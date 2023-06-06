@@ -5,7 +5,9 @@ import flask
 import json
 from collections import defaultdict
 import random
+import sys
 
+sys.path.append('../..')
 
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
