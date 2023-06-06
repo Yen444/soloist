@@ -7,7 +7,8 @@ from collections import defaultdict
 import random
 
 import sys
-sys.path.append('../../')
+#sys.path.append('../../')
+sys.path.append('/Users/yentran/sum2023/sds/soloist/examples')
 
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
