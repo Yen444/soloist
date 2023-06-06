@@ -1,0 +1,45 @@
+version: "2.0"
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - good morning
+      - good evening
+      - hey there
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you around
+      - see you later
+  - intent: query_knowledge_base
+    examples: |
+      - what [side dish]{"entity": "category"} [recipes]{"entity": "object_type", "value": "name"} can you recommend?
+      - list some [recipes]{"entity": "object_type", "value": "name"} for [pasta salat]{"entity": "category"} for [6]{"entity": "yields"} people.
+      - give me [ingredients]{"entity": "attribute","value": "ingredients"} for [Best Homemade Vegan Pizza]{"entity": "name"}.
+      - can you tell me the for how many [portions]{"entity": "attribute", "value": "yields"} of [that recipe]{"entity": "mention"}?
+      - [how long] {"entity": "attribute", "value": "total_time"} does it take to cook [it]{"entity": "mention"}?
+      - give me [instructions]{"entity": "attribute","value": "instructions"} for [Shrimp Pasta Salat]{"entity": "name"}
+      - what [main dish]{"entity": "category"} [recipes]{"entity": "object_type", "value": "name"} can you recommend?
+      - how many [ratings]{"entity": "attribute", "value":"ratings"} is [Greek Fries]{"entity": "name"}?
+      - suggest some [recipes]{"entity": "object_type", "value": "name"} that has rating of [5.0]{"entity":"rating"}
+      - what [starter]{"entity": "category"} [recipes]{"entity": "object_type", "value": "name"} can you recommend?
+  # - lookup: restaurant
+  #   examples: |
+  #     - Donath
+  #     - Berlin Burrito Company
+  #     - I due forni
+  #     - Lụa Restaurant
+  #     - Pfefferberg
+  #     - Marubi Ramen
+  #     - Gong Gan
+  # - lookup: hotel
+  #   examples: |
+  #     - Hilton
+  #     - B&B
+  #     - Berlin Wall Hostel
+  #     - City Hotel
+  #     - Jugendherberge
+  #     - Berlin Hotel
