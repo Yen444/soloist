@@ -1,0 +1,147 @@
+[
+  [
+    "belief : type = soup ;  ingredients = dont care ; name = spicysystem : I'm sorry you could not eat [recipe_ingredient_value]! I would recommend you trying [recipe_name_1].",
+    "belief : type = soup ;  ingredients = dont care ; name = spicysystem : I'm sorry you could not eat [recipe_ingredient_value]! I would recommend you trying [recipe_name_1].",
+    "belief : type = dont care ; ingredients = dont care ; name = spicysystem : I'm sorry you could not eat [recipe_ingredient_value]! I would recommend you trying [recipe_name_1]."
+  ],
+  [
+    "belief : type = dont care ; ingredients = dont care ; name = [recommended_recipe_name_1]system : I'm sorry, I don't understand. Here is the recipe you'll need for the recipe: [recipe_ingredients].",
+    "belief : type = dont care ; ingredients = dont care ; name = [recommended_recipe_name_1]system : I'm sorry, I don't understand. Here is the recipe you'll need for the recipe: [recipe_ingredients].",
+    "belief : type = dont care ; ingredients = dont care ; name = [recommended_recipe_name_1]system : I'm sorry, I don't understand. Here is the recipe you'll need for the recipe: [recipe_ingredients]."
+  ],
+  [
+    "belief : type = dont care ; ingredients = don't care ; name = chilisystem : Sure! I have a fantastic recipe for you! How about trying [recipe_name_1]? Would you like me to share the recipe?",
+    "belief : type = dont care ; ingredients = don't care ; name = chilisystem : Sure! I have a fantastic recipe for you! How about trying [recipe_name_1]? Would you like me to share the recipe?",
+    "belief : type = dont care ; ingredients = don't care ; name = chilisystem : Sure! I have a fantastic recipe for you! How about trying [recipe_name_1]? Would you like me to share the recipe?"
+  ],
+  [
+    "belief : type = dont care ; ingredients = don't care ; name = chili ; ingredients = negative  cream ; name = [recommended_recipe_name_1]system : Sure, here it is: [recipe_ingredients], [recipe_instructions]",
+    "belief : type = dont care ; ingredients = don't care ; name = chili ; ingredients = negative  cream ; name = [recommended_recipe_name_1]system : Sure, here it is: [recipe_ingredients], [recipe_instructions]",
+    "belief : type = dont care ; ingredients = don't care ; name = chili ; ingredients = negative  cream ; name = [recommended_recipe_name_1]system : Sure, here it is: [recipe_ingredients], [recipe_instructions]"
+  ],
+  [
+    "belief : type = main dish ; ingredients = not mentionedsystem : Sure! What main ingredient would you like to use?",
+    "belief : type = main dish ; ingredients = not mentionedsystem : Sure! What main ingredient would you like to use?",
+    "belief : type = main dish ; ingredients = not mentionedsystem : Sure! What main ingredient would you like to use?"
+  ],
+  [
+    "belief : type = main dish ; ingredients = dont caresystem : Sure! I have a delicious recipe for [recipe_name_1]. Would you like me to share the recipe with you?",
+    "belief : type = main dish ; ingredients = dont caresystem : Sure! I have a delicious recipe for [recipe_name_1]. Would you like me to share the recipe with you?",
+    "belief : type = main dish ; ingredients = dont caresystem : Sure! I have a delicious recipe for [recipe_name_1]. Would you like me to share the recipe with you?"
+  ],
+  [
+    "belief : type = main dish ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : Great! Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions].",
+    "belief : type = main dish ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : Great! Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions].",
+    "belief : type = main dish ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : Great! Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions]."
+  ],
+  [
+    "belief : type = main dish ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need anything else.",
+    "belief : type = main dish ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need anything else.",
+    "belief : type = main dish ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need anything else."
+  ],
+  [
+    "belief : type = salad ; ingredients = not mentionedsystem : What kind of ingredients do you prefer?",
+    "belief : type = salad ; ingredients = not mentionedsystem : What kind of ingredients do you prefer?",
+    "belief : type = salad ; ingredients = not mentionedsystem : What kind of ingredients do you prefer?"
+  ],
+  [
+    "belief : type = salad ;  ingredients = negative  quinoasystem : So a [recipe_type]vegan salad recipe with [recipe_ingredient_value], right?",
+    "belief : type = salad ;  ingredients = negative  quinoasystem : So a [recipe_type]vegan salad recipe with [recipe_ingredient_value], right?",
+    "belief : type = salad ;  ingredients = negative  quinoasystem : So a [recipe_type]vegan salad recipe with [recipe_ingredient_value], right?"
+  ],
+  [
+    "belief : type = salad ;  ingredients = negative quinoa ; name = [recommended_recipe_name_1]system : Great! Here's what you'll need: [recipe_ingredients]. And here are the instructions: [recipe_instructions].",
+    "belief : type = salad ;  ingredients = negative quinoa ; name = [recommended_recipe_name_1]system : Great! Here's what you'll need: [recipe_ingredients]. And here are the instructions: [recipe_instructions].",
+    "belief : type = salad ;  ingredients = negative quinoa ; name = [recommended_recipe_name_1]system : Great! Here's what you'll need: [recipe_ingredients]. And here are the instructions: [recipe_instructions]."
+  ],
+  [
+    "belief : type = salad ;  ingredients = negative quinoa ; name = [recommended_recipe_name_1]system : You're welcome! Enjoy making [recipe_name_1].",
+    "belief : type = salad ;  ingredients = negative quinoa ; name = [recommended_recipe_name_1]system : You're welcome! Enjoy making [recipe_name_1].",
+    "belief : type = salad ;  ingredients = negative quinoa ; name = [recommended_recipe_name_1]system : You're welcome! Enjoy making [recipe_name_1]."
+  ],
+  [
+    "belief : type = dessert, ingredients = not mentionedsystem : What kind of ingredients do you prefer?",
+    "belief : type = dessert, ingredients = not mentionedsystem : What kind of ingredients do you prefer?",
+    "belief : type = dessert, ingredients = not mentionedsystem : What kind of ingredients do you prefer?"
+  ],
+  [
+    "belief : type = dessert ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ;  name = [recommended_recipe_name_2]system : Sure! What main ingredient would you like to make it with?user : I would suggest [recipe_name_1]. Would you like me to provide the recipe?user : Here is the recipe: [recipe_instructions].user : Here is the instructions: [recipe_instructions]. Do you have other questions?user : Sure!user : Hi, here are the ingredients you looking for: [recipe_ingredients].user : Here is the equipment needed: [recipe_equipment]",
+    "belief : type = dessert ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ;  name = [recommended_recipe_name_2]system : Sure! What main ingredient would you like to make it with?user : I would suggest [recipe_name_1]. Would you like me to provide the recipe?user : How about trying the [recipe_name_1]? Would you like me to provide the recipe?user : That sounds great! Here are the ingredients you like to share the recipe: [recipe_ingredients].user : Here are the ingredients you'll need: [recipe_ingredients]. And here are th",
+    "belief : type = dessert ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ;  name = [recommended_recipe_name_2]system : Sure! What main ingredient would you like to make it with?user : I would suggest [recipe_name_1]. Would you like me to provide the recipe?user : How about trying the [recipe_name_1]? Would you like me to provide the recipe?user : That sounds great! Here are the ingredients you like to share the recipe: [recipe_ingredients].user : Here are the ingredients you'll need: [recipe_ingredients]. And here are th"
+  ],
+  [
+    "belief : type = dessert ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Great! Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions].",
+    "belief : type = dessert ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions].",
+    "belief : type = dessert ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Great! Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions]."
+  ],
+  [
+    "belief : type = dessert ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : You're welcome! Feel free to ask if you need any further assistance.",
+    "belief : type = dessert ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : You're welcome! Feel free to ask if you need any further assistance.",
+    "belief : type = dessert ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : You're welcome! Feel free to ask if you need any further assistance."
+  ],
+  [
+    "belief : type = breakfast ;  ingredients = negative  avocado ;system : What type of ingredients would you like to make it with?",
+    "belief : type = breakfast ;  ingredients = negative  avocado ;system : What ingredients would you like to go with avocado?",
+    "belief : type = breakfast ;  ingredients = negative  avocado ;system : What type of ingredients would you like to go with avocado?"
+  ],
+  [
+    "belief : type = breakfast ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions].",
+    "belief : type = breakfast ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions].",
+    "belief : type = breakfast ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions]."
+  ],
+  [
+    "belief : type = breakfast ;  ingredients = negative  avocado ;  name = [recommended_recipe_name_1]system : You're welcome! Enjoy making [recipe_name_1].",
+    "belief : type = breakfast ;  ingredients = negative  avocado ; name = [recommended_recipe_name_1]system : You're welcome! Enjoy making [recipe_name_1]",
+    "belief : type = breakfast ;  ingredients = negative  avocado ; name = [recommended_recipe_name_1]system : You're welcome! Enjoy making [recipe_name_1]"
+  ],
+  [
+    "belief : type = breakfast ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : What type of ingredients would you like to go with?",
+    "belief : type = breakfast ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Would you like some thing with [recipe_ingredient_value]?",
+    "belief : type = breakfast ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Would you like some thing with [recipe_ingredient_value]?"
+  ],
+  [
+    "belief : type = breakfast ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions].",
+    "belief : type = breakfast ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions].",
+    "belief : type = breakfast ;  ingredients = negative  eggs ;  ingredients = negative  cornstarch ; name = [recommended_recipe_name_2]system : Here are the ingredients you'll need: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions]."
+  ],
+  [
+    "belief : type = breakfast ;  name = [recommended_recipe_name_1]system : Bye!",
+    "belief : type = breakfast ;  name = [recommended_recipe_name_1]system : Bye!",
+    "belief : type = breakfast ;  name = [recommended_recipe_name_1]system : Bye!"
+  ],
+  [
+    "belief : type = soup ; ingredients = not mentionedsystem : What about trying the [recipe_name_1]?",
+    "belief : type = soup ; ingredients = not mentionedsystem : What about trying the [recipe_name_1]?",
+    "belief : type = soup ; ingredients = not mentionedsystem : What about trying the [recipe_name_1]?"
+  ],
+  [
+    "belief : type = soup ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions].",
+    "belief : type = soup ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions].",
+    "belief : type = soup ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : Here are the ingredients you'll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions: [recipe_instructions]."
+  ],
+  [
+    "belief : type = soup ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need anything else.",
+    "belief : type = soup ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : You're welcome! Let me know if you need any further assistance.",
+    "belief : type = soup ;  ingredients = dont care ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need anything else."
+  ],
+  [
+    "belief : ingredients = tofu ; type = main dishsystem : Sure! I have a dozen of delicious [recipe_type]recipes that you might want to try. Do you have any preferences or restrictions?",
+    "belief : ingredients = tofu ; type = main dishsystem : Sure! I have a dozen of delicious [recipe_type]recipes that you might want to try. Do you have any preferences or restrictions?",
+    "belief : ingredients = tofu ; type = main dishsystem : Sure! I have a dozen of delicious [recipe_type]recipes that you might want to try. Do you have any preferences or restrictions?"
+  ],
+  [
+    "belief : is_vegan = yes ;  type = main dish ; ingredients = tofusystem : Certainly! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions].",
+    "belief : is_vegan = yes ;  type = main dish ; ingredients = tofusystem : Certainly! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions].",
+    "belief : is_vegan = yes ;  type = main dish ; ingredients = tofusystem : Certainly! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions]."
+  ],
+  [
+    "belief : type = main dish ;  ingredients = tofu ;  name = [recommended_recipe_name_1]system : The total cooking time for [recipe_name_1]is [recipe_time].",
+    "belief : type = main dish ;  ingredients = tofu ;  name = [recommended_recipe_name_1]system : The total cooking time for [recipe_name_1]is [recipe_time].",
+    "belief : type = main dish ;  ingredients = tofu ;  name = [recommended_recipe_name_1]system : The total cooking time for [recipe_name_1]is [recipe_time]."
+  ],
+  [
+    "belief : is_vegan = yes ;  type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_1]system : You're welcome! Let me know if you need any further assistance.",
+    "belief : is_vegan = yes ;  type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_1]system : You're welcome! Let me know if you need any further assistance.",
+    "belief : is_vegan = yes ;  type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_1]system : You're welcome! Let me know if you need any further assistance."
+  ]
+]
