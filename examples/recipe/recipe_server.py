@@ -5,10 +5,16 @@ import flask
 import json
 from collections import defaultdict
 import random
+
 import sys
+sys.path.append('../../')
 
-sys.path.append('../..')
-
+# remove this as it is already imported in server.py
+import functools
+import copy
+# import nltk
+# nltk.download('punkt')
+from nltk.tokenize import sent_tokenize, word_tokenize
 
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'
@@ -23,7 +29,7 @@ rgi_queue = Queue(maxsize=0)
 rgo_queue = Queue(maxsize=0)
 
 def parse(sampled_results):
-    
+    print("sampled results", sampled_results)    
     candidates = []
     for system_response in sampled_results:
         system_response = system_response.split('system :')[-1]
@@ -31,16 +37,18 @@ def parse(sampled_results):
         system_response = system_response.replace('[ ','[').replace(' ]',']')
         candidates.append(system_response)
 
+
     candidates_bs = []
     for system_response in sampled_results:
         system_response = system_response.strip()
-        system_response = system_response.split('system :')[0]
+        system_response = system_response.split('system : ')[0]
+        system_response = system_response.split('dp : ')[0]
         system_response = ' '.join(system_response.split()[:])
-        svs = system_response.split(' ; ')
+        svs = system_response.split(';')
         bs_state = {}
         for sv in svs:
             if '=' in sv:
-                s,v = sv.split('=')
+                s,v = sv.strip().split('=')
                 s = s.strip()
                 v = v.strip()
                 bs_state[s] = v
@@ -49,9 +57,10 @@ def parse(sampled_results):
     candidates_w_idx = [(idx, v) for idx,v in enumerate(candidates)]
     candidates = sorted(candidates_w_idx, key=functools.cmp_to_key(compare))
 
+
     idx, response = candidates[-1]
     states = candidates_bs[idx]
-    return states,response
+    return states, response
 
 def compare(key1, key2):
     key1 = key1[1]
@@ -63,18 +72,31 @@ def compare(key1, key2):
     else:
         return -1  
 
-def predictor(context):
+def predictor(context, max_turn = 14):
+    print("context", context)
     context_formated = []
     for idx, i in enumerate(context):
         if idx % 2 == 0:
             context_formated.append(f'user : {i}')
         else:
-            context_formated.append(f'system : {i}')
-            
-    sampled_results = sample(context_formated[-1:])
+            context_formated.append(f'system : {i}')    
+    sampled_results = sample(context_formated[-max_turn:])
+    # sampled_results = sample(context_formated[-1:])
     belief_states, response = parse(sampled_results)
 
     return response, belief_states
+
+# # # testing
+# import sys
+# sys.path.insert(0, '/mount/studenten-temp1/users/quyn/sds/soloist/')
+# from soloist.server import *
+# args.model_name_or_path = '/mount/studenten-temp1/users/quyn/sds/soloist/soloist/recipe_models'
+# args.length = 100
+# main()
+# c = ["i'm looking for a salad recipe", "What kind of ingredients would you like to cook with?", "I don't know"]
+# # c = ["i'm looking for a salad recipe"]
+# response, belief_states = predictor(c)
+# print(response, belief_states)
 
 global_counter = 0
 @app.route('/generate', methods=['GET','POST'])
@@ -96,40 +118,44 @@ def generate_for_queue(in_queue, out_queue):
     while True:
         _, in_request = in_queue.get()
         obs = in_request['msg']
-        response, belief_states = predictor(obs)    
-        # try:
-        #     response = predictor(obs)    
-        # except Exception:
-        #     response = 'Sorry I dont understand, can you paraphrase again ?'
+
+        try:
+            response, belief_states = predictor(obs)  
+            if response.strip() == '[starting_conversation]':
+                memory = []
+            print("**response**", response)  
+            print("**belief state**", belief_states)    
+
+        except ValueError:
+            response = 'Sorry I dont understand, can you paraphrase again ?'
         if belief_states != {}:
             t = []
             for s,v in belief_states.items():
                 t.append(f'{s} = {v}')
             memory.append(' ; '.join(t))
-        print(memory)
         
-        
-        followup = ''
-        if response == 'action_query_knowledge_base':
-            followup = 'Sure thing, query to the kb!'
-        if response == 'bot_challenge':
-            followup = 'Yes, I am a bot!'
-            memory = []
+        # followup = ''
+        # if response == 'action_query_knowledge_base':
+        #     followup = 'Sure thing, query to the kb!'
+        # if response == 'bot_challenge':
+        #     followup = 'Yes, I am a bot!'
+        #     memory = []
         res = {}
         res['response'] = response
         res['memory'] = memory
-        res['followup'] = followup
+        # res['followup'] = followup
         out_queue.put(res)
         in_queue.task_done()
 
 if __name__ == "__main__":
-
     from soloist.server import *
-    args.model_name_or_path = 'recipe'
+    args.model_name_or_path = 'recipe_models'
+
+    args.length = 100
     main()
 
     worker = Thread(target=generate_for_queue, args=(rgi_queue, rgo_queue,))
     worker.setDaemon(True)
     worker.start()
 
-    app.run(host='0.0.0.0',port=8081)
+    app.run(host='0.0.0.0',port=8082)
