@@ -84,7 +84,7 @@ mounted() {
         p
         axios({
               method: 'POST',
-              url: 'http://127.0.0.1:8081/generate',
+              url: 'http://127.0.0.1:8082/generate',
               data: {'msg':this.all_data},
               
           }).then(response => {
