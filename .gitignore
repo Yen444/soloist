@@ -1,3 +1,9 @@
+# models
+soloist/gtg_pretrained
+examples/recipe/recipe_models_all
+examples/recipe/recipe_models_noneg
+examples/recipe/recipe_models
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -9,12 +9,12 @@ import random
 import sys
 sys.path.append('../../')
 
-# remove this as it is already imported in server.py
-import functools
-import copy
-# import nltk
-# nltk.download('punkt')
-from nltk.tokenize import sent_tokenize, word_tokenize
+# # remove this as it is already imported in server.py
+# import functools
+# import copy
+# # import nltk
+# # nltk.download('punkt')
+# from nltk.tokenize import sent_tokenize, word_tokenize
 
 import os
 os.environ['CUDA_VISIBLE_DEVICES'] = '0'

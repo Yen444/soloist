@@ -14,6 +14,7 @@ import sys
 import dotmap
 
 sys.path.append('../../soloist/transformers/')
+sys.path.append('../soloist/soloist/transformers/')
 
 from transformers import GPT2Config, OpenAIGPTConfig
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
@@ -132,8 +133,6 @@ args.seed = 2020
 args.stop_token = '<|endoftext|>'
 def main():
     global model, tokenizer,args
-    
-
     
     args.device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
     args.n_gpu = torch.cuda.device_count()

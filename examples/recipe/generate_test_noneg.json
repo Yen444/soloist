@@ -1,0 +1,212 @@
+[
+  [
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : Of course, [recipe_ingredients], [recipe_instructions]",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : Of course, [recipe_instructions], [recipe_instructions]",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : Of course, [recipe_instructions], [recipe_instructions]",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : Of course, [recipe_ingredients], [recipe_instructions]"
+  ],
+  [
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You're welcome! Bye!",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You're welcome! Bye!",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You're welcome! Bye!",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You're welcome! Bye!",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You're welcome! Bye!"
+  ],
+  [
+    "belief : type = pasta ; ingredients = not mentionedsystem : I assume you are looking for a main dish recipe, right?",
+    "belief : type = pasta ; ingredients = not mentionedsystem : I assume you are looking for a main dish recipe, right?",
+    "belief : type = pasta ; ingredients = not mentionedsystem : I assume you are looking for a main dish recipe, right?",
+    "belief : type = pasta ; ingredients = not mentionedsystem : I assume you are looking for a main dish recipe, right?",
+    "belief : type = pasta ; ingredients = not mentionedsystem : I assume you are looking for a main dish recipe, right?"
+  ],
+  [
+    "belief : type = pasta ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]",
+    "belief : type = pasta ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]",
+    "belief : type = pasta ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]",
+    "belief : type = pasta ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]",
+    "belief : type = pasta ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]"
+  ],
+  [
+    "belief : type = main dish ; ingredients = pasta ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]",
+    "belief : type = main dish ; ingredients = pasta ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]",
+    "belief : type = main dish ; ingredients = pasta ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]",
+    "belief : type = main dish ; ingredients = pasta ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]",
+    "belief : type = main dish ; ingredients = pasta ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]"
+  ],
+  [
+    "belief : type = main dish ; ingredients = dont care ; name = [recommended_recipe_name_2]system : Of course, [recipe_ingredients], [recipe_instructions]",
+    "belief : type = main dish ; ingredients = dont care ; name = [recommended_recipe_name_2]system : Of course, [recipe_ingredients], [recipe_instructions]",
+    "belief : type = main dish ; ingredients = dont care ; name = [recommended_recipe_name_2]system : Of course, [recipe_ingredients], [recipe_instructions]",
+    "belief : type = main dish ; ingredients = dont care ; name = [recommended_recipe_name_2]system : Of course, [recipe_ingredients], [recipe_instructions]",
+    "belief : type = main dish ; ingredients = dont care ; name = [recommended_recipe_name_2]system : Of course, [recipe_ingredients], [recipe_instructions]"
+  ],
+  [
+    "belief : ingredients = chicken ; type = not mentioned ; difficulty = easysystem : Do you want an easy recipe or you want to challenge yourself with a difficult one?",
+    "belief : ingredients = chicken ; type = not mentioned ; difficulty = easysystem : Do you want an easy recipe or you want to challenge yourself with a difficult one?",
+    "belief : ingredients = chicken ; type = not mentioned ; difficulty = easysystem : Do you want an easy recipe or you want to challenge yourself with a difficult one?",
+    "belief : ingredients = chicken ; type = not mentioned ; difficulty = easysystem : Do you want an easy recipe or you want to challenge yourself with a difficult one?",
+    "belief : ingredients = chicken ; type = not mentioned ; difficulty = easysystem : Do you want an easy recipe or you want to challenge yourself with a difficult one?"
+  ],
+  [
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easysystem : Do you want an easy recipe or you want to challenge yourself with a difficult one?",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easysystem : Do you want an easy recipe or you want to challenge yourself with a difficult one?",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easysystem : Do you want an easy recipe or you want to challenge yourself with a difficult one?",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easysystem : Do you want an easy recipe or you want to challenge yourself with a difficult one?",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easysystem : Do you want an easy recipe or you want to challenge yourself with a difficult one?"
+  ],
+  [
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : It takes approximately [recipe_time].",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : It takes approximately [recipe_time].",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : It takes approximately [recipe_time].",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : It takes approximately [recipe_time].",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : It takes approximately [recipe_time]."
+  ],
+  [
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : Here it is: [recipe_ingredients], [recipe_instructions]",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : Here it is: [recipe_ingredients], [recipe_instructions]",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : Here it is: [recipe_ingredients], [recipe_instructions]",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : Here it is: [recipe_ingredients], [recipe_instructions]",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : Here it is: [recipe_ingredients], [recipe_instructions]"
+  ],
+  [
+    "belief : equipment = soy sauce ; type = not mentioned ; ingredients = not mentionedsystem : Sure! How about trying [recipe_name_1]? Would you like me to provide the recipe?",
+    "belief : equipment = soy sauce ; type = not mentioned ; ingredients = not mentionedsystem : Sure! How about trying [recipe_name_1]? Would you like me to provide the recipe?",
+    "belief : equipment = soy sauce ; type = not mentioned ; ingredients = not mentionedsystem : Sure! How about trying [recipe_name_1]? Would you like me to provide the recipe?",
+    "belief : equipment = soy sauce ; type = not mentioned ; ingredients = not mentionedsystem : Sure! How about trying [recipe_name_1]? Would you like me to provide the recipe?",
+    "belief : equipment = soy sauce ; type = not mentioned ; ingredients = not mentionedsystem : Sure! How about trying [recipe_name_1]? Would you like me to provide the recipe?"
+  ],
+  [
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentionedsystem : A delicious vegan [recipe_type]vegan recipe, is it correct?",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentionedsystem : A delicious recipe for [recipe_name_1], is it correct?",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentionedsystem : How about trying [recipe_name_1]?",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentionedsystem : A delicious recipe for [recipe_name_1], is it correct?",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentionedsystem : How about trying [recipe_name_2]?"
+  ],
+  [
+    "belief : type = main dish ; ingredients = not mentioned ; is_vegan = yes ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]",
+    "belief : type = main dish ; ingredients = not mentioned ; is_vegan = yes ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]",
+    "belief : type = main dish ; ingredients = not mentioned ; is_vegan = yes ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]",
+    "belief : type = main dish ; ingredients = not mentioned ; is_vegan = yes ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]",
+    "belief : type = main dish ; ingredients = not mentioned ; is_vegan = yes ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]"
+  ],
+  [
+    "belief : type = main dish ; ingredients = soy ; name = [recommended_recipe_name_1]system : Of course, [recipe_ingredients], [recipe_instructions]",
+    "belief : type = main dish ; ingredients = not mentioned ; is_vegan = yes ; name = [recommended_recipe_name_1]system : Of course, [recipe_ingredients], [recipe_instructions]",
+    "belief : type = main dish ; ingredients = soy ; name = [recommended_recipe_name_1]system : Of course, [recipe_ingredients], [recipe_instructions]",
+    "belief : type = main dish ; ingredients = not mentioned ; is_vegan = yes ; name = [recommended_recipe_name_1]system : Of course, [recipe_ingredients], [recipe_instructions]",
+    "belief : type = main dish ; ingredients = not mentioned ; is_vegan = yes ; name = [recommended_recipe_name_1]system : Of course, [recipe_ingredients], [recipe_instructions]"
+  ],
+  [
+    "belief : equipment = oven ; type = not mentioned ; ingredients = not mentionedsystem : Are you looking for a main dish recipe or any other categories?",
+    "belief : equipment = oven ; type = not mentioned ; ingredients = not mentionedsystem : Are you looking for a main dish recipe or any other categories?",
+    "belief : equipment = oven ; type = not mentioned ; ingredients = not mentionedsystem : Are you looking for a main dish recipe or any other categories?",
+    "belief : equipment = oven ; type = not mentioned ; ingredients = not mentionedsystem : Are you looking for a main dish recipe or any other categories?",
+    "belief : equipment = oven ; type = not mentioned ; ingredients = not mentionedsystem : Are you looking for a main dish recipe or any other categories?"
+  ],
+  [
+    "belief : equipment = oven ; type = main dishsystem : We have [recipe_name_1]and [recipe_name_2].",
+    "belief : equipment = oven ; type = main dishsystem : We have [recipe_name_1]and [recipe_name_2].",
+    "belief : equipment = oven ; type = main dishsystem : We have [recipe_name_1]and [recipe_name_2].",
+    "belief : equipment = oven ; type = main dishsystem : We have [recipe_name_1]and [recipe_name_2].",
+    "belief : equipment = oven ; type = main dishsystem : We have [recipe_name_1]and [recipe_name_2]."
+  ],
+  [
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1]system : Here it is: [recipe_ingredients], [recipe_instructions]",
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1]system : Here it is: [recipe_ingredients], [recipe_instructions]",
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1]system : Here it is: [recipe_ingredients], [recipe_instructions]",
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1]system : Here it is: [recipe_ingredients], [recipe_instructions]",
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1]system : Here it is: [recipe_ingredients], [recipe_instructions]"
+  ],
+  [
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need any further assistance.",
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need any further assistance.",
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need any further assistance.",
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need any further assistance.",
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need any further assistance."
+  ],
+  [
+    "belief : type = breakfast ; ingredients = not mentionedsystem : Do you have any preferences or restrictions?",
+    "belief : type = breakfast ; ingredients = not mentionedsystem : Do you have any preferences or restrictions?",
+    "belief : type = breakfast ; ingredients = not mentionedsystem : Do you have any preferences or restrictions?",
+    "belief : type = breakfast ; ingredients = not mentionedsystem : Do you have any preferences or restrictions?",
+    "belief : type = breakfast ; ingredients = not mentionedsystem : Do you have any preferences or restrictions?"
+  ],
+  [
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : It takes [recipe_time].",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : It takes [recipe_time].",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : It takes [recipe_time].",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : It takes [recipe_time].",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : It takes [recipe_time]."
+  ],
+  [
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1]system : Sorry, I currently don't have that. Would you like to have any recommendation for a main dish?",
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1]system : What about the [recipe_name_2]?",
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1]system : What about the [recipe_name_2]?",
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1]system : What about the [recipe_name_2]?",
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1]system : What about the [recipe_name_2]?"
+  ],
+  [
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1]system : Sure. [recipe_ingredients], [recipe_instructions]",
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1]system : Sure. [recipe_ingredients], [recipe_instructions]",
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1]system : Sure. [recipe_ingredients], [recipe_instructions]",
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1]system : Sure. [recipe_ingredients], [recipe_instructions]",
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1]system : Sure. [recipe_ingredients], [recipe_instructions]"
+  ],
+  [
+    "belief : type = dessert ; ingredients = bluesystem : I assume you are looking for a main dish recipe, right?",
+    "belief : type = dessert ; ingredients = bluesystem : I assume you are looking for a main dish recipe, right?",
+    "belief : type = dessert ; ingredients = bluesystem : I assume you are looking for a main dish recipe, right?",
+    "belief : type = dessert ; ingredients = bluesystem : I assume you are looking for a main dish recipe, right?",
+    "belief : type = dessert ; ingredients = bluesystem : I assume you are looking for a main dish recipe, right?"
+  ],
+  [
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]. For the instructions: [recipe_instructions]",
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]. For the instructions: [recipe_instructions]",
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]. For the instructions: [recipe_instructions]",
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]. For the instructions: [recipe_instructions]",
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]. For the instructions: [recipe_instructions]"
+  ],
+  [
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : You will need [recipe_ingredients]and [recipe_equipment]. For the instructions: [recipe_instructions]",
+    "belief : type = dessert ; ingredients = chicken breasts ; is_vegan = yes ; type = dont care ; is_quick = yes ; name = [recommended_recipe_name_2]system : You will need [recipe_ingredients].",
+    "belief : type = dessert ; ingredients = chicken breasts ; is_vegan = yes ; type = dont care ; is_quick = yes ; name = [recommended_recipe_name_2]system : You will need [recipe_ingredients].",
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : To make [recipe_name_1], you will need [recipe_ingredients]. Please follow the instructions [recipe_instructions]",
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : To make [recipe_name_1], you will need [recipe_ingredients]. Please follow the instructions [recipe_instructions]"
+  ],
+  [
+    "belief : type = dessert ; ingredients = chicken breasts ; name = [recommended_recipe_name_2]system [recommended_recipe_name_2]",
+    "belief : type = dessert ; ingredients = blue ; name = [recommended_recipe_name_1]system : Here are the instructions: [recipe_instructions]",
+    "belief : type = dessert ; ingredients = blue ; name = [recommended_recipe_name_1]system : Here are the instructions: [recipe_instructions]",
+    "belief : type = dessert ; ingredients = blue ; name = [recommended_recipe_name_1]system : Here are the instructions: [recipe_instructions]",
+    "belief : type = dessert ; ingredients = blue ; name = [recommended_recipe_name_1]system : Here are the instructions: [recipe_instructions]"
+  ],
+  [
+    "belief : ingredients = mozzarella ; type = not mentionedsystem : Sure! I have several delicious recipes with [recipe_ingredient_value]that you might like. Would you like an easy one?",
+    "belief : ingredients = mozzarella ; type = not mentionedsystem : Sure! I have several delicious recipes with [recipe_ingredient_value]that you might like. Would you like an easy one?",
+    "belief : ingredients = mozzarella ; type = not mentionedsystem : Sure! I have several delicious recipes with [recipe_ingredient_value]that you might like. Would you like an easy one?",
+    "belief : ingredients = mozzarella ; type = not mentionedsystem : Sure! I have several delicious recipes with [recipe_ingredient_value]that you might like. Would you like an easy one?",
+    "belief : ingredients = mozzarella ; type = not mentionedsystem : Sure! I have several delicious recipes with [recipe_ingredient_value]that you might like. Would you like an easy one?"
+  ],
+  [
+    "belief : ingredients = cheesesare_quick = yes ; type = main dishsystem : So an [recipe_difficulty]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?user : Yes.",
+    "belief : ingredients = cheesesare_quick = yes ; type = main dishsystem : So an [recipe_difficulty]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?user : Yes.",
+    "belief : ingredients = cheesesare_quick = yes ; type = main dishsystem : So an [recipe_difficulty]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?user : Yes.",
+    "belief : ingredients = cheesesare_quick = yes ; type = main dishsystem : So an [recipe_difficulty]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?user : Yes.",
+    "belief : ingredients = cheesesare_quick = yes ; type = main dishsystem : So an [recipe_difficulty]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?user : Yes."
+  ],
+  [
+    "belief : ingredients = cheesesecake ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : Of course, you can try [recipe_name_1]. Here is the instructions: [recipe_instructions].",
+    "belief : ingredients = cheesesecake ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1]system : Of course, you can try [recipe_name_1]. Here is the instructions: [recipe_instructions].",
+    "belief : type = main dish ; ingredients = cheesesare_vegan = yes ; name = [recommended_recipe_name_1]system : Of course, you can try [recipe_name_1]. Here is the recipe: [recipe_instructions].",
+    "belief : type = main dish ; ingredients = cheesesare_vegan = yes ; name = [recommended_recipe_name_1]system : Of course, you can try [recipe_name_1]. Here is the recipe: [recipe_instructions].",
+    "belief : type = main dish ; ingredients = cheesesare_vegan = yes ; name = [recommended_recipe_name_1]system : Of course, you can try [recipe_name_1]. Here is the instructions: [recipe_instructions]."
+  ],
+  [
+    "belief : type = main dish ; ingredients = cheesesare_vegan = yes ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need any further assistance.",
+    "belief : type = main dish ; ingredients = cheesesare_vegan = yes ; name = [recommended_recipe_name_1]system : You're welcome! Enjoy making the [recipe_name_1]!",
+    "belief : type = main dish ; ingredients = cheesesare_vegan = yes ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need any further assistance.",
+    "belief : type = main dish ; ingredients = cheesesare_vegan = yes ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need any further assistance.",
+    "belief : type = main dish ; ingredients = cheesesare_vegan = yes ; name = [recommended_recipe_name_1]system : You're welcome! Feel free to ask if you need any further assistance."
+  ]
+]
