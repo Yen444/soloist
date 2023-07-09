@@ -7,3 +7,49 @@
 [recipe_time]
 [recipe_difficulty]
 [recipe_is_vegan]
+[recipe_ingredient_value]
+[recipe_equipment_value]
+[recommended_recipe_name_1]
+[recommended_recipe_name_2] 
+[recommended_recipe_name_3] 
+[recipe_is_vegan_value]
+[recipe_name_1] 
+[recipe_name_2]
+[recipe_name_3]  
+bye  (  )
+confirm  ( bs )
+confirm ( synonym = [recipe_ingredient_value] )
+confirm  ( ingredients = [recipe_ingredient_value] ) , confirm ( type = [recipe_type] )
+confirm  ( ingredients = negative [recipe_ingredient_value] )
+confirm  ( type  = main dish )
+confirm  ( type = [recipe_type] , ingredients = [recipe_ingredient_value] )
+confirm  ( type = main dish )  ; request  ( ingredients )
+confirm ( bs )
+confirm (type = main dish)
+confirm (type = main dish) ; request (ingredients)
+hello  (  )
+inform  ( difficulty )
+inform  ( equipment )
+inform  ( ingredients )
+inform  ( ingredients , instructions )
+inform  ( ingredients, equipment )
+inform  ( ingredients, instructions ) 
+inform  ( instructions )  
+inform  ( is_vegan )
+inform  ( name = [recipe_name] , name = [recipe_name] )
+inform  ( substitution )
+inform  ( substitution, [recipe_ingredient_value] )
+inform  ( time )
+recommend  ( name = [recipe_name_1] )
+recommend  ( name = none )
+recommendAlternative  ( name = [recipe_name_2] )
+recommendAlternative  ( name = [recipe_name_3] )
+recommendAlternative  ( name = none )
+recommendAternative  ( name = [recipe_name] )
+request  ( difficulty )
+request  ( ingredients )
+request  ( is_vegan )
+request  ( time )
+request  ( type )
+request  ( type , ingredients )
+start_conversation  (  )
