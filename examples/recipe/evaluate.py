@@ -165,6 +165,7 @@ def parse_test_file_for_bs(file):
         for slot_value in bs:
             if '=' in slot_value:
                 s, v = slot_value.split('=')
+                s = s.strip()
                 v = v.strip()
                 if v != 'not mentioned' and v != 'dont care':
                     bs_state[s] = v
