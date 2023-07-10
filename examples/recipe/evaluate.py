@@ -160,12 +160,11 @@ def parse_test_file_for_bs(file):
     for instance in test_data:
         bs = instance['belief'].split('belief : ')[1]
         bs = ' '.join(bs.split()[:])     
-        bs = bs.split(' ; ')
+        bs = bs.split(';')
         bs_state = {}
         for slot_value in bs:
             if '=' in slot_value:
-                s, v = slot_value.split(' = ')
-                s = s.strip()
+                s, v = slot_value.split('=')
                 v = v.strip()
                 if v != 'not mentioned' and v != 'dont care':
                     bs_state[s] = v

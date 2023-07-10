@@ -175,7 +175,7 @@
     "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1]system : To make [recipe_name_1], you will need [recipe_ingredients]. Please follow the instructions [recipe_instructions]"
   ],
   [
-    "belief : type = dessert ; ingredients = chicken breasts ; name = [recommended_recipe_name_2]system [recommended_recipe_name_2]",
+    "belief : type = dessert ; ingredients = chicken breasts ; name = [recommended_recipe_name_2]system : [recommended_recipe_name_2]",
     "belief : type = dessert ; ingredients = blue ; name = [recommended_recipe_name_1]system : Here are the instructions: [recipe_instructions]",
     "belief : type = dessert ; ingredients = blue ; name = [recommended_recipe_name_1]system : Here are the instructions: [recipe_instructions]",
     "belief : type = dessert ; ingredients = blue ; name = [recommended_recipe_name_1]system : Here are the instructions: [recipe_instructions]",

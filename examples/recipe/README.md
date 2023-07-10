@@ -16,3 +16,7 @@ sh scripts/decode_recipe.sh
 ```bash
 # under example/recipe folder
 python evaluate.py --decoded_file generate_test.json --test_file v2_recipe_test_dialogues.json
+
+# Result for model trained with negative values 
+* belief acc: 0.5833333333333334
+* bleu: 0.04839118727874588
