@@ -32,7 +32,11 @@ def parse_decoded_file_for_bleu(file):
     for turn in result:
         hyps = []
         for system_respose in turn:
-            hyp = system_respose.split("system : ")[1]
+            try:
+                hyp = system_respose.split("system : ")[1]
+            except IndexError:
+                print(system_respose)
+                hyp = system_respose.split("system")[-1]
             if hyp in hyps:
                 continue
             hyps.append(hyp)
