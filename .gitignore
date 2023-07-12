@@ -6,6 +6,7 @@ examples/recipe/recipe_models_all_10e_mt
 examples/recipe/recipe_models_noneg
 examples/recipe/recipe_models_noneg_10e
 examples/recipe/recipe_models
+soloist/runs
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
