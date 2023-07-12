@@ -1,0 +1,212 @@
+[
+  [
+    " a slot_time restaurant in slot_location.",
+    " a kitchen speaker.",
+    " a kitchen full of slot_cuisine noodles",
+    " a restaurant serving soup",
+    " a slot_time dinner reservation for 2 people at the slot_restaurant_name in slot_city"
+  ],
+  [
+    " You need a table for 2 at slot_restaurant_name in slot_city, on slot_date at slot_time. Do you confirm?",
+    " I would like to make a reservation at the restaurant slot_restaurant_name in slot_city. You will have the table there at slot_time. The reservation will be for 2 people on slot_date. Do you confirm?",
+    " Do you have a time in mind?",
+    " I'm almost done. You want a table for 2 at slot_restaurant_name in slot_location. It's on slot_date at slot_time. Is that right?",
+    " I'm sorry, I was unable to make the reservation for you. Is there anything else I can help you with?"
+  ],
+  [
+    " I found 10 restaurants in slot_city. What about slot_restaurant_name?",
+    " I found 1 restaurant in slot_city. It is called slot_restaurant_name.",
+    " Some place in slot_city?",
+    " Any place that you are interested in?",
+    " I found 4 restaurants. slot_restaurant_name is located in slot_city."
+  ],
+  [
+    " A place with live music.",
+    " I'm sorry but there is no other good restaurant in the area. Can I help you find something else?",
+    " I want a place in San Jose that has slot_cuisine or slot_cuisine cuisine.",
+    " I want to find something in slot_city that serves alcohol. How about slot_restaurant_name?",
+    " I would love to. How about slot_restaurant_name in slot_location?"
+  ],
+  [
+    " A kitchen speaker.",
+    " You need something like a slot_car_name or a slot_car_name?",
+    " A nice kitchen device like a kitchen speaker?",
+    " I am looking for a kitchen device.",
+    " I am looking for a nice kitchen device."
+  ],
+  [
+    " Do you know the time?",
+    " A table reserved for 2 people at the slot_restaurant_name in slot_city. You want it from slot_date at slot_time?",
+    " A table for 2 at the slot_restaurant_name in slot_city at 6:30 pm on slot_date.",
+    " A table for 2 at slot_restaurant_name in slot_city at 6:30 pm on slot_date. Do you want that?",
+    " Do you have a preference in regards to city and time?"
+  ],
+  [
+    " Look for the best place in slot_location.system : What type of food you want?",
+    " Look for the best restaurant in slot_location.",
+    " I am so sorry that I couldn't find any restaurants for you. Is there anything else I can help you with?",
+    " I can find you a great restaurant in slot_city, slot_restaurant_name.",
+    " I can search for that one, but first please tell me in which city do you want me to search?"
+  ],
+  [
+    " A Chinese Restaurant.system : There are 2 restaurants that you might like. There is slot_restaurant_name in slot_city.",
+    " A good restaurant in slot_city.",
+    " Some Chinese will be good.system : In which city?",
+    " Some Persian food will be great. I think you will love the one called slot_restaurant_name. Located in slot_city.",
+    " Some Persian kind of food will be great. Please check it in slot_location."
+  ],
+  [
+    " 1 day. Do you want me to reserve a table for you?",
+    " 1.5 in the afternoon.",
+    " In about slot_wait_time minutes.",
+    " 1:45 pm",
+    " In a few minutes."
+  ],
+  [
+    " I need a table.",
+    " 1 in slot_city.",
+    " 1 person at quarter to 6 in the evening.system : You want a reservation?",
+    " 1 person.system : At what time you need the reservation?",
+    " 1 person at a restaurant in slot_city at 6 in the evening."
+  ],
+  [
+    " I have 10 restaurants that are good, one is called slot_restaurant_name in slot_city",
+    " Yup, I can find it.system : Okay! There is a restaurant, slot_restaurant_name located in slot_city, for you!",
+    " Search revealed 10 results. slot_restaurant_name serves it in slot_city.",
+    " I've found 1 that meets your needs. It's called slot_restaurant_name in slot_city.",
+    " I found 8 restaurants that serve that kind of food. There's a nice restaurant in slot_city called slot_restaurant_name."
+  ],
+  [
+    " I also have a restaurant in slot_city named slot_restaurant_name.",
+    " I would suggest slot_restaurant_name in slot_city.",
+    " Yes, there is a great place called slot_restaurant_name located in slot_city.",
+    " Yes. How about slot_restaurant_name in slot_location?",
+    " I also found one in slot_city called slot_restaurant_name."
+  ],
+  [
+    " Spicy Indian cuisine, please.",
+    " cashew meal.system : I show that slot_restaurant_name is located in slot_city and is an amazing choice.",
+    " I'm sorry but I couldn't find any other suitable restaurants. Do you need any other help?",
+    " I am showing a moderate number for use in slot_restaurant_name.",
+    " I would love to have some!"
+  ],
+  [
+    " I'm sorry, I couldn't find that one. Can I do something else?",
+    " You want to use slot_cuisine cuisine, slot_cuisine, or something else.",
+    " You want a slot_cuisine restaurant serving slot_cuisine food.",
+    " I'm happy to help. I'm sure you have it all figured out. I am going to reserve a table for you at the slot_restaurant_name in slot_city, if you like.",
+    " You need the directions from slot_recipient_name to slot_city."
+  ],
+  [
+    " Look for something in the city of slot_city. You can make a kitchen reservation at slot_restaurant_name.",
+    " Look in Oaklandsystem : There are 10 restaurants in slot_city. What do you think of slot_restaurant_name?",
+    " Any particular city?",
+    " Look for something in the category of slot_cuisine and there are many good options in slot_city.",
+    " I am looking for a restaurant located in slot_location."
+  ],
+  [
+    " I have found a good place for you. How about slot_restaurant_name in slot_city?",
+    "a burrito, a burrito would be good.system : In what city?",
+    " I would love to. I have a top notch choice in slot_city, slot_restaurant_name.",
+    " I have found 10. How about slot_restaurant_name in slot_city?",
+    " I have found 10 possibilities for you. How about slot_restaurant_name in slot_city?"
+  ],
+  [
+    " I need it from the 8th of this month. Just a few more details. What city would you like me to look in for?",
+    " I am about to reserve a table for you.",
+    " I will help with that.system : What city should I search?",
+    " I need to know the city.",
+    " I will get it for you in a moment.system : The process has begun and yes, I show a nice variety of options for you. I can find slot_cuisine or slot_cuisine, or any other type of cuisine you want."
+  ],
+  [
+    " yes, I can help you with that. I'm sure you can find something for you. You can tell me the time and date you want to dine?",
+    " yes, I can do it for you. I am about to make a transfer. I need to know the city to which you would like the reservation for?",
+    " I am so sorry, I was unable to make the reservation for you. Can I help you with something else?",
+    " Yes, you got it right. You have a great meal.",
+    " Yes please, I'm about to reserve a table for 3 people at slot_restaurant_name in slot_city. You'll be dining in the city on slot_date at slot_time. Is this correct?"
+  ],
+  [
+    " I'd love to try out slot_restaurant_name in slot_city.",
+    " Any preference in location?",
+    " I'd love to.system : What type of food?",
+    " Any preference on the type of food?",
+    " Any particular city I should search in?"
+  ],
+  [
+    " I am looking for slot_time minutes",
+    " 1 day.",
+    " About 1 day.",
+    " 1 day.",
+    " 1 day."
+  ],
+  [
+    " I have slot_restaurant_name in slot_city",
+    " I'm sorry, I'm not able to find any. Do you want me to help you with anything else?",
+    " I am sorry but I am unable to make the reservation for you. Can I do anything for you?",
+    " I have a restaurant called slot_restaurant_name in slot_city",
+    " I'm sorry, there's no other restaurant that meets your requirements."
+  ],
+  [
+    " Pasta.",
+    " Pizza and Pasta.",
+    " Stockholm.system : What is your preferred time?",
+    " Pizza and Pasta. I can make it at afternoon 12.system : Please confirm. Making a table for 2 people at slot_restaurant_name in slot_city at slot_time on slot_date.",
+    " Pizza and Pasta would be great."
+  ],
+  [
+    " I found 1 restaurant in slot_city. It is called slot_restaurant_name.",
+    " Any preference on the type of food?",
+    " I would love it.system : In which city would you like to search in?",
+    " Do you have any suggestion?system : Yup, there is 1 restaurant named slot_restaurant_name located in slot_city.",
+    " I have 3 suggestions for you, one is called slot_restaurant_name located in slot_city."
+  ],
+  [
+    " Brasserie, slot_cuisine, anything you can find?",
+    " Brasserie type of food.",
+    " Coffee & light bites, slot_cuisine, anything else you want.",
+    " Coffee & light bites.",
+    " Brasserie."
+  ],
+  [
+    " Brasserie type of food.",
+    " Yes, there are 2 suitable restaurants. You can find them at slot_restaurant_name in slot_city.",
+    " Yes, I would like you to provide more information.",
+    " Yes. There are 2 restaurants you may like. slot_restaurant_name is a nice choice in slot_city.",
+    " Yes, there's a lovely place called slot_restaurant_name in slot_city."
+  ],
+  [
+    " tell me if I should reserve a table for 2 at the restaurant slot_restaurant_name. The city is slot_city. The reservation is at slot_time on slot_date.",
+    " tell me if I should play slot_song_name on tv.",
+    " I'm going to search for restaurants in slot_city and I need a specific type of cuisine.",
+    " I'm looking for a restaurant in slot_location.",
+    " I'm about to reserve a table for 2 at the slot_restaurant_name in slot_city. You'll be dining at slot_time slot_date."
+  ],
+  [
+    " I have found 1 restaurant in slot_city that is good for you.",
+    " I found 2 restaurants. How about slot_restaurant_name in slot_city?",
+    " I found 1 restaurant in slot_city. It is called slot_restaurant_name.",
+    " What is the city you want to search in?",
+    " I found 10 restaurants in the area. One is called slot_restaurant_name in slot_city."
+  ],
+  [
+    " Italian food.system : In which city are you planning to dine?",
+    " Italian food is perfect.system : I have 1 restaurant you may like, slot_restaurant_name is a great one located in slot_city.",
+    " pizza is great!system : I have 10 salons for you to choose from. How about slot_stylist_name in slot_city?",
+    " Italian food.system : There is a great restaurant called slot_restaurant_name in slot_location.",
+    " pizza is good.system : In which city are you planning to dine?"
+  ],
+  [
+    " A table for 2 at slot_restaurant_name in slot_city on slot_date at slot_time",
+    " I am going to book a table for 2 at the slot_restaurant_name in slot_location. You'll have your table for slot_date at slot_time, is that correct?",
+    " I'm about to place a reservation for 2 at slot_restaurant_name in slot_city on slot_date at slot_time",
+    " A slot_cuisine mozzarella restaurant.",
+    " I am making a slot_cuisine reservation for 2 people at slot_restaurant_name in slot_city, is that correct?"
+  ],
+  [
+    " You're welcome. I am making a reservation at slot_restaurant_name in slot_city, and it's for slot_time, slot_date, for 2 people",
+    " You have a wonderful time with this!",
+    " You have a wonderful time with the table.",
+    " You're right. I'm about to make a table for 2 at the slot_restaurant_name in slot_city on slot_date at slot_time",
+    " You have a good time with this restaurant."
+  ]
+]

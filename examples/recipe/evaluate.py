@@ -36,8 +36,12 @@ def parse_decoded_file_for_bleu(file):
             try:
                 hyp = system_respose.split("system : ")[1]
             except IndexError:
-                print(system_respose)
-                hyp = system_respose.split("system")[-1]
+                
+                if "system" in system_respose:
+                    hyp = system_respose.split("system")[-1]
+                else:
+                    hyp = system_respose
+                    print(hyp)
             if hyp in hyps:
                 continue
             hyps.append(hyp)
@@ -223,6 +227,9 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--decoded_file", type=str, help="Path to the decoded file")
     parser.add_argument("--test_file", type=str, help="Path to the test file")
+    parser.add_argument("--bleu_only", action="store_true", help="only compute bleu")
     args = parser.parse_args()
-
-    compute_accuracy_and_bleu(args.decoded_file, args.test_file)
+    if args.bleu_only:
+        print(compute_bleu(args.decoded_file, args.test_file))
+    else:
+        compute_accuracy_and_bleu(args.decoded_file, args.test_file)

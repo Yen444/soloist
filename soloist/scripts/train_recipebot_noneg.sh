@@ -15,7 +15,7 @@ CUDA_VISIBLE_DEVICES=7,8 python -m torch.distributed.launch \
 --model_name_or_path=gtg_pretrained \
 --do_train \
 --train_data_file=../examples/recipe/no_neg_dialogues/v3_recipe_train_dialogues.json  \
---eval_data_file=../examples/recipe//no_neg_dialogues/v3_recipe_valid_dialogues.json  \
+--eval_data_file=../examples/recipe/no_neg_dialogues/v3_recipe_valid_dialogues.json  \
 --add_special_action_tokens=../examples/recipe/special_tokens.txt \
 --per_gpu_train_batch_size 1 \
 --num_train_epochs 10 \
