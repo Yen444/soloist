@@ -14,6 +14,8 @@ sys.path.append('.')
 sys.path.append('./transformers')
 sys.path.append('./transformers/')
 
+from help_func import post_processing
+
 from transformers import GPT2Config
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
@@ -187,6 +189,8 @@ def main():
         for o in out:
             text = tokenizer.decode(o, clean_up_tokenization_spaces=True)
             text = text[: text.find(args.stop_token) if args.stop_token else None]
+            # delete the response with "user"
+            text = post_processing(text)
             examples.append(text)
         
         output_tests.append(examples)

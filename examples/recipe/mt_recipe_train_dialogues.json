@@ -1,0 +1,687 @@
+[
+    {
+        "history": [
+            "user : could you suggest a recipe"
+        ],
+        "belief": "belief : type = not mentioned  ; ingredients = not mentioned",
+        "reply": "system : Are you looking for a main dish recipe ?"
+    },
+    {
+        "history": [
+            "user : could you suggest a recipe",
+            "system : Are you looking for a main dish recipe ?",
+            "user : no im thinking of a side dish"
+        ],
+        "belief": "belief : type = side dish ; ingredients = not mentioned",
+        "reply": "system : Do you have any preferences for the main ingredient?"
+    },
+    {
+        "history": [
+            "user : could you suggest a recipe",
+            "system : Are you looking for a main dish recipe ?",
+            "user : no im thinking of a side dish",
+            "system : Do you have any preferences for the main ingredient?",
+            "user : Maybe something with chicken."
+        ],
+        "belief": "belief : type = side dish ; ingredients = chicken",
+        "reply": "system : Then I would recommend you trying [recipe_name_1]."
+    },
+    {
+        "history": [
+            "user : I'm looking for something sweet"
+        ],
+        "belief": "belief : type = dessert  ; ingredients = not mentioned",
+        "reply": "system : Sure ! I have a delicious recipe for [recipe_name_1],"
+    },
+    {
+        "history": [
+            "user : I'm looking for something sweet",
+            "system : Sure ! I have a delicious recipe for [recipe_name_1],",
+            "user : which ingredients do i need for that recipe?"
+        ],
+        "belief": "belief : type = dessert  ; ingredients = not mentioned  ; name = [recommended_recipe_name_1]",
+        "reply": "system : You will need [recipe_ingredients] . Do you want the recipe for it ?"
+    },
+    {
+        "history": [
+            "user : I'm looking for something sweet",
+            "system : Sure ! I have a delicious recipe for [recipe_name_1],",
+            "user : which ingredients do i need for that recipe?",
+            "system : You will need [recipe_ingredients] . Do you want the recipe for it ?",
+            "user : no i dont think i have enough ingredients. could you suggest something else?"
+        ],
+        "belief": "belief : type = dessert  ; ingredients = not mentioned ",
+        "reply": "system : Would you like me to share the recipe for [recipe_name_2] ?"
+    },
+    {
+        "history": [
+            "user : I'm looking for something sweet",
+            "system : Sure ! I have a delicious recipe for [recipe_name_1],",
+            "user : which ingredients do i need for that recipe?",
+            "system : You will need [recipe_ingredients] . Do you want the recipe for it ?",
+            "user : no i dont think i have enough ingredients. could you suggest something else?",
+            "system : Would you like me to share the recipe for [recipe_name_2] ?",
+            "user : that sounds good to me"
+        ],
+        "belief": "belief : type = dessert  ; ingredients = not mentioned  ; name = [recommended_recipe_name_2]",
+        "reply": "system : First, you have to prepare the ingredients as follows: [recipe_ingredients]. And this is the instructions: [recipes_instructions]."
+    },
+    {
+        "history": [
+            "user : I'm looking for something sweet",
+            "system : Sure ! I have a delicious recipe for [recipe_name_1],",
+            "user : which ingredients do i need for that recipe?",
+            "system : You will need [recipe_ingredients] . Do you want the recipe for it ?",
+            "user : no i dont think i have enough ingredients. could you suggest something else?",
+            "system : Would you like me to share the recipe for [recipe_name_2] ?",
+            "user : that sounds good to me",
+            "system : First, you have to prepare the ingredients as follows: [recipe_ingredients]. And this is the instructions: [recipes_instructions].",
+            "user : is it quick?"
+        ],
+        "belief": "belief : type = salad  ; ingredients = quinoa ; name = [recommended_recipe_name_1]",
+        "reply": "system : It takes [recipe_time]."
+    },
+    {
+        "history": [
+            "user : I'm looking for something sweet",
+            "system : Sure ! I have a delicious recipe for [recipe_name_1],",
+            "user : which ingredients do i need for that recipe?",
+            "system : You will need [recipe_ingredients] . Do you want the recipe for it ?",
+            "user : no i dont think i have enough ingredients. could you suggest something else?",
+            "system : Would you like me to share the recipe for [recipe_name_2] ?",
+            "user : that sounds good to me",
+            "system : First, you have to prepare the ingredients as follows: [recipe_ingredients]. And this is the instructions: [recipes_instructions].",
+            "user : is it quick?",
+            "system : It takes [recipe_time].",
+            "user : is it easy to make?"
+        ],
+        "belief": "belief : type = salad  ; ingredients = quinoa  ; name = [recommended_recipe_name_1]",
+        "reply": "system : It is [recipe_difficulty] ."
+    },
+    {
+        "history": [
+            "user : I'm looking for something sweet",
+            "system : Sure ! I have a delicious recipe for [recipe_name_1],",
+            "user : which ingredients do i need for that recipe?",
+            "system : You will need [recipe_ingredients] . Do you want the recipe for it ?",
+            "user : no i dont think i have enough ingredients. could you suggest something else?",
+            "system : Would you like me to share the recipe for [recipe_name_2] ?",
+            "user : that sounds good to me",
+            "system : First, you have to prepare the ingredients as follows: [recipe_ingredients]. And this is the instructions: [recipes_instructions].",
+            "user : is it quick?",
+            "system : It takes [recipe_time].",
+            "user : is it easy to make?",
+            "system : It is [recipe_difficulty] .",
+            "user : i like something challenging"
+        ],
+        "belief": "belief : difficulty = Difficult  ; type = salad  ; ingredients = quinoa ",
+        "reply": "system : We found [recipe_name_2] which is more difficult to make."
+    },
+    {
+        "history": [
+            "user : I want to make a salad"
+        ],
+        "belief": "belief : type = salad  ; ingredients = not mentioned",
+        "reply": "system : What kind of ingredients do you prefer ?"
+    },
+    {
+        "history": [
+            "user : I want to make a salad",
+            "system : What kind of ingredients do you prefer ?",
+            "user : maybe with quinoa"
+        ],
+        "belief": "belief : type = salad  ; ingredients = quinoa",
+        "reply": "system : In that case why don't you try [recipe_name_1] ?"
+    },
+    {
+        "history": [
+            "user : I want to make a salad",
+            "system : What kind of ingredients do you prefer ?",
+            "user : maybe with quinoa",
+            "system : In that case why don't you try [recipe_name_1] ?",
+            "user : I need some help. i have some vegantarian guests coming today."
+        ],
+        "belief": "belief : is_vegan = yes  ; type = not mentioned  ; ingredients = not mentioned",
+        "reply": "system : What kind of ingredients do you prefer ?"
+    },
+    {
+        "history": [
+            "user : I want to make a salad",
+            "system : What kind of ingredients do you prefer ?",
+            "user : maybe with quinoa",
+            "system : In that case why don't you try [recipe_name_1] ?",
+            "user : I need some help. i have some vegantarian guests coming today.",
+            "system : What kind of ingredients do you prefer ?",
+            "user : doesnt matter i just need a vegan recipe"
+        ],
+        "belief": "belief : is_vegan = yes  ; type = dont care  ; ingredients = dont care",
+        "reply": "system : Are you looking for a main dish or something else ?"
+    },
+    {
+        "history": [
+            "user : I want to make a salad",
+            "system : What kind of ingredients do you prefer ?",
+            "user : maybe with quinoa",
+            "system : In that case why don't you try [recipe_name_1] ?",
+            "user : I need some help. i have some vegantarian guests coming today.",
+            "system : What kind of ingredients do you prefer ?",
+            "user : doesnt matter i just need a vegan recipe",
+            "system : Are you looking for a main dish or something else ?",
+            "user : main dish"
+        ],
+        "belief": "belief : is_vegan = yes  ; type = main dish ; ingredients = dont care",
+        "reply": "system : What about trying [recipe_name_1] ? It s a delicious and flavorful [recipe_type]."
+    },
+    {
+        "history": [
+            "user : I want to make a salad",
+            "system : What kind of ingredients do you prefer ?",
+            "user : maybe with quinoa",
+            "system : In that case why don't you try [recipe_name_1] ?",
+            "user : I need some help. i have some vegantarian guests coming today.",
+            "system : What kind of ingredients do you prefer ?",
+            "user : doesnt matter i just need a vegan recipe",
+            "system : Are you looking for a main dish or something else ?",
+            "user : main dish",
+            "system : What about trying [recipe_name_1] ? It s a delicious and flavorful [recipe_type].",
+            "user : i need to know the ingredient list first"
+        ],
+        "belief": "belief : type = main dish  ; is_vegan = yes  ; name = [recommended_recipe_name_1]",
+        "reply": "system : The ingredients for [recipe_name_1] are [recipe_ingredients] ."
+    },
+    {
+        "history": [
+            "user : I want to make a salad",
+            "system : What kind of ingredients do you prefer ?",
+            "user : maybe with quinoa",
+            "system : In that case why don't you try [recipe_name_1] ?",
+            "user : I need some help. i have some vegantarian guests coming today.",
+            "system : What kind of ingredients do you prefer ?",
+            "user : doesnt matter i just need a vegan recipe",
+            "system : Are you looking for a main dish or something else ?",
+            "user : main dish",
+            "system : What about trying [recipe_name_1] ? It s a delicious and flavorful [recipe_type].",
+            "user : i need to know the ingredient list first",
+            "system : The ingredients for [recipe_name_1] are [recipe_ingredients] .",
+            "user : okay and what else do i need"
+        ],
+        "belief": "belief : type = main dish  ; ingredients = dont care  ; is_vegan = yes  ; name = [recommended_recipe_name_1]",
+        "reply": "system : You will also need [recipe_equipment]."
+    },
+    {
+        "history": [
+            "user : I want to make a salad",
+            "system : What kind of ingredients do you prefer ?",
+            "user : maybe with quinoa",
+            "system : In that case why don't you try [recipe_name_1] ?",
+            "user : I need some help. i have some vegantarian guests coming today.",
+            "system : What kind of ingredients do you prefer ?",
+            "user : doesnt matter i just need a vegan recipe",
+            "system : Are you looking for a main dish or something else ?",
+            "user : main dish",
+            "system : What about trying [recipe_name_1] ? It s a delicious and flavorful [recipe_type].",
+            "user : i need to know the ingredient list first",
+            "system : The ingredients for [recipe_name_1] are [recipe_ingredients] .",
+            "user : okay and what else do i need",
+            "system : You will also need [recipe_equipment].",
+            "user : could you recommend another recipe?"
+        ],
+        "belief": "belief : type = main dish  ; ingredients = dont care  ; is_vegan = yes ",
+        "reply": "system : What about [recipe_name_2]?"
+    },
+    {
+        "history": [
+            "user : I want to make a salad",
+            "system : What kind of ingredients do you prefer ?",
+            "user : maybe with quinoa",
+            "system : In that case why don't you try [recipe_name_1] ?",
+            "user : I need some help. i have some vegantarian guests coming today.",
+            "system : What kind of ingredients do you prefer ?",
+            "user : doesnt matter i just need a vegan recipe",
+            "system : Are you looking for a main dish or something else ?",
+            "user : main dish",
+            "system : What about trying [recipe_name_1] ? It s a delicious and flavorful [recipe_type].",
+            "user : i need to know the ingredient list first",
+            "system : The ingredients for [recipe_name_1] are [recipe_ingredients] .",
+            "user : okay and what else do i need",
+            "system : You will also need [recipe_equipment].",
+            "user : could you recommend another recipe?",
+            "system : What about [recipe_name_2]?",
+            "user : hmm show me the ingredients"
+        ],
+        "belief": "belief : type = main dish  ; ingredients = negative eggs  ; is_vegan = yes  ; name = [recommended_recipe_name_2]",
+        "reply": "system : You will need [recipe_ingredients]."
+    },
+    {
+        "history": [
+            "user : I want to make a salad",
+            "system : What kind of ingredients do you prefer ?",
+            "user : maybe with quinoa",
+            "system : In that case why don't you try [recipe_name_1] ?",
+            "user : I need some help. i have some vegantarian guests coming today.",
+            "system : What kind of ingredients do you prefer ?",
+            "user : doesnt matter i just need a vegan recipe",
+            "system : Are you looking for a main dish or something else ?",
+            "user : main dish",
+            "system : What about trying [recipe_name_1] ? It s a delicious and flavorful [recipe_type].",
+            "user : i need to know the ingredient list first",
+            "system : The ingredients for [recipe_name_1] are [recipe_ingredients] .",
+            "user : okay and what else do i need",
+            "system : You will also need [recipe_equipment].",
+            "user : could you recommend another recipe?",
+            "system : What about [recipe_name_2]?",
+            "user : hmm show me the ingredients",
+            "system : You will need [recipe_ingredients].",
+            "user : okay please give me the instruction"
+        ],
+        "belief": "belief : is_vegan = yes  ; type = dont care  ; ingredients = dont care  ; name = [recommended_recipe_name_2]",
+        "reply": "system : Here it is  : [recipe_instructions]."
+    },
+    {
+        "history": [
+            "user : I want to make a salad",
+            "system : What kind of ingredients do you prefer ?",
+            "user : maybe with quinoa",
+            "system : In that case why don't you try [recipe_name_1] ?",
+            "user : I need some help. i have some vegantarian guests coming today.",
+            "system : What kind of ingredients do you prefer ?",
+            "user : doesnt matter i just need a vegan recipe",
+            "system : Are you looking for a main dish or something else ?",
+            "user : main dish",
+            "system : What about trying [recipe_name_1] ? It s a delicious and flavorful [recipe_type].",
+            "user : i need to know the ingredient list first",
+            "system : The ingredients for [recipe_name_1] are [recipe_ingredients] .",
+            "user : okay and what else do i need",
+            "system : You will also need [recipe_equipment].",
+            "user : could you recommend another recipe?",
+            "system : What about [recipe_name_2]?",
+            "user : hmm show me the ingredients",
+            "system : You will need [recipe_ingredients].",
+            "user : okay please give me the instruction",
+            "system : Here it is  : [recipe_instructions].",
+            "user : thank you"
+        ],
+        "belief": "belief : type = main dish  ; ingredients = dont care  ; name = [recommended_recipe_name_1]",
+        "reply": "system : Have a nice day!"
+    },
+    {
+        "history": [
+            "user : im making a salad"
+        ],
+        "belief": "belief : type = salad  ; ingredients = not mentioned",
+        "reply": "system : Do you want a vegan salad recipe ?"
+    },
+    {
+        "history": [
+            "user : im making a salad",
+            "system : Do you want a vegan salad recipe ?",
+            "user : i need meat"
+        ],
+        "belief": "belief : type = salad  ; is_vegan= no",
+        "reply": "system : What kind of ingredients do you prefer ?"
+    },
+    {
+        "history": [
+            "user : im making a salad",
+            "system : Do you want a vegan salad recipe ?",
+            "user : i need meat",
+            "system : What kind of ingredients do you prefer ?",
+            "user : chicken. beef is also ok."
+        ],
+        "belief": "belief : type = salad  ; ingredients = chicken or beef",
+        "reply": "system : For [recipe_ingredient_value_1] I would suggest [recipe_name_1]. For [recipe_ingredient_value_2] I think [recipe_name_2] would be very nice. "
+    },
+    {
+        "history": [
+            "user : im making a salad",
+            "system : Do you want a vegan salad recipe ?",
+            "user : i need meat",
+            "system : What kind of ingredients do you prefer ?",
+            "user : chicken. beef is also ok.",
+            "system : For [recipe_ingredient_value_1] I would suggest [recipe_name_1]. For [recipe_ingredient_value_2] I think [recipe_name_2] would be very nice. ",
+            "user : okay please give me the second one"
+        ],
+        "belief": "belief : type = salad  ; ingredients = chicken  ; name = [recommended_recipe_name_2]",
+        "reply": "system : Sure, this is the ingredient list: [recipe_ingredients]. Please follow the instructions: [recipe_instructions]"
+    },
+    {
+        "history": [
+            "user : hello"
+        ],
+        "belief": "belief : none",
+        "reply": "system : [starting_conversation]"
+    },
+    {
+        "history": [
+            "user : hello",
+            "system : [starting_conversation]",
+            "user : how're you doing"
+        ],
+        "belief": "belief : none",
+        "reply": "system : I'm perfectly fine. What can I do for you today?"
+    },
+    {
+        "history": [
+            "user : hello",
+            "system : [starting_conversation]",
+            "user : how're you doing",
+            "system : I'm perfectly fine. What can I do for you today?",
+            "user : i'm looking for something difficult but quick"
+        ],
+        "belief": "belief : difficulty = Difficult  ; is_quick = yes ; type = dont care  ; ingredients = dont care",
+        "reply": "system : I would suggest [recipe_name_1]. It is very delicious, quite challenging but does not take long time. "
+    },
+    {
+        "history": [
+            "user : hello",
+            "system : [starting_conversation]",
+            "user : how're you doing",
+            "system : I'm perfectly fine. What can I do for you today?",
+            "user : i'm looking for something difficult but quick",
+            "system : I would suggest [recipe_name_1]. It is very delicious, quite challenging but does not take long time. ",
+            "user : hmm how long does it take?"
+        ],
+        "belief": "belief : difficulty = Difficult  ; is_quick = yes ; type = dont care  ; ingredients = dont care",
+        "reply": "system : It requires [recipe_time] to prepare ."
+    },
+    {
+        "history": [
+            "user : hello",
+            "system : [starting_conversation]",
+            "user : how're you doing",
+            "system : I'm perfectly fine. What can I do for you today?",
+            "user : i'm looking for something difficult but quick",
+            "system : I would suggest [recipe_name_1]. It is very delicious, quite challenging but does not take long time. ",
+            "user : hmm how long does it take?",
+            "system : It requires [recipe_time] to prepare .",
+            "user : lets try something else"
+        ],
+        "belief": "belief : difficulty = Difficult  ; is_quick = yes ; type = dont care  ; ingredients = dont care",
+        "reply": "system : What do you think about [recipe_name_2] ?"
+    },
+    {
+        "history": [
+            "user : hello",
+            "system : [starting_conversation]",
+            "user : how're you doing",
+            "system : I'm perfectly fine. What can I do for you today?",
+            "user : i'm looking for something difficult but quick",
+            "system : I would suggest [recipe_name_1]. It is very delicious, quite challenging but does not take long time. ",
+            "user : hmm how long does it take?",
+            "system : It requires [recipe_time] to prepare .",
+            "user : lets try something else",
+            "system : What do you think about [recipe_name_2] ?",
+            "user : could you recommend a recipe with bread"
+        ],
+        "belief": "belief : difficulty = Difficult  ; is_quick = yes ; type = dont care  ; ingredients = bread",
+        "reply": "system : Sure ! I have several delicious recipes with [recipe_ingredient_value] that you might like . How about trying [recipe_name_3] ? "
+    },
+    {
+        "history": [
+            "user : hello",
+            "system : [starting_conversation]",
+            "user : how're you doing",
+            "system : I'm perfectly fine. What can I do for you today?",
+            "user : i'm looking for something difficult but quick",
+            "system : I would suggest [recipe_name_1]. It is very delicious, quite challenging but does not take long time. ",
+            "user : hmm how long does it take?",
+            "system : It requires [recipe_time] to prepare .",
+            "user : lets try something else",
+            "system : What do you think about [recipe_name_2] ?",
+            "user : could you recommend a recipe with bread",
+            "system : Sure ! I have several delicious recipes with [recipe_ingredient_value] that you might like . How about trying [recipe_name_3] ? ",
+            "user : no i think we should go with the first one"
+        ],
+        "belief": "belief : name = [recommended_recipe_name_1]",
+        "reply": "system : Good choice! Here is the recipe: [recipe_instructions]."
+    },
+    {
+        "history": [
+            "user : whats the weather today"
+        ],
+        "belief": "belief : none",
+        "reply": "system : I'm sorry, I was trained to suggest recipes. I don't have knowledge about other domains."
+    },
+    {
+        "history": [
+            "user : whats the weather today",
+            "system : I'm sorry, I was trained to suggest recipes. I don't have knowledge about other domains.",
+            "user : do you know what time is it"
+        ],
+        "belief": "belief : none",
+        "reply": "system : I don't have knowledge about date and time."
+    },
+    {
+        "history": [
+            "user : whats the weather today",
+            "system : I'm sorry, I was trained to suggest recipes. I don't have knowledge about other domains.",
+            "user : do you know what time is it",
+            "system : I don't have knowledge about date and time.",
+            "user : do you know the capital of Germany?"
+        ],
+        "belief": "belief : none",
+        "reply": "system : I don't have knowledge about the real world. But I could recommend recipes. Do you need one?"
+    },
+    {
+        "history": [
+            "user : whats the weather today",
+            "system : I'm sorry, I was trained to suggest recipes. I don't have knowledge about other domains.",
+            "user : do you know what time is it",
+            "system : I don't have knowledge about date and time.",
+            "user : do you know the capital of Germany?",
+            "system : I don't have knowledge about the real world. But I could recommend recipes. Do you need one?",
+            "user : Do you know who I am?"
+        ],
+        "belief": "belief : none",
+        "reply": "system : I don't have knowledge about the real world. But I could recommend recipes. Do you need one?"
+    },
+    {
+        "history": [
+            "user : whats the weather today",
+            "system : I'm sorry, I was trained to suggest recipes. I don't have knowledge about other domains.",
+            "user : do you know what time is it",
+            "system : I don't have knowledge about date and time.",
+            "user : do you know the capital of Germany?",
+            "system : I don't have knowledge about the real world. But I could recommend recipes. Do you need one?",
+            "user : Do you know who I am?",
+            "system : I don't have knowledge about the real world. But I could recommend recipes. Do you need one?",
+            "user : just kidding I need a quick recipe with beef"
+        ],
+        "belief": "belief : type = not mentioned  ; ingredients = beef ; is_quick = yes",
+        "reply": "system : I quick [recipe_type] with [recipe_ingredient_value]?"
+    },
+    {
+        "history": [
+            "user : whats the weather today",
+            "system : I'm sorry, I was trained to suggest recipes. I don't have knowledge about other domains.",
+            "user : do you know what time is it",
+            "system : I don't have knowledge about date and time.",
+            "user : do you know the capital of Germany?",
+            "system : I don't have knowledge about the real world. But I could recommend recipes. Do you need one?",
+            "user : Do you know who I am?",
+            "system : I don't have knowledge about the real world. But I could recommend recipes. Do you need one?",
+            "user : just kidding I need a quick recipe with beef",
+            "system : I quick [recipe_type] with [recipe_ingredient_value]?",
+            "user : you misunderstood. I want a side dish. "
+        ],
+        "belief": "belief : type = side dish  ; is_quick = yes  ; ingredients = beef",
+        "reply": "system : I propose trying [recipe_name_1]. "
+    },
+    {
+        "history": [
+            "user : Im having a hard time making dinner"
+        ],
+        "belief": "belief : type = not mentioned  ; ingredients = not mentioned",
+        "reply": "system : I suppose that you are looking for a main dish recipe ? And do you have any preferences or restrictions for ingredients ?"
+    },
+    {
+        "history": [
+            "user : Im having a hard time making dinner",
+            "system : I suppose that you are looking for a main dish recipe ? And do you have any preferences or restrictions for ingredients ?",
+            "user : main dish  ; side dish and also salad"
+        ],
+        "belief": "belief : type = main dish  ; type = or side dish ; type = or salad ; ingredients = not mentioned",
+        "reply": "system : So you would like a three course menu? I would suggest you trying [recipe_name_1]."
+    },
+    {
+        "history": [
+            "user : Im having a hard time making dinner",
+            "system : I suppose that you are looking for a main dish recipe ? And do you have any preferences or restrictions for ingredients ?",
+            "user : main dish  ; side dish and also salad",
+            "system : So you would like a three course menu? I would suggest you trying [recipe_name_1].",
+            "user : is that a main dish recipe?"
+        ],
+        "belief": "belief : type = main dish  ; type = or side dish ; type = or salad ; ingredients = not mentioned ; name = [recommended_recipe_name_1]",
+        "reply": "system : It is a [recipe_type] recipe."
+    },
+    {
+        "history": [
+            "user : Im having a hard time making dinner",
+            "system : I suppose that you are looking for a main dish recipe ? And do you have any preferences or restrictions for ingredients ?",
+            "user : main dish  ; side dish and also salad",
+            "system : So you would like a three course menu? I would suggest you trying [recipe_name_1].",
+            "user : is that a main dish recipe?",
+            "system : It is a [recipe_type] recipe.",
+            "user : i also need a side dish recipe"
+        ],
+        "belief": "belief : type = side dish ; ingredients = dont care",
+        "reply": "system : We have a delicious recipe for [recipe_name_2] "
+    },
+    {
+        "history": [
+            "user : Im having a hard time making dinner",
+            "system : I suppose that you are looking for a main dish recipe ? And do you have any preferences or restrictions for ingredients ?",
+            "user : main dish  ; side dish and also salad",
+            "system : So you would like a three course menu? I would suggest you trying [recipe_name_1].",
+            "user : is that a main dish recipe?",
+            "system : It is a [recipe_type] recipe.",
+            "user : i also need a side dish recipe",
+            "system : We have a delicious recipe for [recipe_name_2] ",
+            "user : and what do you suggest for a main dish recipe"
+        ],
+        "belief": "belief : type = main dish ; ingredients = dont care",
+        "reply": "system : Would you like to try [recipe_name_3]?"
+    },
+    {
+        "history": [
+            "user : I broke up with my boyfriend today. what do you suggest"
+        ],
+        "belief": "belief : type = not mentioned  ; ingredients = not mentioned",
+        "reply": "system : I'm sorry that you broke up with your boyfriend. Do you have any preferences for main ingredient?"
+    },
+    {
+        "history": [
+            "user : i dont have money for dinner. any ideas?"
+        ],
+        "belief": "belief : type = not mentioned  ; ingredients = not mentioned",
+        "reply": "system : Do you want a vegan recipe or not ?"
+    },
+    {
+        "history": [
+            "user : i dont have money for dinner. any ideas?",
+            "system : Do you want a vegan recipe or not ?",
+            "user : a vegan recipe might work"
+        ],
+        "belief": "belief : is_vegan = yes  ; type = main dish ; ingredients = not mentioned",
+        "reply": "system : I would suggest [recipe_name_1] . It is a very easy recipe to try."
+    },
+    {
+        "history": [
+            "user : i dont have money for dinner. any ideas?",
+            "system : Do you want a vegan recipe or not ?",
+            "user : a vegan recipe might work",
+            "system : I would suggest [recipe_name_1] . It is a very easy recipe to try.",
+            "user : okay sound good"
+        ],
+        "belief": "belief : is_vegan = yes  ; type = main dish ; ingredients = not mentioned ; name = [recommended_recipe_name_1]",
+        "reply": "system : This is your recipe [recipe_ingredients], [recipe_instructions]."
+    },
+    {
+        "history": [
+            "user : i want to make something special to surprise my husband. any ideas?"
+        ],
+        "belief": "belief : type = not mentioned  ; ingredients = not mentioned",
+        "reply": "system : I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?"
+    },
+    {
+        "history": [
+            "user : i want to make something special to surprise my husband. any ideas?",
+            "system : I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?",
+            "user : i dont know. could you recommend a three courses menu?"
+        ],
+        "belief": "belief : ingredients = dont care ; type = main dish ; type = or salad ; type = or side dish",
+        "reply": "system : Sure ! I have multiple recipes that you might like . How about [recipe_name_1] ?"
+    },
+    {
+        "history": [
+            "user : i want to make something special to surprise my husband. any ideas?",
+            "system : I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?",
+            "user : i dont know. could you recommend a three courses menu?",
+            "system : Sure ! I have multiple recipes that you might like . How about [recipe_name_1] ?",
+            "user : okay that sounds good for main dish. please give me the recipe"
+        ],
+        "belief": "belief : ingredients = dont care ; type = main dish ; type = or salad ; type = or side dish ; name = [recommended_recipe_name_1]",
+        "reply": "system : Sure ! Here are the ingredients you ll need and the recipe  : [recipe_ingredients]   ; [recipe_instructions] ."
+    },
+    {
+        "history": [
+            "user : i want to make something special to surprise my husband. any ideas?",
+            "system : I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?",
+            "user : i dont know. could you recommend a three courses menu?",
+            "system : Sure ! I have multiple recipes that you might like . How about [recipe_name_1] ?",
+            "user : okay that sounds good for main dish. please give me the recipe",
+            "system : Sure ! Here are the ingredients you ll need and the recipe  : [recipe_ingredients]   ; [recipe_instructions] .",
+            "user : i also need a side dish recipe"
+        ],
+        "belief": "belief : ingredients = dont care ; type = main dish ; type = or salad ; type = or side dish",
+        "reply": "system : I recommend [recipe_name_2]. This is the instructions: [recipe_instructions]."
+    },
+    {
+        "history": [
+            "user : i want to make something special to surprise my husband. any ideas?",
+            "system : I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?",
+            "user : i dont know. could you recommend a three courses menu?",
+            "system : Sure ! I have multiple recipes that you might like . How about [recipe_name_1] ?",
+            "user : okay that sounds good for main dish. please give me the recipe",
+            "system : Sure ! Here are the ingredients you ll need and the recipe  : [recipe_ingredients]   ; [recipe_instructions] .",
+            "user : i also need a side dish recipe",
+            "system : I recommend [recipe_name_2]. This is the instructions: [recipe_instructions].",
+            "user : and i need a salad"
+        ],
+        "belief": "belief : ingredients = dont care ; type = main dish ; type = or salad ; type = or side dish",
+        "reply": "system : Sure ! I have a fantastic option for you . How about trying the [recipe_name_3] ?"
+    },
+    {
+        "history": [
+            "user : i want to make something special to surprise my husband. any ideas?",
+            "system : I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?",
+            "user : i dont know. could you recommend a three courses menu?",
+            "system : Sure ! I have multiple recipes that you might like . How about [recipe_name_1] ?",
+            "user : okay that sounds good for main dish. please give me the recipe",
+            "system : Sure ! Here are the ingredients you ll need and the recipe  : [recipe_ingredients]   ; [recipe_instructions] .",
+            "user : i also need a side dish recipe",
+            "system : I recommend [recipe_name_2]. This is the instructions: [recipe_instructions].",
+            "user : and i need a salad",
+            "system : Sure ! I have a fantastic option for you . How about trying the [recipe_name_3] ?",
+            "user : okay  ; recipe please"
+        ],
+        "belief": "belief : ingredients = dont care ; type = main dish ; type = or salad ; type = or side dish ; name = [recommended_recipe_name_3]",
+        "reply": "system : Here is the recommended recipe for [recipe_name_3]  : [recipe_instructions]."
+    },
+    {
+        "history": [
+            "user : do you have something good with salmon? i need something quick"
+        ],
+        "belief": "belief : ingredients = salmon  ; type = dont care ; is_quick = yes",
+        "reply": "system : I assume you are looking for a main dish recipe, correct ?"
+    },
+    {
+        "history": [
+            "user : do you have something good with salmon? i need something quick",
+            "system : I assume you are looking for a main dish recipe, correct ?",
+            "user : yes"
+        ],
+        "belief": "belief : ingredients = salmon  ; type = main dish ; is_quick = yes",
+        "reply": "system : I recommend trying [recipe_name_1]."
+    }
+]
