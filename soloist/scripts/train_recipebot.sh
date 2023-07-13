@@ -3,7 +3,8 @@
 # lr 1e-5 to 5e-5
 # mc_loss_efficient 0.1 to 1
 # etc.
-# experiment with kb
+# EXPERIMENT WITH KB
+
 CUDA_VISIBLE_DEVICES=1,2 python -m torch.distributed.launch \
 --nproc_per_node=2 \
 --nnodes=1 \

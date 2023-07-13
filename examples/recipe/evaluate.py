@@ -137,9 +137,12 @@ def parse_decoded_file_for_bs(file):
     for turn in result:
         predicted_bs = []   # of each turn
         for system_response in turn:
-            system_response = system_response.strip()
-            bs = system_response.split('system : ')[0]
-            bs = bs.split('belief : ')[1]
+            if '<EOKB>' in system_response:
+                bs = system_response.split("<EOB>")[0].split("belief :")[1].strip()
+            else:
+                system_response = system_response.strip()
+                bs = system_response.split('system : ')[0]
+                bs = bs.split('belief : ')[1]
             bs = ' '.join(bs.split()[:])    # removes any leading, trailing or consecutive whitespace into a single space
             # bs = bs.split(' ; ')
             bs = re.split(r'\s*;\s*|\s*,\s*', bs)

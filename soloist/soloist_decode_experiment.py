@@ -123,6 +123,7 @@ def main():
 
     args = parser.parse_args()
 
+
     args.device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
     args.n_gpu = torch.cuda.device_count()
 
@@ -149,10 +150,12 @@ def main():
     user_token_id = tokenizer.convert_tokens_to_ids(['user'])
 
     # NEW : add end of string symbol after each sequence
+   
     eob_token_id = tokenizer.convert_tokens_to_ids(['<EOB>'])
     eokb_token_id = tokenizer.convert_tokens_to_ids(['<EOKB>'])
 
-    for idx in range(len(inputs)):
+    # for idx in range(len(inputs)):
+    for idx in range(2):
         logger.info(f"PROGRESS: {int(idx/len(inputs)*100)}%")
         example = inputs[idx]
         history = example['history']
@@ -219,7 +222,7 @@ def main():
         # NEW: add kb
         # sequence: User : ...  => belief state : ... <EOB> kb: ... <EOKB> response ... <EOS> 
         
-        kb = example['kb'] + ' ' '<EOKB>' # new: add kb
+        kb = example['kb'] + ' ' + '<EOKB>' # new: add kb
         kb_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(kb))
 
         # concate context + belief_out + kb <EOKB> and predict response
@@ -240,16 +243,14 @@ def main():
                 repetition_penalty=args.repetition_penalty,
                 device=args.device,
             )
-            out = out[:, len(new_context_tokens):].tolist()
-        responses = []
+            out = out[:, len(context_tokens):].tolist()
+        examples = []
         for o in out:
             text = tokenizer.decode(o, clean_up_tokenization_spaces=True)
             text = text[: text.find(args.stop_token) if args.stop_token else None]
             # text = text[: text.find("user") if "user" in text else text]
             text = post_processing(text) # delete the response with "user"
-            responses.append(text)
-
-        examples = beliefs + responses
+            examples.append(text)
 
         # out = sample_sequence(
         #     model=model,

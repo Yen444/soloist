@@ -1,3 +1,5 @@
+<EOB>
+<EOKB>
 [recipe_name]
 [recipe_type]
 [recipe_ingredients]

@@ -17,7 +17,9 @@ sh scripts/decode_recipe.sh
 # under example/recipe folder
 python evaluate.py --decoded_file [generated_test.json] --test_file [test_dialogues.json]
 
+
 # without fine-tuning
+`python evaluate.py --decoded_file generate_test_pretrained.json --test_file v3_recipe_test_dialogues.json`
 * no belief state prediction
 * bleu: 3.8270043718399063e-05
 
