@@ -36,7 +36,6 @@ def parse_decoded_file_for_bleu(file):
             try:
                 hyp = system_respose.split("system : ")[1]
             except IndexError:
-                
                 if "system" in system_respose:
                     hyp = system_respose.split("system")[-1]
                 else:

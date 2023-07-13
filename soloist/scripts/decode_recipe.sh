@@ -24,15 +24,29 @@ TOP_K=3
 # --max_turn 15
 
 # no negative dialogues
+# python soloist_decode.py \
+# --model_type=gpt2 \
+# --model_name_or_path='../examples/recipe/recipe_models_all_10e_mt' \
+# --num_samples $NS \
+# --input_file=../examples/recipe/v3_recipe_test_dialogues.json \
+# --top_k $TOP_K \
+# --temperature $TEMP \
+# --output_file=../examples/recipe/generate_test_all_10e_mt.json \
+# --max_turn 15
+
+# with kb
+# CUDA_VISIBLE_DEVICES=2,3 python -m torch.distributed.launch \
 python soloist_decode.py \
 --model_type=gpt2 \
---model_name_or_path='../examples/recipe/recipe_models_all_10e_mt' \
+--model_name_or_path='../examples/recipe/recipe_models_all_10e_nokb' \
 --num_samples $NS \
 --input_file=../examples/recipe/v3_recipe_test_dialogues.json \
 --top_k $TOP_K \
 --temperature $TEMP \
---output_file=../examples/recipe/generate_test_all_10e_mt.json \
+--output_file=../examples/recipe/generate_test_all_10e.json \
 --max_turn 15
+
+# python ../examples/recipe/evaluate.py --decoded_file ../examples/recipe/generate_test_all_10e_kb.json --test_file ../examples/recipe/v3_recipe_test_dialogues.json 
 
 # with machine teaching
 # python soloist_decode.py \
