@@ -220,9 +220,12 @@ def compute_accuracy(decoded_file, test_file):
 
 
 def compute_accuracy_and_bleu(decoded_file, test_file):
-    acc = compute_accuracy(decoded_file, test_file)
-    bleu = compute_bleu(decoded_file, test_file)
-    print(f'belief acc: {acc}\nbleu: {bleu}')
+    with open('evaluation_result.txt', 'a') as f:
+        print("-"*50, file = f)
+        print(f"decoded_file: {decoded_file}", file = f)
+        acc = compute_accuracy(decoded_file, test_file)
+        bleu = compute_bleu(decoded_file, test_file)
+        print(f'belief acc: {acc:.3f}\nbleu: {bleu:.3f}\ncombine: {acc+bleu:.3f}', file = f)
 
 
 if __name__ == "__main__":

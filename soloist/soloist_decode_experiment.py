@@ -14,8 +14,6 @@ sys.path.append('.')
 sys.path.append('./transformers')
 sys.path.append('./transformers/')
 
-from help_func import post_processing
-
 from transformers import GPT2Config
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
@@ -119,7 +117,7 @@ def main():
     parser.add_argument('--input_file', type=str, default=None, help="input json file to decoding")
     parser.add_argument('--output_file', type=str, default=None, help="save path")
     parser.add_argument('--max_turn', type=int, default=15, help="number of turns used as context")
-    parser.add_argument('--kb', action='store_true', help= 'add knowledge base state to input')
+    parser.add_argument('--add_kb_to_context', action='store_true', help= 'add knowledge base state to input')
 
     args = parser.parse_args()
 
@@ -149,17 +147,10 @@ def main():
     system_token_id = tokenizer.convert_tokens_to_ids(['system'])
     user_token_id = tokenizer.convert_tokens_to_ids(['user'])
 
-    # NEW : add end of string symbol after each sequence
-   
-    eob_token_id = tokenizer.convert_tokens_to_ids(['<EOB>'])
-    eokb_token_id = tokenizer.convert_tokens_to_ids(['<EOKB>'])
-
-    # for idx in range(len(inputs)):
-    for idx in range(2):
+    for idx in range(len(inputs)):
         logger.info(f"PROGRESS: {int(idx/len(inputs)*100)}%")
         example = inputs[idx]
         history = example['history']
-        
         context = history[-args.max_turn:]
         context_ids = []
         token_ids_for_context = []
@@ -171,111 +162,96 @@ def main():
             else:
                 token_ids_for_context += system_token_id * len(ids)
         
-        # first we predict belief state by feeding the start token for belief
         belief = '=>' # induction token 
-        # get the token id for the induction token
         belief_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(belief)) 
-        context_tokens = context_ids + belief_id # concat history and the start signal
-        token_type_ids = token_ids_for_context  + system_token_id 
-
-        # response = '=>'
-        # response_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(response))
-
-        # context_tokens = context_ids + response_id
-        # token_type_ids = token_ids_for_context  + system_token_id
-
-        assert( len(context_tokens) == len(token_type_ids)) # make sure they are the same length
-        
-        # task 1: predict belief
-        # greedy decoding for belief, top_k = 0
-        belief_out = sample_sequence(
-            model=model,
-            context=context_tokens,
-            token_type_ids=token_type_ids,
-            system_token_id=system_token_id,
-            num_samples=args.num_samples,
-            length=args.length,
-            temperature=args.temperature,
-            top_k=0,
-            top_p=args.top_p,
-            # repetition_penalty=args.repetition_penalty,
-            device=args.device,
-        ) 
-        # truncate context tokens and response from output
-        belief_out = belief_out[:, len(context_tokens):].tolist()
-        beliefs = []
-        # examples = []
-        # for o in out:
-        #     text = tokenizer.decode(o, clean_up_tokenization_spaces=True)
-        #     text = text[: text.find(args.stop_token) if args.stop_token else None]
-            
-        #     text = post_processing(text) # delete the response with "user"
-        #     examples.append(text)
-
-        for o in belief_out:
-            text = tokenizer.decode(o, clean_up_tokenization_spaces=True)
-            text = text[: text.find('<EOB>')]
-            
-            # text = post_processing(text) # delete the response with "user"
-            beliefs.append(text) # 
-
-        # NEW: add kb
-        # sequence: User : ...  => belief state : ... <EOB> kb: ... <EOKB> response ... <EOS> 
-        
-        kb = example['kb'] + ' ' + '<EOKB>' # new: add kb
+        if args.add_kb_to_context:
+            kb = example['kb']
+        else:
+            kb = ' '
+        kb = kb + ' ' + '<EOKB>'
         kb_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(kb))
 
-        # concate context + belief_out + kb <EOKB> and predict response
-        for o in belief_out:
-            new_context_tokens = context_tokens + o + kb_id
-            new_token_type_ids = token_type_ids + system_token_id * len(o) + system_token_id * len(kb_id)
+        # concatenate context and the start signal =>
+        context_tokens = context_ids + belief_id 
+        token_type_ids = token_ids_for_context  + system_token_id 
+        assert( len(context_tokens) == len(token_type_ids)) # make sure they are the same length
+        
+        if args.add_kb_to_context:
+            # if the model's aware of kb state, we first make belief prediction then concatenate context + belief prediction + kb state to predict the response
 
-            out = sample_sequence(
+            # task 1: predict belief
+            # greedy decoding for belief, top_k = 0, max length = 50
+            belief_out = sample_sequence(
                 model=model,
-                context=new_context_tokens,
-                token_type_ids=new_token_type_ids,
+                context=context_tokens,
+                token_type_ids=token_type_ids,
                 system_token_id=system_token_id,
                 num_samples=args.num_samples,
-                length=args.length,
+                length=50, 
                 temperature=args.temperature,
-                top_k=args.top_k,
+                top_k=0,
                 top_p=args.top_p,
-                repetition_penalty=args.repetition_penalty,
+                # repetition_penalty=args.repetition_penalty, [no penalty in belief prediction]
                 device=args.device,
-            )
+            ) 
+            # truncate context tokens and response from output
+            belief_out = belief_out[:, len(context_tokens):].tolist()
+
+            # sequence: User : ...  => belief state : ... <EOB> kb: ... <EOKB> response ... <EOS> 
+            # Task2: concate context + belief_out + kb <EOKB> and predict response
+            for o in belief_out:
+                text = tokenizer.decode(o, clean_up_tokenization_spaces=True)
+                bs = text.split('<EOB>')[0]
+                bs = bs + '<EOB>'
+                bs_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(bs)) 
+
+                new_context_tokens = context_tokens + bs_id + kb_id
+                new_token_type_ids = token_type_ids + system_token_id * len(bs_id) + system_token_id * len(kb_id)
+           
+                assert len(new_context_tokens) == len(new_token_type_ids)
+                out = sample_sequence(
+                    model=model,
+                    context=new_context_tokens,
+                    token_type_ids=new_token_type_ids,
+                    system_token_id=system_token_id,
+                    num_samples=args.num_samples,
+                    length=args.length,
+                    temperature=args.temperature,
+                    top_k=args.top_k,
+                    top_p=args.top_p,
+                    repetition_penalty=args.repetition_penalty,
+                    device=args.device,
+                )
+                out = out[:, len(context_tokens):].tolist()
+
+
+        
+        else: # if the model is not aware of kb state, we predicte the bs and response autoregressively
+            out = sample_sequence(
+                    model=model,
+                    context=context_tokens,
+                    token_type_ids=token_type_ids,
+                    system_token_id=system_token_id,
+                    num_samples=args.num_samples,
+                    length=args.length,
+                    temperature=args.temperature,
+                    top_k=args.top_k,
+                    top_p=args.top_p,
+                    repetition_penalty=args.repetition_penalty,
+                    device=args.device,
+                )
             out = out[:, len(context_tokens):].tolist()
+
         examples = []
         for o in out:
             text = tokenizer.decode(o, clean_up_tokenization_spaces=True)
             text = text[: text.find(args.stop_token) if args.stop_token else None]
-            # text = text[: text.find("user") if "user" in text else text]
-            text = post_processing(text) # delete the response with "user"
+            if 'user' in text:
+                text = text.split('user')[0] # delete the response with "user"
             examples.append(text)
-
-        # out = sample_sequence(
-        #     model=model,
-        #     context=context_tokens,
-        #     token_type_ids=token_type_ids,
-        #     system_token_id=system_token_id,
-        #     num_samples=args.num_samples,
-        #     length=args.length,
-        #     temperature=args.temperature,
-        #     top_k=args.top_k,
-        #     top_p=args.top_p,
-        #     repetition_penalty=args.repetition_penalty,
-        #     device=args.device,
-        # )
-        # out = out[:, len(context_tokens):].tolist()
-        # examples = []
-        # for o in out:
-        #     text = tokenizer.decode(o, clean_up_tokenization_spaces=True)
-        #     text = text[: text.find(args.stop_token) if args.stop_token else None]
-            
-        #     text = post_processing(text) # delete the response with "user"
-        #     examples.append(text)
-        
+        print(examples)
         output_tests.append(examples)
-        print(output_tests)
+        
     json.dump(output_tests, open(args.output_file,'w'), indent=2)
     return text
 

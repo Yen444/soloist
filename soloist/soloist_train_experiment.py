@@ -80,8 +80,6 @@ class JsonDataset(Dataset):
             system_token_id = tokenizer.convert_tokens_to_ids(['system'])
             user_token_id = tokenizer.convert_tokens_to_ids(['user'])
             induction_token_id = tokenizer.convert_tokens_to_ids(['=>'])
-            end_of_belief_id = tokenizer.convert_tokens_to_ids(['<EOB>'])
-            end_of_kb_id = tokenizer.convert_tokens_to_ids(['<EOKB>'])
 
             examples = json.load(open(file_path))
 
@@ -99,9 +97,6 @@ class JsonDataset(Dataset):
                 belief_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(belief))
                 belief_pool.append(belief_id) 
 
-                # dp_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(i['dp'])) # NEW
-                # dp_pool.append(dp_id) # NEW
-
             for example in examples:
                 history = example['history']
                 context = history[-max_turn:]
@@ -116,19 +111,24 @@ class JsonDataset(Dataset):
                         token_ids_for_context += system_token_id * len(ids)
 
                 history = ' '.join(history[-max_turn:])
-                # kb = ' '#example['kb'] 
-                kb = example['kb'] + ' ' + '<EOKB>' # NEW: train with kb
+                if args.add_kb_to_context:
+                    kb = example['kb']  # NEW: train with kb
+                else:
+                    kb = ' '
+                kb = kb + ' ' + '<EOKB>' # add end of string symbol at the end of kb
                 kb_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(kb)) # NEW
 
-                
                 belief = example['belief'] + ' ' + '<EOB>'
                 belief_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(belief))
 
-                response =  example['reply'] + ' ' + tokenizer.eos_token
-                response_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(response))
+                if args.add_dp_to_response:
+                    dp = example['dp']
+                else:
+                    dp = ' '
+                dp = dp + ' ' + '<EODP>'
 
-                # dp = example['dp']
-                # dp_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(dp)) # NEW
+                response =  dp + example['reply'] + ' ' + tokenizer.eos_token
+                response_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(response))
                 
                 # sequence: User : ...  => belief state : ... <EOB> kb: ... <EOKB> response ... <EOS> 
 
@@ -389,7 +389,7 @@ def train(args, train_dataset, model, tokenizer):
             log_every_n_interval(500, f"  PROGRESS: {int(float(global_step)/t_total*100)}%")
             if step % 500 == 0:
                 logger.info(f"  PROGRESS: {int(float(global_step)/t_total*100)}%")
-            inputs, tokens, labels, masks,mc_labels, mc_token_ids = batch
+            inputs, tokens, labels, masks, mc_labels, mc_token_ids = batch
 
             inputs = inputs.to(args.device)
             tokens = tokens.to(args.device)
@@ -494,7 +494,7 @@ def evaluate(args, model, tokenizer, prefix=""):
     for batch in tqdm(eval_dataloader, desc="Evaluating"):
         # inputs, labels = mask_tokens(batch, tokenizer, args) if args.mlm else (batch, batch)
 
-        inputs, tokens, labels, masks = batch
+        inputs, tokens, labels, masks, _ , _  = batch
             # import pdb
             # pdb.set_trace()
         inputs = inputs.to(args.device)
@@ -505,7 +505,8 @@ def evaluate(args, model, tokenizer, prefix=""):
         # labels = labels.to(args.device)
 
         with torch.no_grad():
-            outputs = model(inputs, masked_lm_labels=labels, token_type_ids=tokens) if args.mlm else model(inputs, labels=labels)
+            outputs = model(inputs, mc_labels=labels, token_type_ids=tokens) if args.mlm else model(inputs, lm_labels=labels)
+            # outputs = model(inputs, masked_lm_labels=labels, token_type_ids=tokens) if args.mlm else model(inputs, labels=labels)
             lm_loss = outputs[0]
             eval_loss += lm_loss.mean().item()
         nb_eval_steps += 1
@@ -627,7 +628,8 @@ def main():
     parser.add_argument("--add_same_belief_response_prediction", action='store_true')
     parser.add_argument("--add_response_prediction", action='store_true')
     parser.add_argument("--add_belief_prediction", action='store_true')
-    # parser.add_argument("--add_dp_prediction", action='store_true') # NEW
+    parser.add_argument("--add_kb_to_context", action='store_true')
+    parser.add_argument("--add_dp_to_response", action='store_true')
 
     args = parser.parse_args()
 

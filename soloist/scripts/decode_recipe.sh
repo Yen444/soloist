@@ -1,60 +1,21 @@
+# 3k checkpoint
+MODEL_NAME='../examples/recipe/recipe_models_all_10e/checkpoint-3000'
+OUTPUT=../examples/recipe/generate_test/generate_test_all_10e_cp3k.json
 NS=5
 TEMP=1.2
 TOP_P=0.5
 TOP_K=3
-# python soloist_decode.py \
-# --model_type=gpt2 \
-# --model_name_or_path='gtg_pretrained' \
-# --num_samples $NS \
-# --input_file=../examples/recipe/v3_recipe_test_dialogues.json \
-# --top_k $TOP_K \
-# --temperature $TEMP \
-# --output_file=../examples/recipe/generate_test_pretrained.json \
-# --max_turn 15
 
-# all dialogues
-# python soloist_decode.py \
-# --model_type=gpt2 \
-# --model_name_or_path='../examples/recipe/recipe_models_all_10e' \
-# --num_samples $NS \
-# --input_file=../examples/recipe/v3_recipe_test_dialogues.json \
-# --top_k $TOP_K \
-# --temperature $TEMP \
-# --output_file=../examples/recipe/generate_test_all_10e.json \
-# --max_turn 15
-
-# no negative dialogues
-# python soloist_decode.py \
-# --model_type=gpt2 \
-# --model_name_or_path='../examples/recipe/recipe_models_all_10e_mt' \
-# --num_samples $NS \
-# --input_file=../examples/recipe/v3_recipe_test_dialogues.json \
-# --top_k $TOP_K \
-# --temperature $TEMP \
-# --output_file=../examples/recipe/generate_test_all_10e_mt.json \
-# --max_turn 15
-
-# with kb
-
-python soloist_decode.py \
+python soloist_decode_experiment.py \
 --model_type=gpt2 \
---model_name_or_path='../examples/recipe/recipe_models_all_10e_kb' \
+--model_name_or_path $MODEL_NAME \
 --num_samples $NS \
---input_file=../examples/recipe/v3_recipe_test_dialogues.json \
+--input_file=../examples/recipe/all_dialogues/v3_recipe_test_dialogues.json \
 --top_k $TOP_K \
 --temperature $TEMP \
---output_file=../examples/recipe/generate_test_all_10e_kb.json \
+--output_file $OUTPUT \
 --max_turn 15
 
-# python ../examples/recipe/evaluate.py --decoded_file ../examples/recipe/generate_test_all_10e_kb.json --test_file ../examples/recipe/v3_recipe_test_dialogues.json 
-
-# with machine teaching
-# python soloist_decode.py \
-# --model_type=gpt2 \
-# --model_name_or_path='../examples/recipe/recipe_models_all_10e_mt' \
-# --num_samples $NS \
-# --input_file=../examples/recipe/v3_recipe_test_dialogues.json \
-# --top_k $TOP_K \
-# --temperature $TEMP \
-# --output_file=../examples/recipe/generate_test_all_10e_mt.json \
-# --max_turn 15
+python ../examples/recipe/evaluate.py \
+--decoded_file $OUTPUT \
+--test_file=../examples/recipe/all_dialogues/v3_recipe_test_dialogues.json 

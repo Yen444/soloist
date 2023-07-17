@@ -1,389 +1,340 @@
-# 1 
-System: Please chat with the agent
->>> could you suggest a recipe
-***History tracker: ['could you suggest a recipe']***
+# 1
+>>> hi
+***History tracker: ['hi']***
 
-***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned'}***
+***Belief States tracker: {}***
 
-System: Are you looking for a main dish recipe ?
->>> no i'm thinking of a side dish
-***History tracker: ['could you suggest a recipe', 'Are you looking for a main dish recipe ?', "no i'm thinking of a side dish"]***
+System: Hi , what can I do for you ?
+>>> I need some ideas for dinner.   
+***History tracker: ['hi', 'Hi , what can I do for you ?', 'I need some ideas for dinner.']***
 
-***Belief States tracker: {'is_vegan': 'yes', 'type': 'side dish'}***
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'not mentioned'}***
 
-System: Sorry , I currently do n't have that . Would you like to have any recommendation for a main dish ?
->>> no thanks
-***History tracker: ['could you suggest a recipe', 'Are you looking for a main dish recipe ?', "no i'm thinking of a side dish", "Sorry , I currently do n't have that . Would you like to have any recommendation for a main dish ?", 'no thanks']***
+System: Do you have any preferences or restrictions ?
+>>> I don't like eggs. I have some chicken in the fridge.
+***History tracker: ['hi', 'Hi , what can I do for you ?', 'I need some ideas for dinner.', 'Do you have any preferences or restrictions ?', "I don't like eggs. I have some chicken in the fridge."]***
 
-***Belief States tracker: {'is_vegan': 'yes', 'type': 'side dish', 'ingredients': 'dont care'}***
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'negative eggs'}***
 
-System: Have a nice day !
->>> bye
+System: Just to make sure , youre still looking for a [recipe_type] recipe with [recipe_ingredient_value] and [recipe_ingredient_value] , and you dont want [recipe_ingredient_value] , right ?
+>>> I need a recipe with chicken and without eggs. 
+***History tracker: ['hi', 'Hi , what can I do for you ?', 'I need some ideas for dinner.', 'Do you have any preferences or restrictions ?', "I don't like eggs. I have some chicken in the fridge.", 'Just to make sure , youre still looking for a [recipe_type] recipe with [recipe_ingredient_value] and [recipe_ingredient_value] , and you dont want [recipe_ingredient_value] , right ?', 'I need a recipe with chicken and without eggs.']***
+
+***Belief States tracker: {'ingredients': 'negative eggs', 'type': 'main dish'}***
+
+System: Just to make sure , you dont want [recipe_ingredient_value] and you dont care about the recipe type , youre still looking for a [recipe_type] recip
+>>> can you recommend a main dish recipe?
+***History tracker: ['hi', 'Hi , what can I do for you ?', 'I need some ideas for dinner.', 'Do you have any preferences or restrictions ?', "I don't like eggs. I have some chicken in the fridge.", 'Just to make sure , youre still looking for a [recipe_type] recipe with [recipe_ingredient_value] and [recipe_ingredient_value] , and you dont want [recipe_ingredient_value] , right ?', 'I need a recipe with chicken and without eggs.', 'Just to make sure , you dont want [recipe_ingredient_value] and you dont care about the recipe type , youre still looking for a [recipe_type] recip', 'can you recommend a main dish recipe?']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'negative eggs', 'name': '[recommended_recipe_name_1]'}***
+
+System: I have a fantastic recipe for you ! How about trying the [recipe_name_1] ? Would you like me to share the recipe ?
+>>> okay
+***History tracker: ['hi', 'Hi , what can I do for you ?', 'I need some ideas for dinner.', 'Do you have any preferences or restrictions ?', "I don't like eggs. I have some chicken in the fridge.", 'Just to make sure , youre still looking for a [recipe_type] recipe with [recipe_ingredient_value] and [recipe_ingredient_value] , and you dont want [recipe_ingredient_value] , right ?', 'I need a recipe with chicken and without eggs.', 'Just to make sure , you dont want [recipe_ingredient_value] and you dont care about the recipe type , youre still looking for a [recipe_type] recip', 'can you recommend a main dish recipe?', 'I have a fantastic recipe for you ! How about trying the [recipe_name_1] ? Would you like me to share the recipe ?', 'okay']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'chicken', 'name': '[recommended_recipe_name_1]'}***
+
+System: Absolutely ! Here are the ingredients youll need for the [recipe_name_1] : [recipe_ingredients] . And here are the step-by-step instructions : [recipe_instructions] .
+>>> thanks, bye.
 System: Good bye
 
 # 2
-System: Please chat with the agent
->>> I'm looking for something sweet
-***History tracker: ["I'm looking for something sweet"]***
-
-***Belief States tracker: {'type': 'dessert', 'ingredients': 'not mentioned'}***
-
-System: Sure ! I have a delicious recipe for [recipe_name_1] . Would you like me to share the recipe ?
->>> which ingredients do i need for that recipe?
-***History tracker: ["I'm looking for something sweet", 'Sure ! I have a delicious recipe for [recipe_name_1] . Would you like me to share the recipe ?', 'which ingredients do i need for that recipe?']***
-
-***Belief States tracker: {'type': 'dessert', 'ingredients': 'not mentioned', 'name': '[recommended_recipe_name_1]'}***
-
-System: You will need [recipe_ingredients] . Do you want the recipe for it ?
->>> no i don't think i have enough ingredients. could you suggest something else?
-***History tracker: ["I'm looking for something sweet", 'Sure ! I have a delicious recipe for [recipe_name_1] . Would you like me to share the recipe ?', 'which ingredients do i need for that recipe?', 'You will need [recipe_ingredients] . Do you want the recipe for it ?', "no i don't think i have enough ingredients. could you suggest something else?"]***
-
-***Belief States tracker: {'type': 'dessert', 'ingredients': 'negative cornstarch', 'name': '[recommended_recipe_name_2]'}***
-
-System: Would you like me to share the recipe for [recipe_name_2] ?
->>> that sounds good to me
-***History tracker: ["I'm looking for something sweet", 'Sure ! I have a delicious recipe for [recipe_name_1] . Would you like me to share the recipe ?', 'which ingredients do i need for that recipe?', 'You will need [recipe_ingredients] . Do you want the recipe for it ?', "no i don't think i have enough ingredients. could you suggest something else?", 'Would you like me to share the recipe for [recipe_name_2] ?', 'that sounds good to me']***
-
-***Belief States tracker: {'type': 'dessert', 'ingredients': 'negative cornstarch', 'name': '[recommended_recipe_name_1]'}***
-
-System: Would you like me to share the recipe for [recipe_name_1] ? user : Yes , you can try [recipe_name_1]
->>> bye
-System: Good bye
-
-# 3
->>> I want to make a salad
-***History tracker: ['I want to make a salad']***
-
-***Belief States tracker: {'type': 'salad', 'ingredients': 'not mentioned'}***
-
-System: What kind of ingredients do you prefer ?
->>> maybe with quinoa
-***History tracker: ['I want to make a salad', 'What kind of ingredients do you prefer ?', 'maybe with quinoa']***
-
-***Belief States tracker: {'type': 'salad', 'ingredients': 'quinoa'}***
-
-System: In that case why do n't you try [recipe_name_1] ?
->>> is it quick?
-***History tracker: ['I want to make a salad', 'What kind of ingredients do you prefer ?', 'maybe with quinoa', "In that case why do n't you try [recipe_name_1] ?", 'is it quick?']***
-
-***Belief States tracker: {'type': 'salad', 'ingredients': 'quinoa'}***
-
-System: It takes [recipe_time]
->>> is it easy to make?
-***History tracker: ['I want to make a salad', 'What kind of ingredients do you prefer ?', 'maybe with quinoa', "In that case why do n't you try [recipe_name_1] ?", 'is it quick?', 'It takes [recipe_time]', 'is it easy to make?']***
-
-***Belief States tracker: {'type': 'salad', 'ingredients': 'quinoa', 'name': '[recommended_recipe_name_1]'}***
-
-System: It is [recipe_difficulty] .
->>> i like something challenging
-***History tracker: ['I want to make a salad', 'What kind of ingredients do you prefer ?', 'maybe with quinoa', "In that case why do n't you try [recipe_name_1] ?", 'is it quick?', 'It takes [recipe_time]', 'is it easy to make?', 'It is [recipe_difficulty] .', 'i like something challenging']***
-
-***Belief States tracker: {'difficulty': 'Medium', 'type': 'salad', 'ingredients': 'quinoa', 'name': '[recommended_recipe_name_1]'}***
-
-System: Which type of ingredients do you prefer ? user : I find [recipe_name_1] delicious .
->>> bye
-System: Good bye
-
-# 4
-System: Please chat with the agent
->>> I need some help. i have some vegantarian guests coming today.
-***History tracker: ['I need some help. i have some vegantarian guests coming today.']***
-
-***Belief States tracker: {'is_vegan': 'yes', 'type': 'not mentioned', 'ingredients': 'not mentioned'}***
-
-System: What kind of ingredients do you prefer ?
->>> doesn't matter i just need a vegan recipe
-***History tracker: ['I need some help. i have some vegantarian guests coming today.', 'What kind of ingredients do you prefer ?', "doesn't matter i just need a vegan recipe"]***
-
-***Belief States tracker: {'is_vegan': 'yes', 'type': 'dont care', 'ingredients': 'dont care'}***
-
-System: Are you looking for a main dish or something else ?
->>> main dish
-***History tracker: ['I need some help. i have some vegantarian guests coming today.', 'What kind of ingredients do you prefer ?', "doesn't matter i just need a vegan recipe", 'Are you looking for a main dish or something else ?', 'main dish']***
-
-***Belief States tracker: {'is_vegan': 'yes', 'type': 'main dish'}***
-
-System: What about trying [recipe_name_1] ? It 's a delicious and flavorful vegan [recipe_type] . Would you like me to provide the recipe ?
->>> i need to know the ingredient list first
-***History tracker: ['I need some help. i have some vegantarian guests coming today.', 'What kind of ingredients do you prefer ?', "doesn't matter i just need a vegan recipe", 'Are you looking for a main dish or something else ?', 'main dish', "What about trying [recipe_name_1] ? It 's a delicious and flavorful vegan [recipe_type] . Would you like me to provide the recipe ?", 'i need to know the ingredient list first']***
-
-***Belief States tracker: {'type': 'main dish', 'is_vegan': 'yes', 'name': '[recommended_recipe_name_1]'}***
-
-System: The ingredients for [recipe_name_1] are [recipe_ingredients] .
->>> okay and what else do i need
-***History tracker: ['I need some help. i have some vegantarian guests coming today.', 'What kind of ingredients do you prefer ?', "doesn't matter i just need a vegan recipe", 'Are you looking for a main dish or something else ?', 'main dish', "What about trying [recipe_name_1] ? It 's a delicious and flavorful vegan [recipe_type] . Would you like me to provide the recipe ?", 'i need to know the ingredient list first', 'The ingredients for [recipe_name_1] are [recipe_ingredients] .', 'okay and what else do i need']***
-
-***Belief States tracker: {'type': 'main dish', 'ingredients': 'dont care', 'is_vegan': 'yes', 'name': '[recommended_recipe_name_1]'}***
-
-System: You will need [recipe_ingredients] and [recipe_equipment]
->>> could you recommend another recipe?
-***History tracker: ['I need some help. i have some vegantarian guests coming today.', 'What kind of ingredients do you prefer ?', "doesn't matter i just need a vegan recipe", 'Are you looking for a main dish or something else ?', 'main dish', "What about trying [recipe_name_1] ? It 's a delicious and flavorful vegan [recipe_type] . Would you like me to provide the recipe ?", 'i need to know the ingredient list first', 'The ingredients for [recipe_name_1] are [recipe_ingredients] .', 'okay and what else do i need', 'You will need [recipe_ingredients] and [recipe_equipment]', 'could you recommend another recipe?']***
-
-***Belief States tracker: {'type': 'main dish', 'is_vegan': 'yes', 'name': '[recommended_recipe_name_1]'}***
-
-System: What about [recipe_name_2]
->>> hmm show me the ingredients
-***History tracker: ['I need some help. i have some vegantarian guests coming today.', 'What kind of ingredients do you prefer ?', "doesn't matter i just need a vegan recipe", 'Are you looking for a main dish or something else ?', 'main dish', "What about trying [recipe_name_1] ? It 's a delicious and flavorful vegan [recipe_type] . Would you like me to provide the recipe ?", 'i need to know the ingredient list first', 'The ingredients for [recipe_name_1] are [recipe_ingredients] .', 'okay and what else do i need', 'You will need [recipe_ingredients] and [recipe_equipment]', 'could you recommend another recipe?', 'What about [recipe_name_2]', 'hmm show me the ingredients']***
-
-***Belief States tracker: {'type': 'main dish', 'ingredients': 'negative eggs', 'is_vegan': 'yes', 'name': '[recommended_recipe_name_1]'}***
-
-System: You will need [recipe_ingredients] and [recipe_equipment]
->>> okay please give me the instruction
-***History tracker: ['I need some help. i have some vegantarian guests coming today.', 'What kind of ingredients do you prefer ?', "doesn't matter i just need a vegan recipe", 'Are you looking for a main dish or something else ?', 'main dish', "What about trying [recipe_name_1] ? It 's a delicious and flavorful vegan [recipe_type] . Would you like me to provide the recipe ?", 'i need to know the ingredient list first', 'The ingredients for [recipe_name_1] are [recipe_ingredients] .', 'okay and what else do i need', 'You will need [recipe_ingredients] and [recipe_equipment]', 'could you recommend another recipe?', 'What about [recipe_name_2]', 'hmm show me the ingredients', 'You will need [recipe_ingredients] and [recipe_equipment]', 'okay please give me the instruction']***
-
-***Belief States tracker: {'is_vegan': 'yes', 'type': 'dont care', 'ingredients': 'dont care', 'name': '[recommended_recipe_name_1]'}***
-
-System: Here it is : [recipe_instructions]
->>> thank you 
-***History tracker: ['I need some help. i have some vegantarian guests coming today.', 'What kind of ingredients do you prefer ?', "doesn't matter i just need a vegan recipe", 'Are you looking for a main dish or something else ?', 'main dish', "What about trying [recipe_name_1] ? It 's a delicious and flavorful vegan [recipe_type] . Would you like me to provide the recipe ?", 'i need to know the ingredient list first', 'The ingredients for [recipe_name_1] are [recipe_ingredients] .', 'okay and what else do i need', 'You will need [recipe_ingredients] and [recipe_equipment]', 'could you recommend another recipe?', 'What about [recipe_name_2]', 'hmm show me the ingredients', 'You will need [recipe_ingredients] and [recipe_equipment]', 'okay please give me the instruction', 'Here it is : [recipe_instructions]', 'thank you']***
-
-***Belief States tracker: {'type': 'main dish', 'ingredients': 'dont care', 'name': '[recommended_recipe_name_1]'}***
-
-System: Bye bye and have a nice day [recipe_instructions]
-
-# 5
->>> i'm making a salad 
-***History tracker: ["i'm making a salad"]***
-
-***Belief States tracker: {'type': 'salad', 'ingredients': 'not mentioned'}***
-
-System: Do you want a vegan salad recipe ?
->>> i need meat
-***History tracker: ["i'm making a salad", 'Do you want a vegan salad recipe ?', 'i need meat']***
-
-***Belief States tracker: {'type': 'salad', 'ingredients': 'negative meat'}***
-
-System: What kind of ingredients do you prefer ?
->>> chicken. beef is also find
-***History tracker: ["i'm making a salad", 'Do you want a vegan salad recipe ?', 'i need meat', 'What kind of ingredients do you prefer ?', 'chicken. beef is also find']***
-
-***Belief States tracker: {'type': 'salad', 'ingredients': 'beef'}***
-
-System: In that case why do n't you try [recipe_name_1] ?
->>> okay please give me recipe 
-***History tracker: ["i'm making a salad", 'Do you want a vegan salad recipe ?', 'i need meat', 'What kind of ingredients do you prefer ?', 'chicken. beef is also find', "In that case why do n't you try [recipe_name_1] ?", 'okay please give me recipe']***
-
-***Belief States tracker: {'type': 'salad', 'ingredients': 'chicken', 'name': '[recommended_recipe_name_2]'}***
-
-System: Sure , [recipe_ingredients] , [recipe_instructions]
->>> okay bye
-System: Good bye
-
-# 6 
->>> hello
-***History tracker: ['hello']***
-
-***Belief States tracker: {}***
-
-System: [starting_conversation]
->>> how're you doing
-***History tracker: ['hello', '[starting_conversation]', "how're you doing"]***
-
-***Belief States tracker: {}***
-
-System: You are looking for a main dish recipe , correct ? Do you have any restrictions or preferences ? user : I do n't find any appropriate recipe . Maybe another ingredient ? user : How about trying [recipe_name_1] ? Would you like me to provide the recipe ?
->>> i'm looking for something difficult but quick
-***History tracker: ['hello', '[starting_conversation]', "how're you doing", "You are looking for a main dish recipe , correct ? Do you have any restrictions or preferences ? user : I do n't find any appropriate recipe . Maybe another ingredient ? user : How about trying [recipe_name_1] ? Would you like me to provide the recipe ?", "i'm looking for something difficult but quick"]***
-
-***Belief States tracker: {'difficulty': 'Medium', 'type': 'dont care', 'ingredients': 'dont care'}***
-
-System: I 'm sorry that you do n't like [recipe_ingredient_value] . If you prefer a quick recipe , I suggest trying [recipe_name_2] . Would you like me to provide the recipe ?
->>> hmm how long does it take?
-***History tracker: ['hello', '[starting_conversation]', "how're you doing", "You are looking for a main dish recipe , correct ? Do you have any restrictions or preferences ? user : I do n't find any appropriate recipe . Maybe another ingredient ? user : How about trying [recipe_name_1] ? Would you like me to provide the recipe ?", "i'm looking for something difficult but quick", "I 'm sorry that you do n't like [recipe_ingredient_value] . If you prefer a quick recipe , I suggest trying [recipe_name_2] . Would you like me to provide the recipe ?", 'hmm how long does it take?']***
-
-***Belief States tracker: {'difficulty': 'Medium', 'type': 'dont care', 'ingredients': 'dont care', 'is_quick': 'yes'}***
-
-System: It requires [recipe_time] to prepare .
->>> let's try something else
-***History tracker: ['hello', '[starting_conversation]', "how're you doing", "You are looking for a main dish recipe , correct ? Do you have any restrictions or preferences ? user : I do n't find any appropriate recipe . Maybe another ingredient ? user : How about trying [recipe_name_1] ? Would you like me to provide the recipe ?", "i'm looking for something difficult but quick", "I 'm sorry that you do n't like [recipe_ingredient_value] . If you prefer a quick recipe , I suggest trying [recipe_name_2] . Would you like me to provide the recipe ?", 'hmm how long does it take?', 'It requires [recipe_time] to prepare .', "let's try something else"]***
-
-***Belief States tracker: {'difficulty': 'Medium', 'type': 'dont care', 'ingredients': 'dont care', 'is_quick': 'yes'}***
-
-System: Would you like me to share the recipe for [recipe_name_1] ?
->>> could you recommend a recipe with bread
-***History tracker: ['hello', '[starting_conversation]', "how're you doing", "You are looking for a main dish recipe , correct ? Do you have any restrictions or preferences ? user : I do n't find any appropriate recipe . Maybe another ingredient ? user : How about trying [recipe_name_1] ? Would you like me to provide the recipe ?", "i'm looking for something difficult but quick", "I 'm sorry that you do n't like [recipe_ingredient_value] . If you prefer a quick recipe , I suggest trying [recipe_name_2] . Would you like me to provide the recipe ?", 'hmm how long does it take?', 'It requires [recipe_time] to prepare .', "let's try something else", 'Would you like me to share the recipe for [recipe_name_1] ?', 'could you recommend a recipe with bread']***
-
-***Belief States tracker: {'difficulty': 'Medium', 'type': 'main dish', 'ingredients': 'bread', 'name': '[recommended_recipe_name_1]'}***
-
-System: Sure ! I have several delicious recipes with [recipe_ingredient_value] that you might like . How about trying [recipe_name_1] ? Would you like me to share the recipe ?
->>> no i think we should go with the first one
-***History tracker: ['hello', '[starting_conversation]', "how're you doing", "You are looking for a main dish recipe , correct ? Do you have any restrictions or preferences ? user : I do n't find any appropriate recipe . Maybe another ingredient ? user : How about trying [recipe_name_1] ? Would you like me to provide the recipe ?", "i'm looking for something difficult but quick", "I 'm sorry that you do n't like [recipe_ingredient_value] . If you prefer a quick recipe , I suggest trying [recipe_name_2] . Would you like me to provide the recipe ?", 'hmm how long does it take?', 'It requires [recipe_time] to prepare .', "let's try something else", 'Would you like me to share the recipe for [recipe_name_1] ?', 'could you recommend a recipe with bread', 'Sure ! I have several delicious recipes with [recipe_ingredient_value] that you might like . How about trying [recipe_name_1] ? Would you like me to share the recipe ?', 'no i think we should go with the first one']***
-
-***Belief States tracker: {'difficulty': 'Medium', 'type': 'main dish', 'ingredients': 'bread', 'is_quick': 'yes'}***
-
-System: Sorry that you do n't like [recipe_ingredient_value] . If you prefer a different recipe , I suggest trying [recipe_name_2] . Would you like me to provide the recipe ?
->>> bye
-System: Good bye
-
-# 7 
 >>> what's the weather today
 ***History tracker: ["what's the weather today"]***
 
 ***Belief States tracker: {}***
 
-System: It 's hot now , so it 's not a good idea to cook today . Do you want the recipe for it ? user : No problem ! How about trying [recipe_name_1] ? Would you like me to provide the recipe ?
->>> do you know what time is it
-***History tracker: ["what's the weather today", "It 's hot now , so it 's not a good idea to cook today . Do you want the recipe for it ? user : No problem ! How about trying [recipe_name_1] ? Would you like me to provide the recipe ?", 'do you know what time is it']***
+System: It is a [recipe_difficulty] vegan recipe . Would you like me to provide the recipe ?
+>>> what's time is it?
+***History tracker: ["what's the weather today", 'It is a [recipe_difficulty] vegan recipe . Would you like me to provide the recipe ?', "what's time is it?"]***
 
-***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned', 'is_quick': 'yes', 'name': '[recommended_recipe_name_1]'}***
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'not mentioned', 'name': '[recommended_recipe_name_1]'}***
 
-System: It is a [recipe_difficulty] recipe for [recipe_name_1] . And here is the instructions : [recipe_instructions] . Do you need anything else ?
->>> do you know the capital of Germany?
-***History tracker: ["what's the weather today", "It 's hot now , so it 's not a good idea to cook today . Do you want the recipe for it ? user : No problem ! How about trying [recipe_name_1] ? Would you like me to provide the recipe ?", 'do you know what time is it', 'It is a [recipe_difficulty] recipe for [recipe_name_1] . And here is the instructions : [recipe_instructions] . Do you need anything else ?', 'do you know the capital of Germany?']***
-
-***Belief States tracker: {'type': 'dessert', 'is_vegan': 'yes', 'name': '[recommended_recipe_name_1]'}***
-
-System: It is a non-convex one .
+System: It is a [recipe_type] recipe .
 >>> Do you know who I am?
-***History tracker: ["what's the weather today", "It 's hot now , so it 's not a good idea to cook today . Do you want the recipe for it ? user : No problem ! How about trying [recipe_name_1] ? Would you like me to provide the recipe ?", 'do you know what time is it', 'It is a [recipe_difficulty] recipe for [recipe_name_1] . And here is the instructions : [recipe_instructions] . Do you need anything else ?', 'do you know the capital of Germany?', 'It is a non-convex one .', 'Do you know who I am?']***
+***History tracker: ["what's the weather today", 'It is a [recipe_difficulty] vegan recipe . Would you like me to provide the recipe ?', "what's time is it?", 'It is a [recipe_type] recipe .', 'Do you know who I am?']***
 
-***Belief States tracker: {'type': 'dessert', 'ingredients': 'not mentioned', 'is_quick': 'yes', 'name': '[recommended_recipe_name_1]'}***
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'beef or chicken', 'name': '[recommended_recipe_name_1]'}***
 
-System: You can try [recipe_name_1] . It is a good idea.user : How about trying [recipe_name_2] ? Would you like me to provide the recipe ? user : You can try [recipe_name_1] user
->>> just kidding I need a quick recipe with beef
-***History tracker: ["what's the weather today", "It 's hot now , so it 's not a good idea to cook today . Do you want the recipe for it ? user : No problem ! How about trying [recipe_name_1] ? Would you like me to provide the recipe ?", 'do you know what time is it', 'It is a [recipe_difficulty] recipe for [recipe_name_1] . And here is the instructions : [recipe_instructions] . Do you need anything else ?', 'do you know the capital of Germany?', 'It is a non-convex one .', 'Do you know who I am?', 'You can try [recipe_name_1] . It is a good idea.user : How about trying [recipe_name_2] ? Would you like me to provide the recipe ? user : You can try [recipe_name_1] user', 'just kidding I need a quick recipe with beef']***
+System: You will need [recipe_ingredients] and [recipe_equipment] . For the instructions : [recipe_instructions]
+>>> I need a salad recipe with grilled salmon.
+***History tracker: ["what's the weather today", 'It is a [recipe_difficulty] vegan recipe . Would you like me to provide the recipe ?', "what's time is it?", 'It is a [recipe_type] recipe .', 'Do you know who I am?', 'You will need [recipe_ingredients] and [recipe_equipment] . For the instructions : [recipe_instructions]', 'I need a salad recipe with grilled salmon.']***
 
-***Belief States tracker: {'type': 'main dish', 'is_quick': 'yes', 'ingredients': 'beef'}***
+***Belief States tracker: {'type': 'salad', 'ingredients': 'salmon'}***
 
-System: Just to be sure , you 're looking for a [recipe_type] recipe for [recipe_name_1] , and you do n't want [recipe_ingredient_value] , right ? And you do n't care about the main ingredient , right ?
->>> you misunderstood 
-***History tracker: ["what's the weather today", "It 's hot now , so it 's not a good idea to cook today . Do you want the recipe for it ? user : No problem ! How about trying [recipe_name_1] ? Would you like me to provide the recipe ?", 'do you know what time is it', 'It is a [recipe_difficulty] recipe for [recipe_name_1] . And here is the instructions : [recipe_instructions] . Do you need anything else ?', 'do you know the capital of Germany?', 'It is a non-convex one .', 'Do you know who I am?', 'You can try [recipe_name_1] . It is a good idea.user : How about trying [recipe_name_2] ? Would you like me to provide the recipe ? user : You can try [recipe_name_1] user', 'just kidding I need a quick recipe with beef', "Just to be sure , you 're looking for a [recipe_type] recipe for [recipe_name_1] , and you do n't want [recipe_ingredient_value] , right ? And you do n't care about the main ingredient , right ?", 'you misunderstood']***
+System: What about trying the [recipe_name_1] ?
+>>> okay, please show the recipe.
+***History tracker: ["what's the weather today", 'It is a [recipe_difficulty] vegan recipe . Would you like me to provide the recipe ?', "what's time is it?", 'It is a [recipe_type] recipe .', 'Do you know who I am?', 'You will need [recipe_ingredients] and [recipe_equipment] . For the instructions : [recipe_instructions]', 'I need a salad recipe with grilled salmon.', 'What about trying the [recipe_name_1] ?', 'okay, please show the recipe.']***
+
+***Belief States tracker: {'type': 'salad', 'ingredients': 'salmon', 'name': '[recommended_recipe_name_1]'}***
+
+System: Sure , here it is : [recipe_ingredients] , [recipe_instructions]
+>>> bye 
+System: Good bye
+
+# 3
+>>> Am I talking to a bot?
+***History tracker: ['Am I talking to a bot?']***
+
+***Belief States tracker: {}***
+
+System: I assume you are looking for a main dish recipe , right ? What kind of ingredients would you like to combine with [recipe_ingredient_value] ?
+>>> I need a special recipe to surprise my husband.
+***History tracker: ['Am I talking to a bot?', 'I assume you are looking for a main dish recipe , right ? What kind of ingredients would you like to combine with [recipe_ingredient_value] ?', 'I need a special recipe to surprise my husband.']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'dont care'}***
+
+System: I assume you are looking for a main dish recipe , right ?
+>>> Yes
+***History tracker: ['Am I talking to a bot?', 'I assume you are looking for a main dish recipe , right ? What kind of ingredients would you like to combine with [recipe_ingredient_value] ?', 'I need a special recipe to surprise my husband.', 'I assume you are looking for a main dish recipe , right ?', 'Yes']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'dont care', 'name': '[recommended_recipe_name_1]'}***
+
+System: I assume you are looking for a main dish recipe , right ?
+>>> I am looking for a main dish recipe
+***History tracker: ['Am I talking to a bot?', 'I assume you are looking for a main dish recipe , right ? What kind of ingredients would you like to combine with [recipe_ingredient_value] ?', 'I need a special recipe to surprise my husband.', 'I assume you are looking for a main dish recipe , right ?', 'Yes', 'I assume you are looking for a main dish recipe , right ?', 'I am looking for a main dish recipe']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'dont care', 'name': '[recommended_recipe_name_1]'}***
+
+System: Do you want an easy or difficult one ?
+>>> Let's go with a difficult one
+***History tracker: ['Am I talking to a bot?', 'I assume you are looking for a main dish recipe , right ? What kind of ingredients would you like to combine with [recipe_ingredient_value] ?', 'I need a special recipe to surprise my husband.', 'I assume you are looking for a main dish recipe , right ?', 'Yes', 'I assume you are looking for a main dish recipe , right ?', 'I am looking for a main dish recipe', 'Do you want an easy or difficult one ?', "Let's go with a difficult one"]***
+
+***Belief States tracker: {'difficulty': 'easy', 'type': 'main dish', 'ingredients': 'dont care'}***
+
+System: Then we have this special recipe for [recipe_name_1] .
+>>> how long do I need?
+***History tracker: ['Am I talking to a bot?', 'I assume you are looking for a main dish recipe , right ? What kind of ingredients would you like to combine with [recipe_ingredient_value] ?', 'I need a special recipe to surprise my husband.', 'I assume you are looking for a main dish recipe , right ?', 'Yes', 'I assume you are looking for a main dish recipe , right ?', 'I am looking for a main dish recipe', 'Do you want an easy or difficult one ?', "Let's go with a difficult one", 'Then we have this special recipe for [recipe_name_1] .', 'how long do I need?']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'dont care', 'difficulty': 'easy', 'name': '[recommended_recipe_name_1]'}***
+
+System: It takes [recipe_time] .
+>>> Perfect, give me the recipe.
+***History tracker: ['Am I talking to a bot?', 'I assume you are looking for a main dish recipe , right ? What kind of ingredients would you like to combine with [recipe_ingredient_value] ?', 'I need a special recipe to surprise my husband.', 'I assume you are looking for a main dish recipe , right ?', 'Yes', 'I assume you are looking for a main dish recipe , right ?', 'I am looking for a main dish recipe', 'Do you want an easy or difficult one ?', "Let's go with a difficult one", 'Then we have this special recipe for [recipe_name_1] .', 'how long do I need?', 'It takes [recipe_time] .', 'Perfect, give me the recipe.']***
+
+***Belief States tracker: {'difficulty': 'Medium', 'type': 'main dish', 'ingredients': 'dont care', 'name': '[recommended_recipe_name_1]'}***
+
+System: Here it is : [recipe_ingredients] , [recipe_instructions]
+>>> bye
+System: Good bye
+
+# 4
+>>> My boyfriend broke up with me today. I'm awfully sad.   
+***History tracker: ["My boyfriend broke up with me today. I'm awfully sad."]***
+
+***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned'}***
+
+System: I understand . How about trying the [recipe_name_1] ? Would you like me to provide the recipe ?
+>>> I need something sweet. Maybe a huge amount of chocolate would cheer me up.
+***History tracker: ["My boyfriend broke up with me today. I'm awfully sad.", 'I understand . How about trying the [recipe_name_1] ? Would you like me to provide the recipe ?', 'I need something sweet. Maybe a huge amount of chocolate would cheer me up.']***
+
+***Belief States tracker: {'type': 'Chocolate', 'ingredients': 'negative fruit', 'is_vegan': 'no', 'is_quick': 'yes', 'name': '[recommended_recipe_name_1]'}***
+
+System: Would you like me to share the recipe ?
+>>> Give me a recipe for dessert with chocolate
+***History tracker: ["My boyfriend broke up with me today. I'm awfully sad.", 'I understand . How about trying the [recipe_name_1] ? Would you like me to provide the recipe ?', 'I need something sweet. Maybe a huge amount of chocolate would cheer me up.', 'Would you like me to share the recipe ?', 'Give me a recipe for dessert with chocolate']***
+
+***Belief States tracker: {'type': 'dessert', 'ingredients': 'negative Chocolate', 'name': '[recommended_recipe_name_1]'}***
+
+System: Here are the ingredients youll need for the [recipe_name_1] : [recipe_ingredients] . And here are the step-by-step instructions : [recipe_instructions] .
+>>> you're so sweet. would you be my boyfriend?
+***History tracker: ["My boyfriend broke up with me today. I'm awfully sad.", 'I understand . How about trying the [recipe_name_1] ? Would you like me to provide the recipe ?', 'I need something sweet. Maybe a huge amount of chocolate would cheer me up.', 'Would you like me to share the recipe ?', 'Give me a recipe for dessert with chocolate', 'Here are the ingredients youll need for the [recipe_name_1] : [recipe_ingredients] . And here are the step-by-step instructions : [recipe_instructions] .', "you're so sweet. would you be my boyfriend?"]***
+
+***Belief States tracker: {'type': 'dessert', 'ingredients': 'negative Chocolate', 'name': '[recommended_recipe_name_1]'}***
+
+System: Youre welcome ! Heres what youll need : [recipe_ingredients] . And here are the instructions : [recipe_instructions] .
+>>> bye
+System: Good bye
+
+# 5
+>>> I want to eat healthy today. Any ideas/
+***History tracker: ['I want to eat healthy today. Any ideas/']***
+
+***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned'}***
+
+System: I assume you are looking for a main dish recipe , right ? Do you have any restrictions or preferences ?
+>>> I want to make a salad with a lot of meat.
+***History tracker: ['I want to eat healthy today. Any ideas/', 'I assume you are looking for a main dish recipe , right ? Do you have any restrictions or preferences ?', 'I want to make a salad with a lot of meat.']***
+
+***Belief States tracker: {'type': 'salad', 'ingredients': 'beef', 'name': '[recommended_recipe_name_1]'}***
+
+System: What about trying the [recipe_name_1] ?
+>>> Which ingredients do I need?
+***History tracker: ['I want to eat healthy today. Any ideas/', 'I assume you are looking for a main dish recipe , right ? Do you have any restrictions or preferences ?', 'I want to make a salad with a lot of meat.', 'What about trying the [recipe_name_1] ?', 'Which ingredients do I need?']***
+
+***Belief States tracker: {'type': 'salad', 'ingredients': 'beef', 'name': '[recommended_recipe_name_1]'}***
+
+System: You will need [recipe_ingredients] and [recipe_equipment] . For the instructions : [recipe_instructions]
+>>> Sounds good, bye.
+System: Good bye
+
+# 6
+>>> I have a meeting in an hour. Anything quick?
+***History tracker: ['I have a meeting in an hour. Anything quick?']***
+
+***Belief States tracker: {'type': 'main dish', 'is_quick': 'yes'}***
+
+System: I assume that you are looking for a main dish recipe ?
+>>> Yes
+***History tracker: ['I have a meeting in an hour. Anything quick?', 'I assume that you are looking for a main dish recipe ?', 'Yes']***
+
+***Belief States tracker: {'is_quick': 'yes', 'type': 'main dish'}***
+
+System: Do you want to try [recipe_name_1] ?
+>>> How long does it take?
+***History tracker: ['I have a meeting in an hour. Anything quick?', 'I assume that you are looking for a main dish recipe ?', 'Yes', 'Do you want to try [recipe_name_1] ?', 'How long does it take?']***
+
+***Belief States tracker: {'is_quick': 'yes', 'type': 'main dish', 'ingredients': 'dont care'}***
+
+System: It takes [recipe_time] .
+>>> And what do I need?
+***History tracker: ['I have a meeting in an hour. Anything quick?', 'I assume that you are looking for a main dish recipe ?', 'Yes', 'Do you want to try [recipe_name_1] ?', 'How long does it take?', 'It takes [recipe_time] .', 'And what do I need?']***
 
 ***Belief States tracker: {'type': 'main dish', 'is_quick': 'yes', 'name': '[recommended_recipe_name_1]'}***
 
-System: Sorry , I currently do n't have that . If you prefer a different salad option , I suggest trying [recipe_name_2] . Would you like me to provide the recipe ?
->>> bye
+System: You will need [recipe_ingredients] .
+>>> Good, show me the recipe.
+***History tracker: ['I have a meeting in an hour. Anything quick?', 'I assume that you are looking for a main dish recipe ?', 'Yes', 'Do you want to try [recipe_name_1] ?', 'How long does it take?', 'It takes [recipe_time] .', 'And what do I need?', 'You will need [recipe_ingredients] .', 'Good, show me the recipe.']***
+
+***Belief States tracker: {'is_quick': 'yes', 'type': 'main dish', 'ingredients': 'dont care', 'name': '[recommended_recipe_name_1]'}***
+
+System: Here it is : [recipe_ingredients] , [recipe_instructions]
+>>> okay, bye.
 System: Good bye
 
-# 8 
->>> I'm having a hard time making dinner                
-***History tracker: ["I'm having a hard time making dinner"]***
+# 7
+>>> It's soooo hot today. What should I cook?
+***History tracker: ["It's soooo hot today. What should I cook?"]***
 
 ***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned'}***
-
-System: I suppose that you are looking for a main dish recipe ? And do you have any preferences or restrictions for ingredients ?
->>> main dish, side dish and also salad
-***History tracker: ["I'm having a hard time making dinner", 'I suppose that you are looking for a main dish recipe ? And do you have any preferences or restrictions for ingredients ?', 'main dish, side dish and also salad']***
-
-***Belief States tracker: {'type': 'salad', 'ingredients': 'side dish'}***
 
 System: We have a delicious recipe for [recipe_name_1] .
->>> is that a main dish recipe?
-***History tracker: ["I'm having a hard time making dinner", 'I suppose that you are looking for a main dish recipe ? And do you have any preferences or restrictions for ingredients ?', 'main dish, side dish and also salad', 'We have a delicious recipe for [recipe_name_1] .', 'is that a main dish recipe?']***
+>>> Which type is that?        
+***History tracker: ["It's soooo hot today. What should I cook?", 'We have a delicious recipe for [recipe_name_1] .', 'Which type is that?']***
 
-***Belief States tracker: {'type': 'salad', 'ingredients': 'main dish'}***
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'not mentioned', 'name': '[recommended_recipe_name_1]'}***
 
-System: [recipe_name_1] is a main ingredient .
->>> i also need a side dish recipe
-***History tracker: ["I'm having a hard time making dinner", 'I suppose that you are looking for a main dish recipe ? And do you have any preferences or restrictions for ingredients ?', 'main dish, side dish and also salad', 'We have a delicious recipe for [recipe_name_1] .', 'is that a main dish recipe?', '[recipe_name_1] is a main ingredient .', 'i also need a side dish recipe']***
+System: It is a [recipe_type] recipe .
+>>> I think a salad would be fine.
+***History tracker: ["It's soooo hot today. What should I cook?", 'We have a delicious recipe for [recipe_name_1] .', 'Which type is that?', 'It is a [recipe_type] recipe .', 'I think a salad would be fine.']***
 
-***Belief States tracker: {'type': 'side dish', 'ingredients': 'salad'}***
-
-System: We have a delicious recipe for [recipe_name_1] .user : How about trying [recipe_name_1] ?
->>> and what do you suggest for a main dish recipe
-***History tracker: ["I'm having a hard time making dinner", 'I suppose that you are looking for a main dish recipe ? And do you have any preferences or restrictions for ingredients ?', 'main dish, side dish and also salad', 'We have a delicious recipe for [recipe_name_1] .', 'is that a main dish recipe?', '[recipe_name_1] is a main ingredient .', 'i also need a side dish recipe', 'We have a delicious recipe for [recipe_name_1] .user : How about trying [recipe_name_1] ?', 'and what do you suggest for a main dish recipe']***
-
-***Belief States tracker: {'type': 'side dish', 'ingredients': 'salad', 'name': '[recommended_recipe_name_1]'}***
-
-System: We have a delicious recipe for [recipe_name_1] . Would you like to try [recipe_name_1] ? Would you like to know the recipe for it ? user : You will need [recipe_ingredients] and [recipe_equipment]
->>> okay bye
-System: Good bye
-
-# 9 
-System: Please chat with the agent
->>> I broke up with my boyfriend today. what do you suggest
-***History tracker: ['I broke up with my boyfriend today. what do you suggest']***
-
-***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned'}***
-
-System: I assume that you 're making a new wok and you do n't plan to cook any more . What do you think ? user : I 'm sorry that you do n't like [recipe_ingredient_value] . If you prefer a different salad option , I suggest trying [recipe_name_2] . Would you like me to provide the recipe ?
->>> no bye
-System: Good bye
-
-# 10 
->>> i don't have money for dinner. any ideas?
-***History tracker: ["i don't have money for dinner. any ideas?"]***
-
-***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned'}***
+***Belief States tracker: {'type': 'salad', 'ingredients': 'not mentioned'}***
 
 System: Do you want a vegan recipe or not ?
->>> that might work
-***History tracker: ["i don't have money for dinner. any ideas?", 'Do you want a vegan recipe or not ?', 'that might work']***
+>>> Yes.           
+***History tracker: ["It's soooo hot today. What should I cook?", 'We have a delicious recipe for [recipe_name_1] .', 'Which type is that?', 'It is a [recipe_type] recipe .', 'I think a salad would be fine.', 'Do you want a vegan recipe or not ?', 'Yes.']***
 
-***Belief States tracker: {'type': 'main dish', 'is_vegan': 'dont care', 'ingredients': 'not mentioned'}***
+***Belief States tracker: {'type': 'salad', 'ingredients': 'not mentioned', 'name': '[recommended_recipe_name_1]'}***
 
-System: I would suggest [recipe_name_1] . It is a very easy recipe to try . Do you want the recipe for it ?
->>> okay sound good
-***History tracker: ["i don't have money for dinner. any ideas?", 'Do you want a vegan recipe or not ?', 'that might work', 'I would suggest [recipe_name_1] . It is a very easy recipe to try . Do you want the recipe for it ?', 'okay sound good']***
+System: Just to make sure , you want a recipe for [recipe_type] , you dont want a vegan one , and you dont care about the main ingredient , right ?
+>>> I want a vegan salad.
+***History tracker: ["It's soooo hot today. What should I cook?", 'We have a delicious recipe for [recipe_name_1] .', 'Which type is that?', 'It is a [recipe_type] recipe .', 'I think a salad would be fine.', 'Do you want a vegan recipe or not ?', 'Yes.', 'Just to make sure , you want a recipe for [recipe_type] , you dont want a vegan one , and you dont care about the main ingredient , right ?', 'I want a vegan salad.']***
 
-***Belief States tracker: {'type': 'main dish', 'ingredients': 'negative cornstarch', 'name': '[recommended_recipe_name_2]'}***
+***Belief States tracker: {'type': 'salad', 'ingredients': 'not mentioned', 'is_vegan': 'no'}***
 
-System: Sorry , I currently do n't have that . Would you like to have any recommendation for a main dish ? user : you can try [recipe_name_1]
+System: So a [recipe_type] recipe for [recipe_type] , with [recipe_ingredient_value] as the main ingredient , right ?
+>>> please give me the recipe
+***History tracker: ["It's soooo hot today. What should I cook?", 'We have a delicious recipe for [recipe_name_1] .', 'Which type is that?', 'It is a [recipe_type] recipe .', 'I think a salad would be fine.', 'Do you want a vegan recipe or not ?', 'Yes.', 'Just to make sure , you want a recipe for [recipe_type] , you dont want a vegan one , and you dont care about the main ingredient , right ?', 'I want a vegan salad.', 'So a [recipe_type] recipe for [recipe_type] , with [recipe_ingredient_value] as the main ingredient , right ?', 'please give me the recipe']***
+
+***Belief States tracker: {'type': 'salad', 'ingredients': 'not mentioned', 'name': '[recommended_recipe_name_1]'}***
+
+System: Here it is : [recipe_ingredients] , [recipe_instructions]
+>>> okay, bye
+System: Good bye
+
+# 8
+>>> I have a bag of mushroom in my fridge. What should I cook?
+***History tracker: ['I have a bag of mushroom in my fridge. What should I cook?']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'mushroom'}***
+
+System: We have a delicious recipe for [recipe_name_1] .
+>>> Do you have other options?
+***History tracker: ['I have a bag of mushroom in my fridge. What should I cook?', 'We have a delicious recipe for [recipe_name_1] .', 'Do you have other options?']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'mushroom', 'name': '[recommended_recipe_name_1]'}***
+
+System: We have [recipe_name_1] , which might suit your requirements . Would you like some thing with [recipe_ingredient_value] ?
+>>> No I think I would like to try the first one.                          
+***History tracker: ['I have a bag of mushroom in my fridge. What should I cook?', 'We have a delicious recipe for [recipe_name_1] .', 'Do you have other options?', 'We have [recipe_name_1] , which might suit your requirements . Would you like some thing with [recipe_ingredient_value] ?', 'No I think I would like to try the first one.']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'mushroom', 'name': '[recommended_recipe_name_1]'}***
+
+System: Sorry ! We dont have any recipe that meets your request at the moment . Would you like some other ingredient ?
+>>> please give me the first recipe.                
+***History tracker: ['I have a bag of mushroom in my fridge. What should I cook?', 'We have a delicious recipe for [recipe_name_1] .', 'Do you have other options?', 'We have [recipe_name_1] , which might suit your requirements . Would you like some thing with [recipe_ingredient_value] ?', 'No I think I would like to try the first one.', 'Sorry ! We dont have any recipe that meets your request at the moment . Would you like some other ingredient ?', 'please give me the first recipe.']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'mushroom', 'name': '[recommended_recipe_name_1]'}***
+
+System: Sure ! Here are the ingredients youll need and the recipe : [recipe_ingredients] , [recipe_instructions] .
+>>> okay bye.
+System: Good bye
+
+# 9
+>>> I have a party coming up. Any ideas?
+***History tracker: ['I have a party coming up. Any ideas?']***
+
+***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned'}***
+
+System: Do you have any preferences or restrictions ?
+>>> I would need a few recipes. I need to cook a salad, a main dish and a dessert.
+***History tracker: ['I have a party coming up. Any ideas?', 'Do you have any preferences or restrictions ?', 'I would need a few recipes. I need to cook a salad, a main dish and a dessert.']***
+
+***Belief States tracker: {'type': 'salad', 'ingredients': 'dont care'}***
+
+System: What ingredients would you like to go with salad ?
+>>> grilled salmon
+***History tracker: ['I have a party coming up. Any ideas?', 'Do you have any preferences or restrictions ?', 'I would need a few recipes. I need to cook a salad, a main dish and a dessert.', 'What ingredients would you like to go with salad ?', 'grilled salmon']***
+
+***Belief States tracker: {'type': 'salad', 'ingredients': 'salmon'}***
+
+System: Do you want a vegan recipe or not ?
+>>> a salad with grill salmon
+***History tracker: ['I have a party coming up. Any ideas?', 'Do you have any preferences or restrictions ?', 'I would need a few recipes. I need to cook a salad, a main dish and a dessert.', 'What ingredients would you like to go with salad ?', 'grilled salmon', 'Do you want a vegan recipe or not ?', 'a salad with grill salmon']***
+
+***Belief States tracker: {'type': 'salad', 'ingredients': 'negative mustard', 'name': '[recommended_recipe_name_2]'}***
+
+System: Then we have this special recipe for [recipe_name_1] . Would you like the recipe for it ?
+>>> okay
+***History tracker: ['I have a party coming up. Any ideas?', 'Do you have any preferences or restrictions ?', 'I would need a few recipes. I need to cook a salad, a main dish and a dessert.', 'What ingredients would you like to go with salad ?', 'grilled salmon', 'Do you want a vegan recipe or not ?', 'a salad with grill salmon', 'Then we have this special recipe for [recipe_name_1] . Would you like the recipe for it ?', 'okay']***
+
+***Belief States tracker: {'type': 'salad', 'ingredients': 'negative mustard', 'name': '[recommended_recipe_name_2]'}***
+
+System: Here it is : [recipe_ingredients] , [recipe_instructions]
+>>> And a recipe for main dish
+***History tracker: ['I have a party coming up. Any ideas?', 'Do you have any preferences or restrictions ?', 'I would need a few recipes. I need to cook a salad, a main dish and a dessert.', 'What ingredients would you like to go with salad ?', 'grilled salmon', 'Do you want a vegan recipe or not ?', 'a salad with grill salmon', 'Then we have this special recipe for [recipe_name_1] . Would you like the recipe for it ?', 'okay', 'Here it is : [recipe_ingredients] , [recipe_instructions]', 'And a recipe for main dish']***
+
+***Belief States tracker: {'type': 'main dish', 'ingredients': 'negative mustard', 'name': '[recommended_recipe_name_2]'}***
+
+System: Of course , [recipe_instructions] .
+>>> That sounds good. What about dessert?
+***History tracker: ['I have a party coming up. Any ideas?', 'Do you have any preferences or restrictions ?', 'I would need a few recipes. I need to cook a salad, a main dish and a dessert.', 'What ingredients would you like to go with salad ?', 'grilled salmon', 'Do you want a vegan recipe or not ?', 'a salad with grill salmon', 'Then we have this special recipe for [recipe_name_1] . Would you like the recipe for it ?', 'okay', 'Here it is : [recipe_ingredients] , [recipe_instructions]', 'And a recipe for main dish', 'Of course , [recipe_instructions] .', 'That sounds good. What about dessert?']***
+
+***Belief States tracker: {'type': 'dessert', 'ingredients': 'negative mustard', 'name': '[recommended_recipe_name_1]'}***
+
+System: Sorry , I currently could not find any appropriate recipe . Is there anything else I could assist you ?
 >>> bye
 System: Good bye
 
-# 11
->>> i want to make something special to surprise my husband. any ideas?
-***History tracker: ['i want to make something special to surprise my husband. any ideas?']***
+# 10
+>>> I want to make something to drink.
+***History tracker: ['I want to make something to drink.']***
 
-***Belief States tracker: {'type': 'special', 'ingredients': 'not mentioned'}***
+***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned'}***
 
-System: I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?
->>> i don't know. could you recommend a three courses menu? 
-***History tracker: ['i want to make something special to surprise my husband. any ideas?', 'I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?', "i don't know. could you recommend a three courses menu?"]***
+System: Sorry , I dont find any appropriate recipe . Maybe another ingredient ?
+>>> I need a beverage recipe.
+***History tracker: ['I want to make something to drink.', 'Sorry , I dont find any appropriate recipe . Maybe another ingredient ?', 'I need a beverage recipe.']***
 
-***Belief States tracker: {'type': 'main dish', 'ingredients': 'dont care', 'name': '[recommended_recipe_name_1]'}***
+***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned'}***
 
-System: Sure ! I have multiple recipes that you might like . How about [recipe_name_1] ? Would you like an easy one ?
->>> okay that sounds good for main dish. please give me the recipe
-***History tracker: ['i want to make something special to surprise my husband. any ideas?', 'I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?', "i don't know. could you recommend a three courses menu?", 'Sure ! I have multiple recipes that you might like . How about [recipe_name_1] ? Would you like an easy one ?', 'okay that sounds good for main dish. please give me the recipe']***
+System: What type of a recipe are you looking for ?
+>>> beverage
+***History tracker: ['I want to make something to drink.', 'Sorry , I dont find any appropriate recipe . Maybe another ingredient ?', 'I need a beverage recipe.', 'What type of a recipe are you looking for ?', 'beverage']***
 
-***Belief States tracker: {'type': 'main dish', 'ingredients': 'dont care', 'name': '[recommended_recipe_name_1]'}***
+***Belief States tracker: {'type': 'not mentioned', 'ingredients': 'not mentioned', 'name': '[recommended_recipe_name_1]'}***
 
-System: Sure ! Here are the ingredients you 'll need and the recipe : [recipe_ingredients] , [recipe_instructions] .
->>> i also need a side dish recipe
-***History tracker: ['i want to make something special to surprise my husband. any ideas?', 'I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?', "i don't know. could you recommend a three courses menu?", 'Sure ! I have multiple recipes that you might like . How about [recipe_name_1] ? Would you like an easy one ?', 'okay that sounds good for main dish. please give me the recipe', "Sure ! Here are the ingredients you 'll need and the recipe : [recipe_ingredients] , [recipe_instructions] .", 'i also need a side dish recipe']***
-
-***Belief States tracker: {'type': 'side dish', 'ingredients': 'dont care', 'name': '[recommended_recipe_name_1]'}***
-
-System: Sure ! I have multiple recipes that you might like . Do you prefer [recipe_name_1] ? user : I would say mushroom or salad ?
->>> and i need a salad 
-***History tracker: ['i want to make something special to surprise my husband. any ideas?', 'I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?', "i don't know. could you recommend a three courses menu?", 'Sure ! I have multiple recipes that you might like . How about [recipe_name_1] ? Would you like an easy one ?', 'okay that sounds good for main dish. please give me the recipe', "Sure ! Here are the ingredients you 'll need and the recipe : [recipe_ingredients] , [recipe_instructions] .", 'i also need a side dish recipe', 'Sure ! I have multiple recipes that you might like . Do you prefer [recipe_name_1] ? user : I would say mushroom or salad ?', 'and i need a salad']***
-
-***Belief States tracker: {'type': 'side dish', 'ingredients': 'negative salad or soup'}***
-
-System: Sure ! I have a fantastic option for you . How about trying the [recipe_name_1] ?
->>> okay, recipe please
-***History tracker: ['i want to make something special to surprise my husband. any ideas?', 'I assume that you are looking for a main dish recipe ? And do you have any preferences or restrictions ?', "i don't know. could you recommend a three courses menu?", 'Sure ! I have multiple recipes that you might like . How about [recipe_name_1] ? Would you like an easy one ?', 'okay that sounds good for main dish. please give me the recipe', "Sure ! Here are the ingredients you 'll need and the recipe : [recipe_ingredients] , [recipe_instructions] .", 'i also need a side dish recipe', 'Sure ! I have multiple recipes that you might like . Do you prefer [recipe_name_1] ? user : I would say mushroom or salad ?', 'and i need a salad', 'Sure ! I have a fantastic option for you . How about trying the [recipe_name_1] ?', 'okay, recipe please']***
-
-***Belief States tracker: {'type': 'side dish', 'ingredients': 'negative salad', 'name': '[recommended_recipe_name_2]'}***
-
-System: Here is the recommended recipe for [recipe_name_1] : [recipe_instructions] , [recipe_instructions]
+System: Sorry , I dont find any appropriate recipe . Maybe another ingredient ?
 >>> bye
-
->>> do you have something good with salmon? i need something quick
-***History tracker: ['do you have something good with salmon? i need something quick']***
-
-***Belief States tracker: {'ingredients': 'salmon', 'type': 'dont care'}***
-
-System: I assume you are looking for a main dish recipe , correct ?
->>> yes 
-***History tracker: ['do you have something good with salmon? i need something quick', 'I assume you are looking for a main dish recipe , correct ?', 'yes']***
-
-***Belief States tracker: {'ingredients': 'salmon', 'type': 'main dish'}***
-
-System: Yes , we have [recipe_name_1] and [recipe_name_2] .
->>> the first one please
-***History tracker: ['do you have something good with salmon? i need something quick', 'I assume you are looking for a main dish recipe , correct ?', 'yes', 'Yes , we have [recipe_name_1] and [recipe_name_2] .', 'the first one please']***
-
-***Belief States tracker: {'ingredients': 'salmon', 'type': 'main dish', 'is_quick': 'yes'}***
-
-System: Here are the ingredients you 'll need and the recipe : [recipe_ingredients] , [recipe_instructions] .
->>> how about the second one
-***History tracker: ['do you have something good with salmon? i need something quick', 'I assume you are looking for a main dish recipe , correct ?', 'yes', 'Yes , we have [recipe_name_1] and [recipe_name_2] .', 'the first one please', "Here are the ingredients you 'll need and the recipe : [recipe_ingredients] , [recipe_instructions] .", 'how about the second one']***
-
-***Belief States tracker: {'ingredients': 'negative mustard', 'type': 'main dish', 'is_quick': 'yes'}***
-
-System: Here are the ingredients you 'll need and the recipe : [recipe_ingredients] . And here are the step-by-step instructions : [recipe_instructions] .user.user : Bye !
->>> okay bye
 System: Good bye
+

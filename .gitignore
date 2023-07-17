@@ -1,13 +1,6 @@
 # models
+soloist/finetuned_models
 soloist/gtg_pretrained
-examples/recipe/recipe_models_all
-examples/recipe/recipe_models_all_10e
-examples/recipe/recipe_models_all_10e_kb
-examples/recipe/recipe_models_all_10e_nokb
-examples/recipe/recipe_models_all_10e_mt
-examples/recipe/recipe_models_noneg
-examples/recipe/recipe_models_noneg_10e
-examples/recipe/recipe_models
 soloist/runs
 
 # Byte-compiled / optimized / DLL files

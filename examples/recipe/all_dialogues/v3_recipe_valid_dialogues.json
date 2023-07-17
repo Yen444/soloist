@@ -112,6 +112,54 @@
         "dp": "dp : recommend ( name = [recipe_name_1] ) "
     },
     {
+        "dialogue_id": 43,
+        "history": [
+            "user : Do you have any recipe so that I can try my new saucepan?",
+            "system : Which type of recipe are you looking for and do you have nay preferences or restrictions for ingredients?",
+            "user : I dont care. Surprise me!",
+            "system : Of course, you can try [recipe_name_1] .",
+            "user : I dont like salad that much."
+        ],
+        "kb": "kb : one",
+        "belief": "belief : equipment = saucepan ; ingredients = dont care ; type = negative salad ",
+        "reply": "system : Then you may try your new saucepan with this recipe [recipe_name_2] ",
+        "dp": "dp : recommendAlternative ( name = [recipe_name_2] ) "
+    },
+    {
+        "dialogue_id": 43,
+        "history": [
+            "user : Do you have any recipe so that I can try my new saucepan?",
+            "system : Which type of recipe are you looking for and do you have nay preferences or restrictions for ingredients?",
+            "user : I dont care. Surprise me!",
+            "system : Of course, you can try [recipe_name_1] .",
+            "user : I dont like salad that much.",
+            "system : Then you may try your new saucepan with this recipe [recipe_name_2] ",
+            "user : No , I dont like Risotto"
+        ],
+        "kb": "kb : zero",
+        "belief": "belief : equipment = saucepan ; ingredients = dont care ; type = negative salad ; ingredients = negative risotto",
+        "reply": "system : Were sorry we dont have any recipe that meets your request at the moment. Anything else can we do for you?",
+        "dp": "dp : recommendAlternative ( name = [recipe_name_3] ) "
+    },
+    {
+        "dialogue_id": 43,
+        "history": [
+            "user : Do you have any recipe so that I can try my new saucepan?",
+            "system : Which type of recipe are you looking for and do you have nay preferences or restrictions for ingredients?",
+            "user : I dont care. Surprise me!",
+            "system : Of course, you can try [recipe_name_1] .",
+            "user : I dont like salad that much.",
+            "system : Then you may try your new saucepan with this recipe [recipe_name_2] ",
+            "user : No , I dont like Risotto",
+            "system : Were sorry we dont have any recipe that meets your request at the moment. Anything else can we do for you?",
+            "user : You suck!"
+        ],
+        "kb": "kb : zero",
+        "belief": "belief : equipment = saucepan ; ingredients = dont care ; type = negative salad ; ingredients = negative risotto",
+        "reply": "system : We are sorry for that. Bye and have a nice day!",
+        "dp": "dp : bye ( ) "
+    },
+    {
         "dialogue_id": 45,
         "history": [
             "user : I have some broccoli. What should I cook with it?"
@@ -256,6 +304,48 @@
         "belief": "belief : ingredients = vegetables broth ; type = dont care",
         "reply": "system : You can try this delicious soup [recipe_name_1] ",
         "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 46,
+        "history": [
+            "user : I made some vegetables broth yesterday. Dont know what to cook with it.",
+            "system : You can try this delicious soup [recipe_name_1] ",
+            "user : Unfortunatly I dont have lentils."
+        ],
+        "kb": "kb : one",
+        "belief": "belief : ingredients = vegetables broth ; type = dont care ; ingredients = negative lentils ",
+        "reply": "system :  [recipe_name_2] is another good choice then.",
+        "dp": "dp : recommendAlternative ( name = [recipe_name_2] ) "
+    },
+    {
+        "dialogue_id": 46,
+        "history": [
+            "user : I made some vegetables broth yesterday. Dont know what to cook with it.",
+            "system : You can try this delicious soup [recipe_name_1] ",
+            "user : Unfortunatly I dont have lentils.",
+            "system :  [recipe_name_2] is another good choice then.",
+            "user : I also dont have risotto rice."
+        ],
+        "kb": "kb : zero",
+        "belief": "belief : ingredients = vegetables broth ; type = dont care ; ingredients = negative lentils ; ingredients = negative risotto rice ",
+        "reply": "system : In that case, you can just drink your vegetables broth like water.",
+        "dp": "dp : recommend ( name = none ) "
+    },
+    {
+        "dialogue_id": 46,
+        "history": [
+            "user : I made some vegetables broth yesterday. Dont know what to cook with it.",
+            "system : You can try this delicious soup [recipe_name_1] ",
+            "user : Unfortunatly I dont have lentils.",
+            "system :  [recipe_name_2] is another good choice then.",
+            "user : I also dont have risotto rice.",
+            "system : In that case, you can just drink your vegetables broth like water.",
+            "user : Good idea! I will try. Thanks!"
+        ],
+        "kb": "kb : zero",
+        "belief": "belief : ingredients = vegetables broth ; ingredients = negative lentils ; ingredients = negative risotto rice ",
+        "reply": "system : Youre welcome. Bye bye!",
+        "dp": "dp : bye ( ) "
     },
     {
         "dialogue_id": 47,

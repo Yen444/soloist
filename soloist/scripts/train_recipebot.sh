@@ -1,28 +1,38 @@
 #!/bin/bash
-# QUY
 # lr 1e-5 to 5e-5
 # mc_loss_efficient 0.1 to 1
 # etc.
-# EXPERIMENT WITH KB
+# for train ALWAYS CHANGE THIS
+OUTPUT=finetuned_models/all_12e_kb_mt
+MODEL_NAME=finetuned_models/all_12e_kb
 
-CUDA_VISIBLE_DEVICES=1,2 python -m torch.distributed.launch \
---nproc_per_node=2 \
---nnodes=1 \
---node_rank=0 \
---master_addr="localhost" \
---master_port=8898 soloist_train_experiment.py \
---output_dir=../examples/recipe/recipe_models_all_10e_kb \
+EPOCHS=3
+# for decode ALWAYS CHANGE THIS
+GENERATE=../examples/recipe/generate_test/all_12e_kb_mt.json
+# ONLY CHANGE THIS IF MT OR NO-NEG
+TRAIN_FILE=../examples/recipe/all_dialogues/mt_recipe_train_dialogues.json
+
+# training valid dataset, should not change
+EVAL_FILE=../examples/recipe/all_dialogues/v3_recipe_valid_dialogues.json  
+# decode, should not change
+NS=5
+TEMP=1.2
+TOP_P=0.5
+TOP_K=3
+
+# TRAIN: SET ADD_KB OR ADD_DP IF DESIRED
+CUDA_VISIBLE_DEVICES=2 python soloist_train_experiment.py \
+--output_dir $OUTPUT \
 --model_type=gpt2 \
---model_name_or_path=gtg_pretrained \
+--model_name_or_path $MODEL_NAME \
 --do_train \
---train_data_file=../examples/recipe/v3_recipe_train_dialogues.json  \
---eval_data_file=../examples/recipe/v3_recipe_valid_dialogues.json  \
+--train_data_file $TRAIN_FILE \
+--eval_data_file $EVAL_FILE \
 --add_special_action_tokens=../examples/recipe/special_tokens.txt \
 --per_gpu_train_batch_size 1 \
---num_train_epochs 1 \
+--num_train_epochs $EPOCHS \
 --learning_rate 5e-5 \
 --overwrite_cache \
---save_steps 5000 \
 --max_seq 100 \
 --overwrite_output_dir \
 --max_turn 15 \
@@ -31,31 +41,23 @@ CUDA_VISIBLE_DEVICES=1,2 python -m torch.distributed.launch \
 --add_response_prediction \
 --add_same_belief_response_prediction \
 --add_belief_prediction \
+--save_steps 6000 \
+--add_kb_to_context
+# --add_dp_to_response \
 
 
-# CUDA_VISIBLE_DEVICES=7,8 python -m torch.distributed.launch \
-# --nproc_per_node=2 \
-# --nnodes=1 \
-# --node_rank=0 \
-# --master_addr="localhost" \
-# --master_port=8898 soloist_train.py \
-# --output_dir=../examples/recipe/recipe_models_all_10e \
-# --model_type=gpt2 \
-# --model_name_or_path=gtg_pretrained \
-# --do_train \
-# --train_data_file=../examples/recipe/v3_recipe_train_dialogues.json  \
-# --eval_data_file=../examples/recipe/v3_recipe_valid_dialogues.json  \
-# --add_special_action_tokens=../examples/recipe/special_tokens.txt \
-# --per_gpu_train_batch_size 1 \
-# --num_train_epochs 10 \
-# --learning_rate 5e-5 \
-# --overwrite_cache \
-# --save_steps 5000 \
-# --max_seq 100 \
-# --overwrite_output_dir \
-# --max_turn 15 \
-# --num_candidates 1 \
-# --mc_loss_efficient 0.33 \
-# --add_response_prediction \
-# --add_same_belief_response_prediction \
-# --add_belief_prediction \
+# DECODE SET ADD_KB IF DESIRE
+CUDA_VISIBLE_DEVICES=2 python soloist_decode_experiment.py \
+--model_type=gpt2 \
+--model_name_or_path $OUTPUT \
+--num_samples $NS \
+--input_file=../examples/recipe/all_dialogues/v3_recipe_test_dialogues.json \
+--top_k $TOP_K \
+--temperature $TEMP \
+--output_file $GENERATE \
+--max_turn 15 \
+--add_kb_to_context
+
+python ../examples/recipe/evaluate.py \
+--decoded_file $GENERATE \
+--test_file=../examples/recipe/all_dialogues/v3_recipe_test_dialogues.json 
