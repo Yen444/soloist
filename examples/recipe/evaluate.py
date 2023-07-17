@@ -32,7 +32,15 @@ def parse_decoded_file_for_bleu(file):
     for turn in result:
         hyps = []
         for system_respose in turn:
-            hyp = system_respose.split("system : ")[1]
+            # hyp = system_respose.split("system")[1].strip(" : ")
+            try:
+                hyp = system_respose.split("system : ")[1]
+            except IndexError:
+                if "system" in system_respose:
+                    hyp = system_respose.split("system")[-1]
+                else:
+                    hyp = system_respose
+                    print(hyp)
             if hyp in hyps:
                 continue
             hyps.append(hyp)
@@ -129,9 +137,12 @@ def parse_decoded_file_for_bs(file):
     for turn in result:
         predicted_bs = []   # of each turn
         for system_response in turn:
-            system_response = system_response.strip()
-            bs = system_response.split('system : ')[0]
-            bs = bs.split('belief : ')[1]
+            if '<EOKB>' in system_response:
+                bs = system_response.split("<EOB>")[0].split("belief :")[1].strip()
+            else:
+                system_response = system_response.strip()
+                bs = system_response.split('system : ')[0]
+                bs = bs.split('belief : ')[1]
             bs = ' '.join(bs.split()[:])    # removes any leading, trailing or consecutive whitespace into a single space
             # bs = bs.split(' ; ')
             bs = re.split(r'\s*;\s*|\s*,\s*', bs)
@@ -160,11 +171,11 @@ def parse_test_file_for_bs(file):
     for instance in test_data:
         bs = instance['belief'].split('belief : ')[1]
         bs = ' '.join(bs.split()[:])     
-        bs = bs.split(' ; ')
+        bs = bs.split(';')
         bs_state = {}
         for slot_value in bs:
             if '=' in slot_value:
-                s, v = slot_value.split(' = ')
+                s, v = slot_value.split('=')
                 s = s.strip()
                 v = v.strip()
                 if v != 'not mentioned' and v != 'dont care':
@@ -209,15 +220,21 @@ def compute_accuracy(decoded_file, test_file):
 
 
 def compute_accuracy_and_bleu(decoded_file, test_file):
-    acc = compute_accuracy(decoded_file, test_file)
-    bleu = compute_bleu(decoded_file, test_file)
-    print(f'belief acc: {acc}\nbleu: {bleu}')
+    with open('evaluation_result.txt', 'a') as f:
+        print("-"*50, file = f)
+        print(f"decoded_file: {decoded_file}", file = f)
+        acc = compute_accuracy(decoded_file, test_file)
+        bleu = compute_bleu(decoded_file, test_file)
+        print(f'belief acc: {acc:.3f}\nbleu: {bleu:.3f}\ncombine: {acc+bleu:.3f}', file = f)
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--decoded_file", type=str, help="Path to the decoded file")
     parser.add_argument("--test_file", type=str, help="Path to the test file")
+    parser.add_argument("--bleu_only", action="store_true", help="only compute bleu")
     args = parser.parse_args()
-
-    compute_accuracy_and_bleu(args.decoded_file, args.test_file)
+    if args.bleu_only:
+        print(compute_bleu(args.decoded_file, args.test_file))
+    else:
+        compute_accuracy_and_bleu(args.decoded_file, args.test_file)

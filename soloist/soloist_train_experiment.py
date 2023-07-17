@@ -85,7 +85,7 @@ class JsonDataset(Dataset):
 
             response_pool = []
             belief_pool = []
-            dp_pool = [] # NEW
+            # dp_pool = [] # NEW
 
             idxs = list(range(len(examples)))
             for i in examples: 
@@ -93,11 +93,9 @@ class JsonDataset(Dataset):
                 response_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(response))
                 response_pool.append(response_id) 
 
-                belief_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(i['belief']))
+                belief = i['belief'] + ' ' + '<EOB>'
+                belief_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(belief))
                 belief_pool.append(belief_id) 
-
-                dp_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(i['dp'])) # NEW
-                dp_pool.append(dp_id) # NEW
 
             for example in examples:
                 history = example['history']
@@ -113,28 +111,34 @@ class JsonDataset(Dataset):
                         token_ids_for_context += system_token_id * len(ids)
 
                 history = ' '.join(history[-max_turn:])
-                # kb = ' '#example['kb'] 
-                kb = example['kb'] # NEW: train with kb
-                dp = example['dp']
-                belief = example['belief']
-                response =  example['reply'] + ' '+tokenizer.eos_token
-                
-                belief_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(belief))
+                if args.add_kb_to_context:
+                    kb = example['kb']  # NEW: train with kb
+                else:
+                    kb = ' '
+                kb = kb + ' ' + '<EOKB>' # add end of string symbol at the end of kb
                 kb_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(kb)) # NEW
-                dp_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(dp)) # NEW
+
+                belief = example['belief'] + ' ' + '<EOB>'
+                belief_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(belief))
+
+                if args.add_dp_to_response:
+                    dp = example['dp']
+                else:
+                    dp = ' '
+                dp = dp + ' ' + '<EODP>'
+
+                response =  dp + example['reply'] + ' ' + tokenizer.eos_token
                 response_id = tokenizer.convert_tokens_to_ids(tokenizer.tokenize(response))
+                
+                # sequence: User : ...  => belief state : ... <EOB> kb: ... <EOKB> response ... <EOS> 
 
-                # token_id = token_ids_for_context + system_token_id + system_token_id * len(belief_id) + system_token_id * len(response_id)
-                # source =  context_ids + induction_token_id + belief_id + response_id
-
-                # NEW
-                token_id = token_ids_for_context + user_token_id * len(kb_id) + system_token_id + system_token_id * len(belief_id) + system_token_id * len(dp_id) + system_token_id * len(response_id)
-                source =  context_ids + kb_id + induction_token_id + belief_id + dp_id + response_id
+                token_id = token_ids_for_context + system_token_id + system_token_id * len(belief_id) + system_token_id * len(kb_id) + system_token_id * len(response_id)
+                source =  context_ids + induction_token_id + belief_id + kb_id + response_id
 
                 if args.with_LM:
                     target = source
                 else:
-                    target = [-1] * len(context_ids) + [-1] * len(induction_token_id) + belief_id + response_id
+                    target = [-1] * len(context_ids) + [-1] * len(induction_token_id) + belief_id + [-1] * len(kb_id) +  response_id
                 
 
                 if len(source) < max_seq:
@@ -168,14 +172,10 @@ class JsonDataset(Dataset):
                         random_idx = random.choice(idxs)
                         new_response_id = response_pool[random_idx]
                         new_belief_id = belief_pool[random_idx]
-                        new_dp_id = dp_pool[random_idx]
-                        # NEW
 
-                        token_id = token_ids_for_context + user_token_id * len(kb_id) + system_token_id + system_token_id * len(new_belief_id) + system_token_id * len(dp_id) + system_token_id * len(new_response_id)
-                        source =  context_ids + kb_id + induction_token_id + new_belief_id + dp_id + new_response_id
-                        
-                        # source = context_ids + induction_token_id + new_belief_id + new_response_id
-                        # token_id = token_ids_for_context + system_token_id + system_token_id * len(new_belief_id)  + system_token_id * len(new_response_id)
+                        token_id = token_ids_for_context + system_token_id + system_token_id * len(new_belief_id) + system_token_id * len(kb_id) + system_token_id * len(new_response_id)
+                        source =  context_ids + induction_token_id + new_belief_id + kb_id + new_response_id
+
                         if len(source) < max_seq:
                             attention_mask = [0] * max_seq
                             attention_mask[:len(source)] = [1] * len(source)
@@ -202,44 +202,10 @@ class JsonDataset(Dataset):
                         random_idx = random.choice(idxs)
                         new_response_id = response_pool[random_idx]
                         new_belief_id = belief_pool[random_idx]
-                        new_dp_id = dp_pool[random_idx]
 
-                        source =  context_ids + kb_id + induction_token_id + belief_id + dp_id + new_response_id # NEW
-                        token_id = token_ids_for_context + user_token_id * len(kb_id) + system_token_id + system_token_id * len(belief_id) + system_token_id * len(dp_id) + system_token_id * len(new_response_id)
-                        # source = context_ids + induction_token_id + belief_id + new_response_id
-                        # token_id = token_ids_for_context + system_token_id + system_token_id * len(belief_id)  + system_token_id * len(new_response_id)
-                        if len(source) < max_seq:
-                            attention_mask = [0] * max_seq
-                            attention_mask[:len(source)] = [1] * len(source)
-                            self.mc_token_ids.append(len(source)-1)
-                            source += [0] * (max_seq - len(source))
-                            token_id += [0] * (max_seq - len(token_id))
-                        else:
-                            attention_mask = [1] * max_seq
-                            self.mc_token_ids.append(max_seq - 1)
-                            source = source[-max_seq:]
-                            target = target[-max_seq:]
-                            token_id = token_id[-max_seq:]
+                        token_id = token_ids_for_context + system_token_id + system_token_id * len(belief_id) + system_token_id * len(kb_id) + system_token_id * len(new_response_id)
+                        source =  context_ids + induction_token_id + belief_id  + kb_id + new_response_id
 
-
-                        self.examples.append(source)
-                        self.labels.append([-1] * len(source))
-                        self.token_ids.append(token_id)
-                        self.mc_labels.append(1)
-                        self.attention_masks.append(attention_mask)
-                
-                if args.add_dp_prediction: # NEW
-                    for _ in range(args.num_candidates):
-                        random_idx = random.choice(idxs)
-                        new_response_id = response_pool[random_idx]
-                        new_belief_id = belief_pool[random_idx]
-                        new_dp_id = dp_pool[random_idx]
-
-                        source =  context_ids + kb_id + induction_token_id + belief_id + new_dp_id + response_id # NEW
-                        token_id = token_ids_for_context + user_token_id * len(kb_id) + system_token_id + system_token_id * len(belief_id) + system_token_id * len(new_dp_id) + system_token_id * len(response_id)
-                       
-                        # source = context_ids + induction_token_id + new_belief_id + response_id
-                        # token_id = token_ids_for_context + system_token_id + system_token_id * len(new_belief_id)  + system_token_id * len(response_id)
                         if len(source) < max_seq:
                             attention_mask = [0] * max_seq
                             attention_mask[:len(source)] = [1] * len(source)
@@ -265,13 +231,10 @@ class JsonDataset(Dataset):
                         random_idx = random.choice(idxs)
                         new_response_id = response_pool[random_idx]
                         new_belief_id = belief_pool[random_idx]
-                        new_dp_id = dp_pool[random_idx]
 
-                        source =  context_ids + kb_id + induction_token_id + new_belief_id + dp_id + response_id # NEW
-                        token_id = token_ids_for_context + system_token_id * len(kb_id) + system_token_id + system_token_id * len(new_belief_id) + system_token_id * len(dp_id) + system_token_id * len(response_id)
-                       
-                        # source = context_ids + induction_token_id + new_belief_id + response_id
-                        # token_id = token_ids_for_context + system_token_id + system_token_id * len(new_belief_id)  + system_token_id * len(response_id)
+                        token_id = token_ids_for_context + system_token_id + system_token_id * len(new_belief_id) + system_token_id * len(kb_id) + system_token_id * len(response_id)
+                        source =  context_ids + induction_token_id + new_belief_id + kb_id + response_id
+
                         if len(source) < max_seq:
                             attention_mask = [0] * max_seq
                             attention_mask[:len(source)] = [1] * len(source)
@@ -426,7 +389,7 @@ def train(args, train_dataset, model, tokenizer):
             log_every_n_interval(500, f"  PROGRESS: {int(float(global_step)/t_total*100)}%")
             if step % 500 == 0:
                 logger.info(f"  PROGRESS: {int(float(global_step)/t_total*100)}%")
-            inputs, tokens, labels, masks,mc_labels, mc_token_ids = batch
+            inputs, tokens, labels, masks, mc_labels, mc_token_ids = batch
 
             inputs = inputs.to(args.device)
             tokens = tokens.to(args.device)
@@ -531,7 +494,7 @@ def evaluate(args, model, tokenizer, prefix=""):
     for batch in tqdm(eval_dataloader, desc="Evaluating"):
         # inputs, labels = mask_tokens(batch, tokenizer, args) if args.mlm else (batch, batch)
 
-        inputs, tokens, labels, masks = batch
+        inputs, tokens, labels, masks, _ , _  = batch
             # import pdb
             # pdb.set_trace()
         inputs = inputs.to(args.device)
@@ -542,7 +505,8 @@ def evaluate(args, model, tokenizer, prefix=""):
         # labels = labels.to(args.device)
 
         with torch.no_grad():
-            outputs = model(inputs, masked_lm_labels=labels, token_type_ids=tokens) if args.mlm else model(inputs, labels=labels)
+            outputs = model(inputs, mc_labels=labels, token_type_ids=tokens) if args.mlm else model(inputs, lm_labels=labels)
+            # outputs = model(inputs, masked_lm_labels=labels, token_type_ids=tokens) if args.mlm else model(inputs, labels=labels)
             lm_loss = outputs[0]
             eval_loss += lm_loss.mean().item()
         nb_eval_steps += 1
@@ -664,7 +628,8 @@ def main():
     parser.add_argument("--add_same_belief_response_prediction", action='store_true')
     parser.add_argument("--add_response_prediction", action='store_true')
     parser.add_argument("--add_belief_prediction", action='store_true')
-    parser.add_argument("--add_dp_prediction", action='store_true') # NEW
+    parser.add_argument("--add_kb_to_context", action='store_true')
+    parser.add_argument("--add_dp_to_response", action='store_true')
 
     args = parser.parse_args()
 

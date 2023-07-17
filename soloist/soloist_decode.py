@@ -187,6 +187,8 @@ def main():
         for o in out:
             text = tokenizer.decode(o, clean_up_tokenization_spaces=True)
             text = text[: text.find(args.stop_token) if args.stop_token else None]
+            if 'user' in text:
+                text = text.split('user')[0]
             examples.append(text)
         
         output_tests.append(examples)

@@ -1,0 +1,646 @@
+[
+    {
+        "dialogue_id": 81,
+        "history": [
+            "user : hi"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : none",
+        "reply": "system : Hi , what can I do for you ?",
+        "dp": "dp : hello ( ) "
+    },
+    {
+        "dialogue_id": 81,
+        "history": [
+            "user : hi",
+            "system : Hi , what can I do for you ?",
+            "user : I need some ideas for dinner."
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = not mentioned ; ingredients = not mentioned",
+        "reply": "system : Are you looking for a main dish recipe? And Do you have any preferences or restrictions ?",
+        "dp": "dp : confirm ( type = main dish ) ; request ( ingredients ) "
+    },
+    {
+        "dialogue_id": 81,
+        "history": [
+            "user : hi",
+            "system : Hi , what can I do for you ?",
+            "user : I need some ideas for dinner.",
+            "system : Are you looking for a main dish recipe? And Do you have any preferences or restrictions ?",
+            "user : I have some chicken in the fridge."
+        ],
+        "kb": "kb : more than three",
+        "belief": "belief : type = main dish ; ingredients = chicken",
+        "reply": "system : How about trying the [recipe_name_1] ? Would you like me to share the recipe ?",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 81,
+        "history": [
+            "user : hi",
+            "system : Hi , what can I do for you ?",
+            "user : I need some ideas for dinner.",
+            "system : Are you looking for a main dish recipe? And Do you have any preferences or restrictions ?",
+            "user : I have some chicken in the fridge.",
+            "system : How about trying the [recipe_name_1] ? Would you like me to share the recipe ?",
+            "user : okay"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = main dish ; ingredients = chicken and negative eggs ; name = [recommended_recipe_name_1]",
+        "reply": "system : Absolutely ! Here are the ingredients youll need for the [recipe_name_1] : [recipe_ingredients] . And here are the step-by-step instructions : [recipe_instructions] .",
+        "dp": "dp : inform ( ingredients  ; instructions )"
+    },
+    {
+        "dialogue_id": 82,
+        "history": [
+            "user : what's the weather today"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = unknown",
+        "reply": "system : I'm sorry, I could only suggest recipes.",
+        "dp": "dp : none"
+    },
+    {
+        "dialogue_id": 82,
+        "history": [
+            "user : what's the weather today",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : what's time is it?"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = unknown",
+        "reply": "system : I'm sorry, I could only suggest recipes.",
+        "dp": "dp : none"
+    },
+    {
+        "dialogue_id": 82,
+        "history": [
+            "user : what's the weather today",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : what's time is it?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : Do you know who I am?"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = unknown",
+        "reply": "system : I'm sorry, I could only suggest recipes.",
+        "dp": "dp : none"
+    },
+    {
+        "dialogue_id": 82,
+        "history": [
+            "user : what's the weather today",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : what's time is it?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : Do you know who I am?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : I need a salad recipe with grilled salmon."
+        ],
+        "kb": "kb : zero",
+        "belief": "belief : type = salad ; ingredients = grilled salmon",
+        "reply": "system : My bad, I could not find an appropriate recipe for your request. Maybe a different ingredients?",
+        "dp": "dp : recommend (name = none) "
+    },
+    {
+        "dialogue_id": 82,
+        "history": [
+            "user : what's the weather today",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : what's time is it?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : Do you know who I am?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : I need a salad recipe with grilled salmon.",
+            "system : My bad, I could not find an appropriate recipe for your request. Maybe a different ingredients?",
+            "user : okay, then a salad with chicken"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = salad ; ingredients = chicken",
+        "reply": "system : Sure, then I recommend [recipe_name_1]. Here it is : [recipe_ingredients] , [recipe_instructions]",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 83,
+        "history": [
+            "user : Am I talking to a bot?"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = bot challenging",
+        "reply": "system : I'm sorry, I could only suggest recipes.",
+        "dp": "dp : none"
+    },
+    {
+        "dialogue_id": 83,
+        "history": [
+            "user : Am I talking to a bot?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : I need a special recipe to surprise my husband."
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = not mentioned ; ingredients = not mentioned",
+        "reply": "system : I assume you are looking for a main dish recipe , right ?",
+        "dp": "dp : confirm ( type = main dish )"
+    },
+    {
+        "dialogue_id": 83,
+        "history": [
+            "user : Am I talking to a bot?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : I need a special recipe to surprise my husband.",
+            "system : I assume you are looking for a main dish recipe , right ?",
+            "user : Yes"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = main dish ; ingredients = not mentioned",
+        "reply": "system : Do you have any preferences or restrictions ?",
+        "dp": "dp : request ( ingredients ) "
+    },
+    {
+        "dialogue_id": 83,
+        "history": [
+            "user : Am I talking to a bot?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : I need a special recipe to surprise my husband.",
+            "system : I assume you are looking for a main dish recipe , right ?",
+            "user : Yes",
+            "system : Do you have any preferences or restrictions ?",
+            "user : Does not matter."
+        ],
+        "kb": "kb : more than three",
+        "belief": "belief : type = main dish ; ingredients = dont care",
+        "reply": "system : Do you want an easy or difficult one ?",
+        "dp": "dp : request (difficulty) "
+    },
+    {
+        "dialogue_id": 83,
+        "history": [
+            "user : Am I talking to a bot?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : I need a special recipe to surprise my husband.",
+            "system : I assume you are looking for a main dish recipe , right ?",
+            "user : Yes",
+            "system : Do you have any preferences or restrictions ?",
+            "user : Does not matter.",
+            "system : Do you want an easy or difficult one ?",
+            "user : Let's go with a difficult one"
+        ],
+        "kb": "kb : more than three",
+        "belief": "belief :  type = main dish ; ingredients = dont care ; difficulty = medium",
+        "reply": "system : Then we have this special recipe for [recipe_name_1] .",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 83,
+        "history": [
+            "user : Am I talking to a bot?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : I need a special recipe to surprise my husband.",
+            "system : I assume you are looking for a main dish recipe , right ?",
+            "user : Yes",
+            "system : Do you have any preferences or restrictions ?",
+            "user : Does not matter.",
+            "system : Do you want an easy or difficult one ?",
+            "user : Let's go with a difficult one",
+            "system : Then we have this special recipe for [recipe_name_1] .",
+            "user : how long do I need?"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = main dish ; ingredients = dont care ; difficulty = medium ; name = [recommended_recipe_name_1]",
+        "reply": "system : It takes [recipe_time] .",
+        "dp": "dp : inform ( time )"
+    },
+    {
+        "dialogue_id": 83,
+        "history": [
+            "user : Am I talking to a bot?",
+            "system : I'm sorry, I could only suggest recipes.",
+            "user : I need a special recipe to surprise my husband.",
+            "system : I assume you are looking for a main dish recipe , right ?",
+            "user : Yes",
+            "system : Do you have any preferences or restrictions ?",
+            "user : Does not matter.",
+            "system : Do you want an easy or difficult one ?",
+            "user : Let's go with a difficult one",
+            "system : Then we have this special recipe for [recipe_name_1] .",
+            "user : how long do I need?",
+            "system : It takes [recipe_time] .",
+            "user : Perfect, give me the recipe."
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = main dish ; ingredients = dont care ; difficulty = medium ; name = [recommended_recipe_name_1]",
+        "reply": "system : Here it is : [recipe_ingredients] , [recipe_instructions]",
+        "dp": "dp : inform ( ingredients  ; instructions )"
+    },
+    {
+        "dialogue_id": 84,
+        "history": [
+            "user : My boyfriend broke up with me today. I'm awfully sad."
+        ],
+        "kb": "kb : none",
+        "belief": "belief : none",
+        "reply": "system : What can I do for you?",
+        "dp": "dp : none"
+    },
+    {
+        "dialogue_id": 84,
+        "history": [
+            "user : My boyfriend broke up with me today. I'm awfully sad.",
+            "system : What can I do for you?",
+            "user : I need something sweet. Maybe a huge amount of chocolate would cheer me up."
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = dessert ; ingredients = chocolate",
+        "reply": "system : Then I would recommend you try [recipe_name_1].",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 84,
+        "history": [
+            "user : My boyfriend broke up with me today. I'm awfully sad.",
+            "system : What can I do for you?",
+            "user : I need something sweet. Maybe a huge amount of chocolate would cheer me up.",
+            "system : Then I would recommend you try [recipe_name_1].",
+            "user : Give me a recipe."
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = dessert ; ingredients = chocolate ; name = [recommended_recipe_name_1]",
+        "reply": "system : Here are the ingredients youll need for the [recipe_name_1] : [recipe_ingredients] . And here are the step-by-step instructions : [recipe_instructions] .",
+        "dp": "dp : inform ( ingredients  ; instructions )"
+    },
+    {
+        "dialogue_id": 84,
+        "history": [
+            "user : My boyfriend broke up with me today. I'm awfully sad.",
+            "system : What can I do for you?",
+            "user : I need something sweet. Maybe a huge amount of chocolate would cheer me up.",
+            "system : Then I would recommend you try [recipe_name_1].",
+            "user : Give me a recipe.",
+            "system : Here are the ingredients youll need for the [recipe_name_1] : [recipe_ingredients] . And here are the step-by-step instructions : [recipe_instructions] .",
+            "user : you're so sweet. would you be my boyfriend?"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : none",
+        "reply": "system : I'm sorry, I could only suggest recipes.",
+        "dp": "dp : none"
+    },
+    {
+        "dialogue_id": 85,
+        "history": [
+            "user : I want to eat healthy today. Any ideas?"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = not mentioned ; ingredients = not mentioned",
+        "reply": "system : I assume you are looking for a main dish recipe , right ? Do you have any restrictions or preferences ?",
+        "dp": "dp : confirm ( type = main dish ) ; request ( ingredients ) "
+    },
+    {
+        "dialogue_id": 85,
+        "history": [
+            "user : I want to eat healthy today. Any ideas?",
+            "system : I assume you are looking for a main dish recipe , right ? Do you have any restrictions or preferences ?",
+            "user : I want to make a salad with a lot of meat."
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = salad ; ingredients = chicken",
+        "reply": "system : What about trying the [recipe_name_1] ?",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 85,
+        "history": [
+            "user : I want to eat healthy today. Any ideas?",
+            "system : I assume you are looking for a main dish recipe , right ? Do you have any restrictions or preferences ?",
+            "user : I want to make a salad with a lot of meat.",
+            "system : What about trying the [recipe_name_1] ?",
+            "user : Which ingredients do I need?"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = salad ; ingredients = chicken ; name = [recommended_recipe_name_1]",
+        "reply": "system : You will need [recipe_ingredients] and [recipe_equipment] . For the instructions : [recipe_instructions]",
+        "dp": "dp : inform ( ingredients )"
+    },
+    {
+        "dialogue_id": 86,
+        "history": [
+            "user : I have a meeting in an hour. Anything quick?"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = not mentioned ; is_quick = yes",
+        "reply": "system : I assume that you are looking for a main dish recipe ?",
+        "dp": "dp : confirm ( type = main dish )"
+    },
+    {
+        "dialogue_id": 86,
+        "history": [
+            "user : I have a meeting in an hour. Anything quick?",
+            "system : I assume that you are looking for a main dish recipe ?",
+            "user : Yes"
+        ],
+        "kb": "kb : more than three",
+        "belief": "belief : is_quick = yes ; type = main dish",
+        "reply": "system : Do you want to try [recipe_name_1] ?",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 86,
+        "history": [
+            "user : I have a meeting in an hour. Anything quick?",
+            "system : I assume that you are looking for a main dish recipe ?",
+            "user : Yes",
+            "system : Do you want to try [recipe_name_1] ?",
+            "user : How long does it take?"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : is_quick = yes ; type = main dish ; name = [recommended_recipe_name_1]",
+        "reply": "system : It takes [recipe_time] .",
+        "dp": "dp : inform ( time )"
+    },
+    {
+        "dialogue_id": 86,
+        "history": [
+            "user : I have a meeting in an hour. Anything quick?",
+            "system : I assume that you are looking for a main dish recipe ?",
+            "user : Yes",
+            "system : Do you want to try [recipe_name_1] ?",
+            "user : How long does it take?",
+            "system : It takes [recipe_time] .",
+            "user : And what do I need?"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = main dish ; is_quick = yes ; name = [recommended_recipe_name_1]",
+        "reply": "system : You will need [recipe_ingredients]. And you also need some equipments, [recipe_equipment].",
+        "dp": "dp : inform ( ingredients) ; inform ( equipment ) "
+    },
+    {
+        "dialogue_id": 86,
+        "history": [
+            "user : I have a meeting in an hour. Anything quick?",
+            "system : I assume that you are looking for a main dish recipe ?",
+            "user : Yes",
+            "system : Do you want to try [recipe_name_1] ?",
+            "user : How long does it take?",
+            "system : It takes [recipe_time] .",
+            "user : And what do I need?",
+            "system : You will need [recipe_ingredients]. And you also need some equipments, [recipe_equipment].",
+            "user : Good, show me the recipe."
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = main dish ; is_quick = yes ; name = [recommended_recipe_name_1]",
+        "reply": "system : Here it is : [recipe_instructions]",
+        "dp": "dp : inform ( instructions )"
+    },
+    {
+        "dialogue_id": 87,
+        "history": [
+            "user : It's soooo hot today. What should I cook?"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = not mentioned ; ingredients = not mentioned",
+        "reply": "system : Are you looking for a main dish recipe? And do you have any preferences or restrictions ?",
+        "dp": "dp : confirm ( type = main dish ) ; request ( ingredients ) "
+    },
+    {
+        "dialogue_id": 87,
+        "history": [
+            "user : It's soooo hot today. What should I cook?",
+            "system : Are you looking for a main dish recipe? And do you have any preferences or restrictions ?",
+            "user : I don't know"
+        ],
+        "kb": "kb : more than three",
+        "belief": "belief : type = dont care ; ingredients = dont care",
+        "reply": "system : I recommend [recipe_name_1].",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 87,
+        "history": [
+            "user : It's soooo hot today. What should I cook?",
+            "system : Are you looking for a main dish recipe? And do you have any preferences or restrictions ?",
+            "user : I don't know",
+            "system : I recommend [recipe_name_1].",
+            "user : Which type is that?"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = dont care ; ingredients = dont care ; name = [recommended_recipe_name_1]",
+        "reply": "system : It is a [recipe_type] recipe .",
+        "dp": "dp : inform ( type )"
+    },
+    {
+        "dialogue_id": 87,
+        "history": [
+            "user : It's soooo hot today. What should I cook?",
+            "system : Are you looking for a main dish recipe? And do you have any preferences or restrictions ?",
+            "user : I don't know",
+            "system : I recommend [recipe_name_1].",
+            "user : Which type is that?",
+            "system : It is a [recipe_type] recipe .",
+            "user : I think a salad would be fine."
+        ],
+        "kb": "kb : more than three",
+        "belief": "belief : ingredients = dont care ; type = salad",
+        "reply": "system : Do you want a vegan recipe or not ?",
+        "dp": "dp : request ( is_vegan ) "
+    },
+    {
+        "dialogue_id": 87,
+        "history": [
+            "user : It's soooo hot today. What should I cook?",
+            "system : Are you looking for a main dish recipe? And do you have any preferences or restrictions ?",
+            "user : I don't know",
+            "system : I recommend [recipe_name_1].",
+            "user : Which type is that?",
+            "system : It is a [recipe_type] recipe .",
+            "user : I think a salad would be fine.",
+            "system : Do you want a vegan recipe or not ?",
+            "user : Yes."
+        ],
+        "kb": "kb : one",
+        "belief": "belief : ingredients = dont care ; type = salad ; is_vegan = yes",
+        "reply": "system : Then I would recommend you try [recipe_name_1].",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 87,
+        "history": [
+            "user : It's soooo hot today. What should I cook?",
+            "system : Are you looking for a main dish recipe? And do you have any preferences or restrictions ?",
+            "user : I don't know",
+            "system : I recommend [recipe_name_1].",
+            "user : Which type is that?",
+            "system : It is a [recipe_type] recipe .",
+            "user : I think a salad would be fine.",
+            "system : Do you want a vegan recipe or not ?",
+            "user : Yes.",
+            "system : Then I would recommend you try [recipe_name_1].",
+            "user : please give me the recipe"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : ingredients = dont care ; type = salad ; is_vegan = yes ; name = [recommended_recipe_name_1]",
+        "reply": "system : Here it is : [recipe_ingredients] , [recipe_instructions]",
+        "dp": "dp : inform ( ingredients  ; instructions )"
+    },
+    {
+        "dialogue_id": 88,
+        "history": [
+            "user : I have a bag of mushroom in my fridge. What should I cook?"
+        ],
+        "kb": "kb : three",
+        "belief": "belief : type = main dish ; ingredients = mushroom",
+        "reply": "system : We have a delicious recipe for [recipe_name_1] .",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 88,
+        "history": [
+            "user : I have a bag of mushroom in my fridge. What should I cook?",
+            "system : We have a delicious recipe for [recipe_name_1] .",
+            "user : Do you have other options?"
+        ],
+        "kb": "kb : three",
+        "belief": "belief : type = main dish ; ingredients = mushroom ",
+        "reply": "system : We have [recipe_name_2] , which might suit your requirements. ",
+        "dp": "dp : recommendAlternative ( name = [recipe_name_2] ) "
+    },
+    {
+        "dialogue_id": 88,
+        "history": [
+            "user : I have a bag of mushroom in my fridge. What should I cook?",
+            "system : We have a delicious recipe for [recipe_name_1] .",
+            "user : Do you have other options?",
+            "system : We have [recipe_name_2] , which might suit your requirements. ",
+            "user : No I think I would like to try the first one."
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = main dish ; ingredients = mushroom ; name = [recommended_recipe_name_1]",
+        "reply": "system : Here it is : [recipe_ingredients] , [recipe_instructions]",
+        "dp": "dp : inform ( ingredients) ; inform ( equipment ) "
+    },
+    {
+        "dialogue_id": 89,
+        "history": [
+            "user : I have a party coming up. Any ideas?"
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = not mentioned ; ingredients = not mentioned",
+        "reply": "system : Do you have any preferences or restrictions ?",
+        "dp": "dp : request ( ingredients ) "
+    },
+    {
+        "dialogue_id": 89,
+        "history": [
+            "user : I have a party coming up. Any ideas?",
+            "system : Do you have any preferences or restrictions ?",
+            "user : I would need a few recipes. I need to cook a main dish, a salad and a dessert."
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = dont care ; ingredients = not mentioned",
+        "reply": "system : For the main dish, what would be the main ingredients?",
+        "dp": "dp : confim ( type = main dish ) ; request ( ingredients ) "
+    },
+    {
+        "dialogue_id": 89,
+        "history": [
+            "user : I have a party coming up. Any ideas?",
+            "system : Do you have any preferences or restrictions ?",
+            "user : I would need a few recipes. I need to cook a main dish, a salad and a dessert.",
+            "system : For the main dish, what would be the main ingredients?",
+            "user : grilled salmon"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = main dish ; ingredients = salmon",
+        "reply": "system : Then we have this special recipe for [recipe_name_1] . Would you like the recipe for it ?",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 89,
+        "history": [
+            "user : I have a party coming up. Any ideas?",
+            "system : Do you have any preferences or restrictions ?",
+            "user : I would need a few recipes. I need to cook a main dish, a salad and a dessert.",
+            "system : For the main dish, what would be the main ingredients?",
+            "user : grilled salmon",
+            "system : Then we have this special recipe for [recipe_name_1] . Would you like the recipe for it ?",
+            "user : okay"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = main dish ; ingredients = salmon ; name = [recommended_recipe_name_1]",
+        "reply": "system : Here it is : [recipe_ingredients] , [recipe_instructions].",
+        "dp": "dp : inform ( ingredients  ; instructions )"
+    },
+    {
+        "dialogue_id": 89,
+        "history": [
+            "user : I have a party coming up. Any ideas?",
+            "system : Do you have any preferences or restrictions ?",
+            "user : I would need a few recipes. I need to cook a main dish, a salad and a dessert.",
+            "system : For the main dish, what would be the main ingredients?",
+            "user : grilled salmon",
+            "system : Then we have this special recipe for [recipe_name_1] . Would you like the recipe for it ?",
+            "user : okay",
+            "system : Here it is : [recipe_ingredients] , [recipe_instructions].",
+            "user : And a recipe for salad"
+        ],
+        "kb": "kb : more than three",
+        "belief": "belief : type = salad ; ingredients = dont care ",
+        "reply": "system : You could try this [recipe_name_2]. [recipe_ingredients] , [recipe_instructions].",
+        "dp": "dp : recommend ( name = [recipe_name_2] ) ; inform ( ingredients  ; instructions )"
+    },
+    {
+        "dialogue_id": 89,
+        "history": [
+            "user : I have a party coming up. Any ideas?",
+            "system : Do you have any preferences or restrictions ?",
+            "user : I would need a few recipes. I need to cook a main dish, a salad and a dessert.",
+            "system : For the main dish, what would be the main ingredients?",
+            "user : grilled salmon",
+            "system : Then we have this special recipe for [recipe_name_1] . Would you like the recipe for it ?",
+            "user : okay",
+            "system : Here it is : [recipe_ingredients] , [recipe_instructions].",
+            "user : And a recipe for salad",
+            "system : You could try this [recipe_name_2]. [recipe_ingredients] , [recipe_instructions].",
+            "user : That sounds good. What about dessert?"
+        ],
+        "kb": "kb : more than three",
+        "belief": "belief : type = dessert ; ingredients = dont care ",
+        "reply": "system : I found [recipe_name_3]. [recipe_ingredients] , [recipe_instructions].",
+        "dp": "dp : recommend ( name = [recipe_name_3] ) ; inform ( ingredients  ; instructions )"
+    },
+    {
+        "dialogue_id": 90,
+        "history": [
+            "user : I want to make something to drink."
+        ],
+        "kb": "kb : none",
+        "belief": "belief : type = beverage ; ingredients = not mentioned",
+        "reply": "system : Do you have any preferences or restrictions ?",
+        "dp": "dp : request ( ingredients ) "
+    },
+    {
+        "dialogue_id": 90,
+        "history": [
+            "user : I want to make something to drink.",
+            "system : Do you have any preferences or restrictions ?",
+            "user : I need a beverage recipe with banana"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = beverage ; ingredients = banana",
+        "reply": "system : I found a wonderful recipe. Would you like to try [recipe_name_1]?",
+        "dp": "dp : recommend ( name = [recipe_name_1] ) "
+    },
+    {
+        "dialogue_id": 90,
+        "history": [
+            "user : I want to make something to drink.",
+            "system : Do you have any preferences or restrictions ?",
+            "user : I need a beverage recipe with banana",
+            "system : I found a wonderful recipe. Would you like to try [recipe_name_1]?",
+            "user : Okay dokey"
+        ],
+        "kb": "kb : one",
+        "belief": "belief : type = beverage ; ingredients = banana ; name = [recommended_recipe_name_1]",
+        "reply": "system : Sure, this is the recipe: [recipe_ingredients] , [recipe_instructions].",
+        "dp": "dp : inform ( ingredients) ; inform ( equipment ) "
+    }
+]

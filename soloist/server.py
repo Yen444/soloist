@@ -14,6 +14,7 @@ import sys
 import dotmap
 
 sys.path.append('../../soloist/transformers/')
+sys.path.append('../soloist/soloist/transformers/')
 
 from transformers import GPT2Config, OpenAIGPTConfig
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
@@ -118,22 +119,22 @@ model = None
 tokenizer = None
 args = dotmap.DotMap()
 args.model_type = 'gpt2'
-args.model_name_or_path = 'kbbot'
+# args.model_name_or_path = 'kbbot'
 args.prompt = ''
 args.padding_text = ''
 args.length = 30
 args.num_samples = 1
-args.temperature = 1
+# args.temperature = 1
+args.temperature = 1.3 # use higher temperature
 args.repetition_penalty = 1
-args.top_k = 0
+# args.top_k = 0
+args.top_k = 3 # use top_k sample
 args.top_p = 0.5
 args.no_cuda = False
 args.seed = 2020
 args.stop_token = '<|endoftext|>'
 def main():
     global model, tokenizer,args
-    
-
     
     args.device = torch.device("cuda" if torch.cuda.is_available() and not args.no_cuda else "cpu")
     args.n_gpu = torch.cuda.device_count()

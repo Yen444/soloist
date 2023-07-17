@@ -1,4 +1,4 @@
-#!/bin/bash
+ #!/bin/bash
 CUDA_VISIBLE_DEVICES=0 python soloist_train.py \
 --output_dir=../examples/knowledgebasebot/knowledgebase_model \
 --model_type=gpt2 \

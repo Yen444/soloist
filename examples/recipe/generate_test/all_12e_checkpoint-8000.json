@@ -1,0 +1,611 @@
+[
+  [
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Any preferences or restrictions for ingredients?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What type of a recipe are you looking for?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Any preferences or restrictions for ingredients?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Any preferences or restrictions for ingredients?"
+  ],
+  [
+    "belief : type = salad ; ingredients = quinoa <EOB> <EOKB> <EODP>system : Sure! [recipe_type]is a good one. Do you want the recipe for it?",
+    "belief : type = salad ; ingredients = quinoa <EOB> <EOKB> <EODP>system : Sure! I have a delicious recipe for [recipe_name_1].",
+    "belief : type = salad ; ingredients = quinoa <EOB> <EOKB> <EODP>system : Just to confirm, you are looking for a [recipe_type]with [recipe_ingredient_value]as the main ingredient, is that correct?",
+    "belief : type = salad ; ingredients = quinoa <EOB> <EOKB> <EODP>system : Sure! I have a delicious recipe for [recipe_name_1]. Would you like me to share the recipe with you?",
+    "belief : type = salad ; ingredients = quinoa <EOB> <EOKB> <EODP>system : Just to make sure, you want a recipe with [recipe_ingredient_value], you dont want a vegan one, and you dont care about the main ingredient, right?"
+  ],
+  [
+    "belief : type = salad ; ingredients = quinoa ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Great! Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions].",
+    "belief : type = salad ; ingredients = quinoa ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Great! Here is the instruction : [recipe_instructions], [recipe_instructions].",
+    "belief : type = salad ; ingredients = quinoa ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Great! Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions].",
+    "belief : type = salad ; ingredients = quinoa ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Great! Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions].",
+    "belief : type = salad ; ingredients = quinoa ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Great! Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions]."
+  ],
+  [
+    "belief : type = salad ; ingredients = quinoa ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Youre welcome. Have a nice day!",
+    "belief : type = salad ; ingredients = negative quinoa ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Bye!",
+    "belief : type = salad ; ingredients = negative quinoa ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Youre welcome! Bye!",
+    "belief : type = salad ; ingredients = quinoa ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_2].",
+    "belief : type = salad ; ingredients = quinoa ; name = [recommended_recipe_name_2] <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1]."
+  ],
+  [
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Any preferences or restrictions for ingredients?",
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What kind of a recipe are you looking for?",
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What type of a recipe are you looking for?",
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What kind of a recipe are you looking for?"
+  ],
+  [
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : How about trying the [recipe_name_1]?",
+    "belief : type = dessert ; ingredients = dont care <EOB> <EOKB> <EODP>system : How about trying the [recipe_name_1]?",
+    "belief : type = dessert ; ingredients = dont care <EOB> <EOKB> <EODP>system : How about trying the [recipe_name_1]?",
+    "belief : type = dessert ; ingredients = dont care <EOB> <EOKB> <EODP>system : How about trying the [recipe_name_1]?",
+    "belief : type = dessert ; ingredients = dont care <EOB> <EOKB> <EODP>system : How about trying the [recipe_name_1]?"
+  ],
+  [
+    "belief : type = dessert ; ingredients = negative eggs ; is_vegan = no ; is_quick = yes ; negative eggs = negative fruit <EOB> <EOKB> <EODP>system : Here are the ingredients youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions].",
+    "belief : type = dessert ; ingredients = dont care ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Great! Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions].",
+    "belief : type = dessert ; ingredients = negative eggs ; is_vegan = no ; is_quick = yes ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need for the [recipe_name_2]: [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions].",
+    "belief : type = dessert ; ingredients = negative eggs ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the simple instructions : [recipe_instructions].",
+    "belief : type = dessert ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Great! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions]."
+  ],
+  [
+    "belief : type = dessert ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Let me know if you need any further assistance.",
+    "belief : type = dessert ; ingredients = negative eggs ; is_vegan = no ; eggs = negative eggs = negative fruit <EOB> <EOKB> <EODP>system : Youre welcome! Im glad I could provide you an option that suits your preferences. Enjoy making the [recipe_name_1]!",
+    "belief : type = dessert ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Im glad I could provide you an option that suits your preferences. Enjoy making the [recipe_name_1].",
+    "belief : type = dessert ; ingredients = negative eggs ; is_vegan = no ; is_quick = yes ; negative eggs = negative eggs ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1]!",
+    "belief : type = dessert ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Im glad I could help. Enjoy making the [recipe_name_1]!"
+  ],
+  [
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : So a [recipe_type]vegan recipe with [recipe_ingredient_value], right?",
+    "belief : type = breakfast ; ingredients = negative avocado ; <EOB> <EOKB> <EODP>system : Just to make sure, you want a recipe for [recipe_type], you dont want a vegan one, and you dont care about the main ingredient, right?",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : So a [recipe_type]vegan recipe with [recipe_ingredient_value], right?",
+    "belief : type = breakfast ; ingredients = negative avocado ; <EOB> <EOKB> <EODP>system : What type of a recipe are you looking for?",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : So a [recipe_type]vegan recipe with [recipe_ingredient_value], right?"
+  ],
+  [
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions].",
+    "belief : type = breakfast ; ingredients = negative avocado ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions].",
+    "belief : type = breakfast ; ingredients = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Here are the ingredients youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions].",
+    "belief : type = breakfast ; ingredients = negative avocado ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions].",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions]."
+  ],
+  [
+    "belief : type = breakfast ; ingredients = avocados ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1]!",
+    "belief : type = breakfast ; ingredients = negative avocado ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1].",
+    "belief : type = breakfast ; ingredients = negative avocado ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Bye!",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1].",
+    "belief : type = breakfast ; ingredients = negative avocado ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1]."
+  ],
+  [
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; ingredients = negative avocado ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Sure! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : type = breakfast ; ingredients = avocados ; <EOB> <EOKB> <EODP>system : Sure! Heres what youll need : [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions].",
+    "belief : type = breakfast ; ingredients = negative avocado ; <EOB> <EOKB> <EODP>system : Sure! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Sure! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : type = breakfast ; ingredients = negative avocado ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions]."
+  ],
+  [
+    "belief : type = breakfast ; ingredients = avocados ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions].",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the instructions : [recipe_instructions]. And these are the ingredients youll need : [recipe_ingredients].",
+    "belief : type = breakfast ; ingredients = avocos ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Sure! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions]. Enjoy this delicious and savory mushroom risotto!",
+    "belief : type = breakfast ; ingredients = negative avocado ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions].",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; ingredients = negative avocado ; name = [recommended_recipe_name_2] <EOKB> <EODP>system : Here are the ingredients youll need and the recipe : [recipe_ingredients]."
+  ],
+  [
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EODP>system : Youre welcome! Have a nice day!",
+    "belief : type = breakfast ; ingredients = negative avocado ; name = [recommended_recipe_name_2] <EOKB> <EODP>system : Youre welcome! Bye!",
+    "belief : type = breakfast ; ingredients = negative avocado ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_2]!",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOKB> <EODP>system : Youre welcome! Bye!",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_2]!"
+  ],
+  [
+    "belief : type = soup ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What ingredients would you like to go with chicken?",
+    "belief : type = soup ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! I have several delicious recipes with [recipe_ingredient_value]that you might like. Would you like an easy one?",
+    "belief : type = soup ; ingredients = dont care <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = soup ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = soup ; ingredients = dont care <EOB> <EOKB> <EODP>system : What ingredients would you like to go with chicken?"
+  ],
+  [
+    "belief : type = soup ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Great! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions]. Enjoy this creamy and savory mushroom risotto!",
+    "belief : type = soup ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need for the [recipe_name_2]: [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions].",
+    "belief : type = soup ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Great! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Great! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : type = soup ; ingredients = dont care <EOB> <EOKB> <EODP>system : Great! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_instructions], [recipe_instructions]."
+  ],
+  [
+    "belief : type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_2]!",
+    "belief : type = soup ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome. Have a nice day!",
+    "belief : type = soup ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1].",
+    "belief : type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Bye!",
+    "belief : type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1]!"
+  ],
+  [
+    "belief : is_vegan = yes ; type = main dish <EOB> <EOKB> <EODP>system : What type of a recipe are you looking for?",
+    "belief : is_vegan = yes ; type = main dish <EOB> <EOKB> <EODP>system : Sure! I have several delicious recipes with [recipe_ingredient_value]that you might like. Would you like an easy one?",
+    "belief : type = main dish ; ingredients = tofu <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = main dish ; ingredients = tofu <EOB> <EOKB> <EODP>system : So a [recipe_type]vegan recipe with [recipe_ingredient_value], right?",
+    "belief : is_vegan = yes ; is_vegan = no ; type = main dish <EOB> <EOKB> <EODP>system : Sure! I assume you dont care about the recipe type and youre good with any ingredients. How about trying [recipe_name_1]?"
+  ],
+  [
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions].",
+    "belief : is_vegan = yes ; type = main dish ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Sure! Heres what youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu <EOB> <EOKB> <EODP>system : Here are the ingredients youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu <EOB> <EOKB> <EODP>system : Certainly! Heres what youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu <EOB> <EOKB> <EODP>system : Sure! Here are the ingredients youll need for the [recipe_name_2]: [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions]."
+  ],
+  [
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : [recipe_name_1]takes [recipe_time].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : [recipe_name_1]takes [recipe_time].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : [recipe_name_1]takes [recipe_time].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu <EOB> <EOKB> <EODP>system : [recipe_name_1]takes [recipe_time].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : [recipe_name_1]takes [recipe_time]."
+  ],
+  [
+    "belief : type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy cooking and let me know if you need any other recommendations.",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Bye!",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Bye!",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = tofu ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1]!",
+    "belief : is_vegan = yes ; type = main dish ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1]."
+  ],
+  [
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What kind of specific salad do you have in mind?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What type of a recipe are you looking for?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What type of a recipe are you looking for?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What kind of specific salad do you have in mind?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What kind of specific salad do you have in mind?"
+  ],
+  [
+    "belief : type = salad ; ingredients = chicken <EOB> <EOKB> <EODP>system : [recipe_type]with [recipe_ingredient_value]? My bad, I could not find any matching recipe.",
+    "belief : type = salad ; ingredients = chicken <EOB> <EOKB> <EODP>system : [recipe_type]with [recipe_ingredient_value]? My bad, I could not find any matching recipe.",
+    "belief : type = salad ; ingredients = chicken <EOB> <EOKB> <EODP>system : [recipe_type]with [recipe_ingredient_value]? My bad, I could not find any matching recipe.",
+    "belief : type = salad ; ingredients = chicken <EOB> <EOKB> <EODP>system : [recipe_type]with [recipe_ingredient_value]? My bad, I could not find any matching recipe.",
+    "belief : type = salad ; ingredients = chicken <EOB> <EOKB> <EODP>system : [recipe_name_1]with [recipe_ingredient_value]? My bad, I could not find any matching recipe."
+  ],
+  [
+    "belief : type = salad ; ingredients = chicken ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Absolutely! Here are the ingredients and instructions for preparing the [recipe_name_2]: [recipe_ingredients], [recipe_instructions].",
+    "belief : type = salad ; ingredients = chicken ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Absolutely! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions]",
+    "belief : type = salad ; ingredients = chicken ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Absolutely! Here are the ingredients and instructions for preparing the [recipe_name_2]: [recipe_ingredients], [recipe_instructions]",
+    "belief : type = salad ; ingredients = chicken ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Certainly! Here are the instructions for the [recipe_name_2]: [recipe_instructions], [recipe_instructions]",
+    "belief : type = salad ; ingredients = chicken ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Certainly! Here are the instructions for the [recipe_name_1]: [recipe_ingredients], [recipe_instructions]."
+  ],
+  [
+    "belief :  ingredients = beef ; type = not mentioned <EOB> <EOKB> <EODP>system : I found a dozen of delicious [recipe_type]recipes that you might want to try. Do you have any preferences or restrictions?",
+    "belief :  ingredients = beef ; type = not mentioned <EOB> <EOKB> <EODP>system : I found a dozen of delicious [recipe_type]recipes that you might want to try. Do you have any preferences or restrictions?",
+    "belief :  ingredients = beef ; type = not mentioned <EOB> <EOKB> <EODP>system : I found a dozen of delicious [recipe_type]recipes that you might want to try. Do you have any preferences or restrictions?",
+    "belief :  ingredients = beef ; type = not mentioned <EOB> <EOKB> <EODP>system : I found a dozen of delicious [recipe_type]recipes that you might want to try. Do you have any preferences or restrictions?",
+    "belief :  ingredients = beef ; type = not mentioned <EOB> <EOKB> <EODP>system : I found a dozen of delicious [recipe_type]recipes that you might want to try. Do you have any preferences or restrictions?"
+  ],
+  [
+    "belief : type = main dish ; is_quick = yes ; ingredients = beef <EOB> <EOKB> <EODP>system : Sorry, I currently could not find any alternatives for you. Is there anything else I could assist you?",
+    "belief :  ingredients = beef ; type = main dish <EOB> <EOKB> <EODP>system : We have [recipe_name_2], which might suit your requirements.",
+    "belief : difficulty = easy ; type = main dish ; ingredients = beef <EOB> <EOKB> <EODP>system : We have [recipe_name_2], which might suit your requirements. Would you like the recipe for it?",
+    "belief : difficulty = easy ; type = beef ; ingredients = beef <EOB> <EOKB> <EODP>system : We have [recipe_name_2], which might suit your requirements.",
+    "belief :  ingredients = beef ; type = not mentioned <EOB> <EOKB> <EODP>system : We have [recipe_name_2], which might suit your requirements."
+  ],
+  [
+    "belief : type = main dish ; ingredients = beef ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients and instructions for preparing [recipe_name_1]: [recipe_ingredients], [recipe_instructions].",
+    "belief : difficulty = easy ; type = main dish ; is_quick = yes ; ingredients = beef ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Absolutely! Here are the ingredients and instructions for preparing [recipe_name_1]: [recipe_ingredients], [recipe_instructions].",
+    "belief : difficulty = easy ; type = main dish ; ingredients = beef ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients and instructions for preparing [recipe_name_2]: [recipe_ingredients], [recipe_instructions].",
+    "belief : type = main dish ; ingredients = beef ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients and instructions for preparing [recipe_name_1]: [recipe_ingredients], [recipe_instructions].",
+    "belief : type = main dish ; ingredients = beef ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Absolutely! Here are the ingredients and instructions for preparing [recipe_name_1]: [recipe_ingredients], [recipe_instructions]."
+  ],
+  [
+    "belief : type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : I assume you dont care about the recipe type and youre good with any ingredients. Wanna try the [recipe_name_1]?",
+    "belief : type = salad ; ingredients = cherry <EOB> <EOKB> <EODP>system : I assume you dont care about the recipe type and youre good with any ingredients. Wanna try the [recipe_name_1]?",
+    "belief : type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : I assume you are looking for a main dish recipe, right?",
+    "belief : type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : I assume you are looking for a main dish recipe, right?",
+    "belief : type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : I assume you dont care about the recipe type and youre good with any ingredients. Wanna try the [recipe_name_1]?"
+  ],
+  [
+    "belief : type = salad ; ingredients = cherry <EOB> <EOKB> <EODP>system : Sure! How about trying the [recipe_name_1]?",
+    "belief : type = salad ; ingredients = cherry <EOB> <EOKB> <EODP>system : Sure! How about trying the [recipe_name_1]?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! How about trying [recipe_name_1]?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! How about trying the [recipe_name_1]?",
+    "belief : type = salad ; ingredients = cherry <EOB> <EOKB> <EODP>system : Sure! How about trying the [recipe_name_1]?"
+  ],
+  [
+    "belief : type = salad ; ingredients = cherry ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It takes [recipe_time].",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : It takes [recipe_time]",
+    "belief : type = salad ; ingredients = cherry ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It takes [recipe_time].",
+    "belief : ingredients = chicken ; type = salad ; ingredients = cherry <EOB> <EOKB> <EODP>system : It takes [recipe_time].",
+    "belief : type = salad ; ingredients = fruit <EOB> <EOKB> <EODP>system : It takes [recipe_time]."
+  ],
+  [
+    "belief : type = salad ; ingredients = cherry ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Absolutely! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions].",
+    "belief : type = salad ; ingredients = cherry ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_instructions], [recipe_instructions]",
+    "belief : type = salad ; ingredients = synonym fruit; ingredients = negative mustard ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Absolutely! Here are the ingredients youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the simple instructions : [recipe_instructions].",
+    "belief : type = salad ; ingredients = cherry ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Absolutely! Here are the instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions].",
+    "belief : ingredients = chicken ; type = salad ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions]."
+  ],
+  [
+    "belief : type = main dish ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = main dish ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = main dish ; ingredients = synonym [recommended_recipe_name_2] <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : is_vegan = yes ; type = main dish <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = main dish ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?"
+  ],
+  [
+    "belief : is_vegan = yes ; type = main dish ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients and instructions for preparing [recipe_name_1]: [recipe_ingredients], [recipe_instructions]",
+    "belief : type = main dish ; ingredients = synonym fruit <EOB> <EOKB> <EODP>system : Sure! I assume you dont care about the recipe type and youre good with any ingredients. How about trying [recipe_name_1]?",
+    "belief : type = main dish ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients and instructions for preparing [recipe_name_1]: [recipe_ingredients], [recipe_instructions].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = Parmesan <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients and instructions for preparing [recipe_name_1]: [recipe_ingredients], [recipe_instructions].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = synonym fruit <EOB> <EOKB> <EODP>system : Sure! Here are the ingredients youll need for this recipe : [recipe_ingredients]."
+  ],
+  [
+    "belief : type = main dish ; ingredients = synonym fruit <EOB> <EOKB> <EODP>system : Of course! Here are the instructions : [recipe_instructions]. And these are the ingredients youll need : [recipe_ingredients].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = beef ; is_quick = yes ; ingredients = negative turkey ; ingredients = mushroom <EOB> <EOKB> <EODP>system : Of course, [recipe_ingredients], [recipe_instructions]",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Of course, [recipe_instructions]",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = beef ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Of course, [recipe_instructions].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Of course, [recipe_instructions]"
+  ],
+  [
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What type of a recipe are you looking for?",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What kind of a recipe are you looking for?",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What type of a recipe are you looking for?",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What kind of a recipe are you looking for?",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What type of a recipe are you looking for?"
+  ],
+  [
+    "belief : is_vegan = yes ; type = salad <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_1]?",
+    "belief : is_vegan = yes ; type = salad <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_1]?",
+    "belief : is_vegan = yes ; type = salad <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_2]?",
+    "belief : is_vegan = yes ; type = salad <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_2]?",
+    "belief : is_vegan = yes ; type = salad <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_1]?"
+  ],
+  [
+    "belief : is_vegan = yes ; type = salad ; ingredients = negative salad <EOB> <EOKB> <EODP>system : It is [recipe_difficulty].",
+    "belief : is_vegan = yes ; type = salad ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It is [recipe_difficulty].",
+    "belief : is_vegan = yes ; type = salad ; ingredients = salad <EOB> <EOKB> <EODP>system : It is [recipe_difficulty].",
+    "belief : is_vegan = yes ; type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : It is [recipe_difficulty].",
+    "belief : is_vegan = yes ; type = salad ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It is [recipe_difficulty]."
+  ],
+  [
+    "belief : is_vegan = yes ; type = salad ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Certainly! Here are the instructions : [recipe_instructions].",
+    "belief : is_vegan = yes ; type = salad ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Here it is : [recipe_ingredients], [recipe_instructions]",
+    "belief : is_vegan = yes ; type = salad ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions]",
+    "belief : is_vegan = yes ; type = salad ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients and instructions for preparing the [recipe_name_2]: [recipe_ingredients], [recipe_instructions]",
+    "belief : is_vegan = yes ; type = salad ; ingredients = salad <EOB> <EOKB> <EODP>system : Certainly! Here are the ingredients and instructions for preparing the [recipe_name_2]: [recipe_instructions], [recipe_instructions]"
+  ],
+  [
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Absolutely! How about trying [recipe_name_1]? Its a decadent dessert that can be ready in just [recipe_time]. Would you like me to share the recipe?",
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! How about trying [recipe_name_1]?",
+    "belief : type = Chocolate ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Absolutely. Do you want a vegan recipe?",
+    "belief : type = Chocolate ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : We have a delicious recipe for [recipe_name_1].",
+    "belief : type = Chocolate ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Absolutely. Do you want a vegan recipe?"
+  ],
+  [
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]",
+    "belief : type = Chocolate ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]. Do you want the recipe for it?",
+    "belief : type = Chocolate ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]",
+    "belief : type = dessert ; ingredients = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]and [recipe_equipment]",
+    "belief : type = Chocolate ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]. Do you want the recipe for it?"
+  ],
+  [
+    "belief : type = dessert ; is_vegan = yes ; is_quick = yes ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Of course! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions]",
+    "belief : type = Chocolate ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Certainly! Here is the recipe : [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; is_quick = yes ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Of course! Heres what youll need for the [recipe_name_1]: [recipe_ingredients]. And here are the instructions : [recipe_instructions]",
+    "belief : type = Chocolate ; ingredients = negative mustard ; ingredients = negative mustard ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Absolutely! Here are the ingredients youll need and the recipe : [recipe_ingredients], [recipe_instructions].",
+    "belief : type = Chocolate ; ingredients = negative milk ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Absolutely! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_instructions], [recipe_instructions]."
+  ],
+  [
+    "belief : type = dessert ; is_vegan = yes ; is_quick = yes ; negative equipment = negative oven ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy baking.",
+    "belief : type = Chocolate ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1]!",
+    "belief : type = dessert ; is_vegan = yes ; ingredients = negative milk ; is_quick = yes ; is_quick = yes ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_2].",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; negative cream = negative fruit <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1].",
+    "belief : type = dessert ; is_vegan = yes ; is_quick = yes ; negative cream = negative fruit <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1]."
+  ],
+  [
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Absolutely! How about trying [recipe_name_1]?",
+    "belief : is_vegan = yes ; type = not mentioned <EOB> <EOKB> <EODP>system : Absolutely! How about trying [recipe_name_2]?",
+    "belief : is_vegan = yes ; type = not mentioned <EOB> <EOKB> <EODP>system : Are you looking for a main dish recipe?",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Absolutely. Do you want an easy or difficult one?",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Absolutely. Do you want a vegan recipe?"
+  ],
+  [
+    "belief : is_vegan = yes ; type = soup <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_1]?",
+    "belief : is_vegan = yes ; type = soup <EOB> <EOKB> <EODP>system : How about trying the [recipe_name_1]?",
+    "belief : is_vegan = yes ; type = soup <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_1]?",
+    "belief : is_vegan = yes ; type = soup <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_2]?",
+    "belief : is_vegan = yes ; type = soup <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_1]?"
+  ],
+  [
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]and [recipe_equipment]",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]and [recipe_equipment]"
+  ],
+  [
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : It takes [recipe_time]",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It takes [recipe_time].",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : It takes [recipe_time]",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : It takes [recipe_time]",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It takes [recipe_time]."
+  ],
+  [
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : To make this dish, you will need [recipe_ingredients]. Please follow the instructions [recipe_instructions]",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : To make the [recipe_name_1], you will need [recipe_ingredients].",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : To make the [recipe_name_1], youll need [recipe_ingredients].",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : To make the [recipe_name_1], you will need [recipe_ingredients]. Please follow the instructions [recipe_instructions]",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It takes [recipe_time]"
+  ],
+  [
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_2] <EOKB> <EODP>system : Youre welcome! Have a nice day!",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Youre welcome! Bye!",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Youre welcome! Bye!",
+    "belief : is_vegan = yes ; type = soup ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Youre welcome! Have a nice day!",
+    "belief : is_vegan = yes ; type = soup ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Bye!"
+  ],
+  [
+    "belief : type = pasta ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = pasta ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Just to confirm, you are looking for a [recipe_type]with [recipe_ingredient_value]as the main ingredient, is that correct?",
+    "belief : type = pasta ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! I have a delicious recipe for [recipe_name_1].",
+    "belief : type = soup ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = soup ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?"
+  ],
+  [
+    "belief : type = soup ; ingredients = negative eggs ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : You can replace [recipe_ingredient_value]by [recipe_substitution].",
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : You can replace [recipe_substitution]by [recipe_substitution].",
+    "belief : type = main dish ; ingredients = negative eggs ; is_quick = yes <EOB> <EOKB> <EODP>system : You can replace [recipe_substitution]by [recipe_substitution]",
+    "belief : type = soup ; ingredients = negative turkey ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : You can replace [recipe_substitution]by [recipe_substitution].",
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : You can replace [recipe_ingredient_value]by [recipe_ingredient_value]."
+  ],
+  [
+    "belief : type = main dish ; ingredients = negative eggs ; is_quick = yes ; is_vegan = yes ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]. Do you want the recipe for it?",
+    "belief : type = main dish ; is_quick = yes ; ingredients = negative turkey ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]and [recipe_equipment]. For the instructions : [recipe_instructions]",
+    "belief : type = main dish ; ingredients = negative eggs ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Of course! How about trying [recipe_name_2]?",
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]and [recipe_equipment]",
+    "belief : type = main dish ; ingredients = negative eggs ; is_quick = yes ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]and [recipe_equipment]"
+  ],
+  [
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]and [recipe_ingredients]",
+    "belief : type = main dish ; ingredients = negative eggs ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]and [recipe_ingredients]",
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]",
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]",
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You can try [recipe_name_1]"
+  ],
+  [
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]",
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Of course, [recipe_instructions].",
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]and [recipe_equipment]",
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Of course, [recipe_ingredients].",
+    "belief : type = main dish ; ingredients = negative turkey ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Of course, [recipe_instructions]."
+  ],
+  [
+    "belief : type = easy ; ingredients = chicken <EOB> <EOKB> <EODP>system : Do you want a vegan recipe or not?",
+    "belief : ingredients = chicken ; type = easy <EOB> <EOKB> <EODP>system : We have a delicious recipe for [recipe_name_1].",
+    "belief : type = easy ; ingredients = chicken <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice.",
+    "belief : ingredients = chicken ; difficulty = easy <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice.",
+    "belief : type = easy ; ingredients = chicken <EOB> <EOKB> <EODP>system : Do you want a vegan recipe or not?"
+  ],
+  [
+    "belief : ingredients = chicken ; type = easy <EOB> <EOKB> <EODP>system : Do you want an easy recipe or you want to challenge yourself with a difficult one?",
+    "belief : ingredients = chicken ; type = easy <EOB> <EOKB> <EODP>system : Do you want an easy or difficult one?",
+    "belief : ingredients = chicken ; type = easy <EOB> <EOKB> <EODP>system : Do you want an easy or difficult one?",
+    "belief : difficulty = easy ; ingredients = chicken <EOB> <EOKB> <EODP>system : Do you want to try [recipe_name_1]?",
+    "belief : ingredients = chicken ; type = easy <EOB> <EOKB> <EODP>system : Do you want an easy or difficult one?"
+  ],
+  [
+    "belief : type = main dish ; ingredients = chicken ; difficulty = easy ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : It takes [recipe_time].",
+    "belief : type = easy ; ingredients = chicken ; difficulty = easy ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : It takes [recipe_time]",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : It takes [recipe_time].",
+    "belief : difficulty = easy ; type = dont care ; ingredients = chicken ; difficulty = easy <EOB> <EOKB> <EODP>system : It takes [recipe_time]",
+    "belief : type = easy ; ingredients = chicken ; difficulty = easy ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : It takes [recipe_time]"
+  ],
+  [
+    "belief : ingredients = chicken ; difficulty = easy ; type = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Sure. Here it is : [recipe_ingredients], [recipe_instructions]",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Please follow the instructions [recipe_instructions]",
+    "belief : type = main dish ; ingredients = chicken ; difficulty = easy ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here it is : [recipe_ingredients], [recipe_instructions]",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here it is : [recipe_ingredients], [recipe_instructions]",
+    "belief : ingredients = chicken ; type = main dish ; difficulty = easy ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Please follow the instructions [recipe_instructions]"
+  ],
+  [
+    "belief : type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Yes, we have multiple delicious [recipe_type]recipes that you might like. Would you like an easy one?",
+    "belief : type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Yes, we have multiple recipes that match your criteria! How about [recipe_name_1]?",
+    "belief : type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Yes, we have multiple recipes that use soy. Do you have any preferences or restrictions?",
+    "belief : type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! How about trying [recipe_name_1]? Its a flavorful and flavorful vegan [recipe_type]. Would you like me to provide the recipe?",
+    "belief : type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! I assume you dont care about the recipe type and youre good with any ingredients. How about trying [recipe_name_2]?"
+  ],
+  [
+    "belief : is_vegan = yes ; type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Then we have this special recipe for [recipe_name_1].",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What about trying [recipe_name_2]?",
+    "belief : type = main dish ; is_quick = yes ; is_vegan = no ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : If you dont have [recipe_ingredient_value], you can use [recipe_ingredient_value].",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What about trying [recipe_name_2]?",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_1]?"
+  ],
+  [
+    "belief : type = dessert ; ingredients = negative cream ; is_vegan = no ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]",
+    "belief : is_vegan = yes ; type = not mentioned ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients].",
+    "belief : type = dessert ; ingredients = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients].",
+    "belief : type = breakfast ; is_vegan = yes ; ingredients = negative cream <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients].",
+    "belief : type = breakfast ; is_vegan = yes ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]"
+  ],
+  [
+    "belief : type = breakfast ; is_vegan = yes ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Certainly! Here are the instructions for the [recipe_name_1]: [recipe_instructions], [recipe_instructions]",
+    "belief : type = breakfast ; ingredients = oreo cookies ; is_vegan = no ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Certainly! Here are the instructions [recipe_instructions]and the instructions [recipe_instructions]",
+    "belief : type = dessert ; is_vegan = no ; ingredients = negative cream ; is_quick = yes ; is_quick = yes ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Certainly! Here are the instructions [recipe_instructions]and the instructions [recipe_instructions]",
+    "belief : type = breakfast ; is_vegan = yes ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Of course, [recipe_instructions].",
+    "belief : type = breakfast ; ingredients = negative eggs ; is_vegan = yes ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Certainly! Here are the instructions [recipe_equipment]and instructions [recipe_instructions]"
+  ],
+  [
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; can_recipe = no <EOB> <EOKB> <EODP>system : I assume you are looking for a main dish recipe, correct? Do you have any restrictions or preferences?",
+    "belief : type = oven ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Im sorry you dont like [recipe_ingredient_value]! I think [recipe_name_2]would be a good choice. Would you like me to provide the recipe?",
+    "belief : type = dessert ; is_vegan = no ; is_vegan = no ; is_quick = yes ; equipment = oven <EOB> <EOKB> <EODP>system : I assume you dont care about the recipe type and youre good with any ingredients. Wanna try the [recipe_name_1]?",
+    "belief : equipment = oven ; type = not mentioned <EOB> <EOKB> <EODP>system : I assume that you are looking for a main dish recipe?",
+    "belief : type = oven ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Are you looking for a main dish recipe?"
+  ],
+  [
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; is_recipe = yes ; equipment = oven <EOB> <EOKB> <EODP>system : How about trying the [recipe_name_1]?",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; is_vegan = no ; is_quick = yes ; equipment = oven <EOB> <EOKB> <EODP>system : What about trying the [recipe_name_1]?",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; is_vegan = no ; is_quick = yes ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : How about trying the [recipe_name_1]?",
+    "belief : equipment = oven ; ingredients = not mentioned ; type = main dish <EOB> <EOKB> <EODP>system : At the moment, we dont have any recipe for your request. Do you have any other requests?",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; is_recipe = yes ; is_quick = yes ; ingredients = negative fruit <EOB> <EOKB> <EODP>system : At the moment, we dont have any recipe for your request. Do you have any other requests?"
+  ],
+  [
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; equipment = negative salmon <EOB> <EOKB> <EODP>system : If you dont have [recipe_ingredient_value], you can replace [recipe_substitution].",
+    "belief : type = dessert ; difficulty = easy ; is_vegan = no ; is_quick = yes ; ingredients = negative salmon <EOB> <EOKB> <EODP>system : If you dont have [recipe_ingredient_value], you can replace [recipe_substitution].",
+    "belief : type = main dish ; equipment = oven ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : If you dont have [recipe_ingredient_value], you can replace [recipe_substitution].",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; negative salmon <EOB> <EOKB> <EODP>system : We have another recipe for dessert. What about the [recipe_name_1]?",
+    "belief : type = oven ; ingredients = negative salmon ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : We have a delicious recipe for [recipe_name_1]."
+  ],
+  [
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; equipment = negative salmon ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Here it is : [recipe_ingredients], [recipe_instructions]",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; ingredients = negative salmon ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Here it is : [recipe_ingredients], [recipe_instructions]",
+    "belief : equipment = oven ; ingredients = negative salmon ; type = main dish <EOB> <EOKB> <EODP>system : Here it is : [recipe_ingredients], [recipe_instructions]",
+    "belief : equipment = oven ; ingredients = negative salmon ; type = main dish ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Here it is : [recipe_ingredients], [recipe_instructions]",
+    "belief : type = main dish ; is_quick = yes ; ingredients = negative salmon ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Here it is : [recipe_ingredients], [recipe_instructions]"
+  ],
+  [
+    "belief : type = dessert ; difficulty = easy ; is_vegan = dont care ; is_quick = yes ; ingredients = negative salmon <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy baking!",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; equipment = negative salmon ; name = [recommended_recipe_name_1] <EOKB> <EODP>system : Youre welcome! Im glad I could help. Enjoy making the [recipe_name_2]!",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; equipment = negative salmon ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_2]!",
+    "belief : type = dessert ; is_vegan = no ; is_quick = yes ; equipment = negative salmon ; name = [recommended_recipe_name_2] <EOKB> <EODP>system : Youre welcome! Im glad I could help. Enjoy baking!",
+    "belief : equipment = oven ; type = main dish ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy baking!"
+  ],
+  [
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice.",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice.",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice.",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice.",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice."
+  ],
+  [
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : The total cooking time for [recipe_name_2]is [recipe_time].",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : It requires [recipe_time]to prepare.",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : It requires [recipe_time]to prepare.",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : It takes [recipe_time].",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : It requires [recipe_time]to prepare."
+  ],
+  [
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Sorry, I currently could not find any alternatives for you. Is there anything else I could assist you?",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sorry, I dont find any alternatives for you. Is there anything else I could assist you?",
+    "belief : type = breakfast ; ingredients = dont care <EOB> <EOKB> <EODP>system : Do you want any other recipe or you want to challenge yourself with a difficult one?",
+    "belief : type = breakfast ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sorry, I currently could not find any alternatives for you. Is there anything else I could assist you?",
+    "belief : type = breakfast ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : What about [recipe_name_2]?"
+  ],
+  [
+    "belief : type = breakfast ; ingredients = negative eggs ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : So a [recipe_type]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?",
+    "belief : type = breakfast ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Just to be sure, you want a recipe for [recipe_type], you dont want a vegan one, and you dont care about the main ingredient, right?",
+    "belief : type = breakfast ; ingredients = negative eggs ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Just to make sure, you want a recipe for [recipe_type], you dont want a vegan one, and you dont care about the main ingredient, right?",
+    "belief : type = breakfast ; ingredients = negative eggs ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Just to be sure, youre still looking for a [recipe_type]recipe with [recipe_ingredient_value]and [recipe_ingredient_value], and you dont want [recipe_ingredient_value], right?",
+    "belief : type = breakfast ; ingredients = negative eggs ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : So a [recipe_type]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?"
+  ],
+  [
+    "belief : type = dessert ; ingredients = synonym <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice.",
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : [recipe_name_2]is a good choice.",
+    "belief : type = dessert ; ingredients = synonym fruit <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice.",
+    "belief : type = dessert ; ingredients = synonym <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice.",
+    "belief : type = dessert ; ingredients = blueberries <EOB> <EOKB> <EODP>system : [recipe_name_1]is a good choice."
+  ],
+  [
+    "belief : type = dessert ; ingredients = synonym fruit <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]",
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_equipment]",
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]",
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]",
+    "belief : type = dessert ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]"
+  ],
+  [
+    "belief : type = dessert ; ingredients = negative fruit ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You can replace [recipe_substitution]by [recipe_substitution].",
+    "belief : type = dessert ; ingredients = dont care ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Absolutely! You can replace [recipe_substitution]by [recipe_ingredient_value].",
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : What about trying [recipe_name_2]?",
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : What about trying [recipe_name_2]?",
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : You will need [recipe_ingredients]"
+  ],
+  [
+    "belief : type = dessert ; ingredients = negative cream ; is_vegan = yes ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Here are the instructions : [recipe_instructions]",
+    "belief : type = dessert ; ingredients = negative fruit ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the instructions for [recipe_name_1]: [recipe_instructions]",
+    "belief : type = dessert ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the instructions : [recipe_instructions]",
+    "belief : type = dessert ; ingredients = negative cream ; ingredients = negative fruit ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Here are the instructions : [recipe_instructions].",
+    "belief : type = dessert ; ingredients = negative fruit ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : To make [recipe_name_1], youll need [recipe_ingredients]. Do you have any restrictions or preferences?"
+  ],
+  [
+    "belief : type = main dish ; is_vegan = no ; is_quick = yes ; ingredients = mozzarella <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = main dish ; is_vegan = no ; is_quick = yes <EOB> <EOKB> <EODP>system [recipe_name_1] <EOKB> <EODP>, <EOB> <EOKB> <EODP>, is that correct?",
+    "belief : type = not mentioned ; ingredients = mozzarella <EOB> <EOKB> <EODP>system : I assume you are looking for a main dish recipe, right?",
+    "belief : type = not mentioned ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = not mentioned ; ingredients = mozzarella <EOB> <EOKB> <EODP>system : Just to confirm, you are looking for a [recipe_type]with [recipe_ingredient_value]as the main ingredient, is that correct?"
+  ],
+  [
+    "belief : is_vegan = yes ; type = main dish ; ingredients = mozzarella <EOB> <EOKB> <EODP>system : So an [recipe_difficulty]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?",
+    "belief : type = main dish ; ingredients = mozzarella cheese ; difficulty = easy <EOB> <EOKB> <EODP>system : So an [recipe_difficulty]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?",
+    "belief : type = salad ; is_vegan = yes ; is_quick = yes <EOB> <EOKB> <EODP>system : So an [recipe_difficulty]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?",
+    "belief : is_vegan = yes ; type = salad ; is_quick = yes <EOB> <EOKB> <EODP>system : So an [recipe_difficulty]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?",
+    "belief : is_vegan = yes ; type = salad ; ingredients = negative pasta ; difficulty = easy <EOB> <EOKB> <EODP>system : So an [recipe_difficulty]recipe for [recipe_type], with [recipe_ingredient_value]as the main ingredient, right?"
+  ],
+  [
+    "belief : type = salve ; ingredients = negative cream ; is_vegan = no ; is_quick = yes ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Absolutely! Here are the instructions : [recipe_ingredients], [recipe_instructions].",
+    "belief : is_vegan = yes ; type = salad ; ingredients = mozzarella ; difficulty = easy ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Absolutely! Here are the instructions : [recipe_instructions], [recipe_instructions]",
+    "belief : type = salad ; ingredients = oreo ; difficulty = easy <EOB> <EOKB> <EODP>system : Absolutely! Here are the instructions : [recipe_instructions].",
+    "belief : type = salad ; is_vegan = yes ; is_quick = yes ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Absolutely! Here are the instructions : [recipe_ingredients], [recipe_instructions].",
+    "belief : is_vegan = yes ; type = main dish ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Absolutely! Here are the instructions for the [recipe_name_2]: [recipe_instructions], [recipe_instructions]."
+  ],
+  [
+    "belief : is_vegan = yes ; type = salad ; is_quick = yes ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Youre welcome. Have a nice day!",
+    "belief : type = main dish ; ingredients = mozzarella cheese ; difficulty = easy ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_2].",
+    "belief : type = main dish ; ingredients = mozzarella ; difficulty = easy ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_2]!",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = mozzarella cheese ; difficulty = easy ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Youre welcome! Im glad I could help. Have a nice day!",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = mozzarella cheese ; difficulty = easy <EOB> <EOKB> <EODP>system : Youre welcome! Enjoy making the [recipe_name_1]!"
+  ],
+  [
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What kind of a recipe are you looking for?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What kind of specific salad do you have in mind?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : What kind of ingredients would you like to go with chicken?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?",
+    "belief : type = salad ; ingredients = not mentioned <EOB> <EOKB> <EODP>system : Sure! What main ingredient would you like to use?"
+  ],
+  [
+    "belief : type = salad ; ingredients = beef <EOB> <EOKB> <EODP>system : Just to make sure, you want a recipe for [recipe_type], you dont want a vegan one, and you dont care about the main ingredient, right?",
+    "belief : type = salad ; ingredients = beef <EOB> <EOKB> <EODP>system : Do you want a vegan recipe?",
+    "belief : type = salad ; ingredients = beef <EOB> <EOKB> <EODP>system : Do you want an easy recipe or you want to challenge yourself with a difficult one?",
+    "belief : type = salad ; ingredients = beef <EOB> <EOKB> <EODP>system : Do you want a vegan recipe?",
+    "belief : type = salad ; ingredients = beef <EOB> <EOKB> <EODP>system : Just to confirm, you are looking for a [recipe_type]with [recipe_ingredient_value]as the main ingredient, is that correct?"
+  ],
+  [
+    "belief : type = salad ; ingredients = beef <EOB> <EOKB> <EODP>system : At the moment, we dont have any recipe for your request. Do you have any other requests?",
+    "belief : type = salad ; ingredients = beef <EOB> <EOKB> <EODP>system : At the moment, we dont have any recipe for your request. Do you have any other requests?",
+    "belief : type = salad ; ingredients = beef <EOB> <EOKB> <EODP>system : At the moment, we dont have any recipe for your request. Do you have any other requests?",
+    "belief : type = salad ; ingredients = beef ; is_vegan = no <EOB> <EOKB> <EODP>system : At the moment, we dont have any recipe for your request. Do you have any other requests?",
+    "belief : type = salad ; ingredients = beef <EOB> <EOKB> <EODP>system : At the moment, we dont have any recipe for your request. Do you have any other requests?"
+  ],
+  [
+    "belief : type = salad ; ingredients = beef ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It is a [recipe_difficulty]recipe.",
+    "belief : type = salad ; ingredients = beef ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It is a [recipe_difficulty]recipe.",
+    "belief : type = salad ; ingredients = beef ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It is a [recipe_difficulty]recipe.",
+    "belief : type = salad ; ingredients = beef ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : It is a [recipe_difficulty]recipe.",
+    "belief : type = salad ; ingredients = beef ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : It is a [recipe_difficulty]recipe. Please try the [recipe_name_1]"
+  ],
+  [
+    "belief : type = salad ; ingredients = beef ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Sure! Here are the instructions : [recipe_instructions], [recipe_instructions].",
+    "belief : type = salad ; ingredients = not mentioned ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here it is : [recipe_ingredients], [recipe_instructions]",
+    "belief : type = salad ; ingredients = beef ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Sure! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions].",
+    "belief : type = salad ; ingredients = beef ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Here are the ingredients youll need for the [recipe_name_2]: [recipe_ingredients]. And here are the step-by-step instructions : [recipe_instructions]",
+    "belief : type = salad ; ingredients = beef ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Sure! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions]"
+  ],
+  [
+    "belief : type = not mentioned ; ingredients = broccoli <EOB> <EOKB> <EODP>system : We have many delicious [recipe_type]recipes that you might want to try. Do you have any preferences or restrictions?",
+    "belief : type = main dish ; ingredients = broccoli <EOB> <EOKB> <EODP>system : We have many delicious [recipe_type]recipes that you might want to try. Do you have any preferences or restrictions?",
+    "belief : type = main dish ; ingredients = negative broccoli <EOB> <EOKB> <EODP>system : Are you looking for a main dish recipe?",
+    "belief : type = main dish ; ingredients = negative broccoli <EOB> <EOKB> <EODP>system : We have many delicious [recipe_type]recipes with [recipe_ingredient_value]that you might want to try. Do you have any preferences or restrictions?",
+    "belief : type = main dish ; is_vegan = yes ; is_vegan = no ; ingredients = negative broccoli <EOB> <EOKB> <EODP>system : Sure! I assume you dont care about the recipe type and youre good with any ingredients. How about trying [recipe_name_2]?"
+  ],
+  [
+    "belief : type = main dish ; ingredients = broccoli ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : What about trying [recipe_name_2]?",
+    "belief : type = main dish ; ingredients = broccoli ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Sure! I have a delicious recipe for [recipe_name_1]. Would you like me to share the recipe with you?",
+    "belief : type = main dish ; ingredients = negative eggs ; is_vegan = no ; type = main dish <EOB> <EOKB> <EODP>system : Sure! How about trying [recipe_name_2]?",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = broccoli <EOB> <EOKB> <EODP>system : What type of a recipe are you looking for?",
+    "belief : type = main dish ; ingredients = broccoli ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Sure! How about trying [recipe_name_2]? Would you like me to provide the recipe?"
+  ],
+  [
+    "belief : type = main dish ; ingredients = negative eggs ; ingredients = negative eggs <EOB> <EOKB> <EODP>system : Im sorry you dont like [recipe_ingredient_value]! I think [recipe_name_2]would be a good choice. Would you like me to provide the recipe?",
+    "belief : type = main dish ; ingredients = negative eggs ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Im sorry that you dont like [recipe_ingredient_value]. In this case, I suggest [recipe_name_2]. Would you like me to provide the recipe?",
+    "belief : type = main dish ; ingredients = negative eggs ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Im sorry that you dont like [recipe_ingredient_value]. If you prefer a different salad option, I suggest trying [recipe_name_2].",
+    "belief : type = main dish ; ingredients = negative eggs ; ingredients = negative chicken <EOB> <EOKB> <EODP>system : Im sorry that you dont like [recipe_ingredient_value]. If you prefer a different salad option, I suggest trying [recipe_name_2]. Would you like me to provide the recipe?",
+    "belief : type = main dish ; ingredients = negative eggs ; is_vegan = yes <EOB> <EOKB> <EODP>system : Im sorry you could not eat [recipe_ingredient_value]! I would recommend trying [recipe_name_1]."
+  ],
+  [
+    "belief : type = main dish ; ingredients = negative cream ; ingredients = negative mustard ; is_vegan = negative eggs ; ingredients = negative eggs <EOB> <EOKB> <EODP>system : Perfect! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : type = main dish ; ingredients = negative cream ; is_vegan = yes ; ingredients = negative eggs ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Great! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : type = main dish ; ingredients = negative eggs ; is_vegan = no ; name = [recommended_recipe_name_1] <EOB> <EOKB> <EODP>system : Great! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : is_vegan = yes ; type = main dish ; ingredients = negative mustard ; ingredients = negative mustard <EOB> <EODP>system <EOB> <EOKB> <EODP>system : Perfect! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions].",
+    "belief : difficulty = Medium ; is_vegan = yes ; type = main dish ; ingredients = negative eggs ; name = [recommended_recipe_name_2] <EOB> <EOKB> <EODP>system : Perfect! Heres what youll need : [recipe_ingredients]. And here are the instructions : [recipe_instructions]."
+  ]
+]
