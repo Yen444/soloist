@@ -83,3 +83,43 @@ decoded_file: ../examples/recipe/generate_test/all_12e_kb_mt.json
 belief acc: 0.675
 bleu: 0.156
 combine: 0.831
+--------------------------------------------------
+decoded_file: ../examples/recipe/generate_test/all_12e_valid.json
+belief acc: 0.481
+bleu: 0.090
+combine: 0.571
+--------------------------------------------------
+decoded_file: ../examples/recipe/generate_test/all_12e_valid_checkpoint_2000.json
+belief acc: 0.321
+bleu: 0.061
+combine: 0.382
+--------------------------------------------------
+decoded_file: ../examples/recipe/generate_test/all_12e_valid_checkpoint_4000.json
+belief acc: 0.384
+bleu: 0.058
+combine: 0.442
+--------------------------------------------------
+decoded_file: ../examples/recipe/generate_test/all_12e_valid_checkpoint_6000.json
+belief acc: 0.488
+bleu: 0.119
+combine: 0.607
+--------------------------------------------------
+decoded_file: ../examples/recipe/generate_test/all_12e_valid_checkpoint_8000.json
+belief acc: 0.533
+bleu: 0.106
+combine: 0.639
+--------------------------------------------------
+decoded_file: ../examples/recipe/generate_test/all_extra_9e.json
+belief acc: 0.777
+bleu: 0.154
+combine: 0.931
+--------------------------------------------------
+decoded_file: ../examples/recipe/generate_test/all_extra_9e.json
+belief acc: 0.777
+bleu: 0.154
+combine: 0.931
+--------------------------------------------------
+decoded_file: ../examples/recipe/generate_test/all_15e_kb.json
+belief acc: 0.647
+bleu: 0.157
+combine: 0.803
