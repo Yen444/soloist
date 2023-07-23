@@ -2,26 +2,26 @@
 # lr 1e-5 to 5e-5
 # mc_loss_efficient 0.1 to 1
 # etc.
-# NOW: run more epochs on kb and dp
-# for train ALWAYS CHANGE THIS
-OUTPUT=finetuned_models/all_15e_kb
-MODEL_NAME=finetuned_models/all_12e_kb
 
-EPOCHS=3
+# for train ALWAYS CHANGE THIS
+OUTPUT=finetuned_models/all_9e_baseline
+MODEL_NAME=gtg_pretrained
+
+EPOCHS=9
 # for decode ALWAYS CHANGE THIS
-GENERATE=../examples/recipe/generate_test/all_15e_kb.json
+GENERATE=../examples/recipe/generate_test/all_9e_baseline.json
 # CHANGE THIS IF MT / NO-NEG / extra
 TRAIN_FILE=../examples/recipe/all_dialogues/v3_recipe_train_dialogues.json
 
 # training valid dataset, should not change
 EVAL_FILE=../examples/recipe/all_dialogues/v3_recipe_valid_dialogues.json  
-# decode, should not change
+# decode hyperparameters, should not change for all experiments
 NS=5
 TEMP=1.2
 TOP_P=0.5
 TOP_K=3
 
-# TRAIN: SET ADD_KB OR ADD_DP IF DESIRED
+# TRAIN: SET ADD_KB OR ADD_DP IF DESIRED; change CUDA if necessary
 CUDA_VISIBLE_DEVICES=2 python soloist_train_experiment.py \
 --output_dir $OUTPUT \
 --model_type=gpt2 \
@@ -42,11 +42,10 @@ CUDA_VISIBLE_DEVICES=2 python soloist_train_experiment.py \
 --add_response_prediction \
 --add_same_belief_response_prediction \
 --add_belief_prediction \
---save_steps 6000 \
---add_kb_to_context
+--save_steps 6000
+# --add_kb_to_context
 # --evaluate_during_training
-
-# # --add_dp_to_response \
+# --add_dp_to_response
 
 # DECODE SET ADD_KB IF DESIRE;
 CUDA_VISIBLE_DEVICES=2 python soloist_decode_experiment.py \
