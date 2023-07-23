@@ -77,7 +77,7 @@ def query_database(del_response : str, db_state=None):
    #print(f'respond {res}')
 
    # encode query from belief state
-   query = "SELECT * FROM Recipes WHERE"
+   query = "SELECT name FROM Recipes WHERE"
    for bs in bs_list:
       bs = bs.split('=')
       slot = bs[0].strip()
@@ -86,11 +86,11 @@ def query_database(del_response : str, db_state=None):
       print(f'val: {val}')
       if val == 'recommended_recipe_name_1':
          name = db_state['recommended_recipe_name_1']
-         query = f'SELECT * FROM Recipes WHERE name = {name}'
+         query = f'SELECT name FROM Recipes WHERE name = {name}'
          break
       elif val == 'recommended_recipe_name_2':
          name = db_state['recommended_recipe_name_2']
-         query = f'SELECT * FROM Recipes WHERE name = {name}'
+         query = f'SELECT name FROM Recipes WHERE name = {name}'
          break
       else: 
          if val == 'dont care' or val == 'not mentioned' or val == "don't care":
@@ -117,8 +117,9 @@ def query_database(del_response : str, db_state=None):
    cursor = conn.cursor()
    cursor.execute(query)
    matches = cursor.fetchall() 
+   print(matches)
    # lexicalize response
-   if len(matches) == 0:
+   """if len(matches) == 0:
       res = 'Sorry. I do not have any recipe that meet your requests at the moment. What else can I help you?'
    else:
       match_idx = random.randint(0, len(matches)-1)
@@ -170,9 +171,7 @@ def query_database(del_response : str, db_state=None):
          ingredient_value = f'out {ingredient_value[-1]}' if 'negative' in ingredient_value else f'{ingredient_value[-1]}' # when confirm the ingredients that user wants or doesn't want
          res = res.replace('[recipe_ingredient_value]', ingredient_value)
 
-   return res, db_state
+   return res, db_state"""
 
 if __name__ == "__main__":
-   res, db_state = query_database("belief : is_vegan = yes ;  type = main dish ; ingredients = tofusystem : Certainly! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions].")
-   print(res)
-   print(db_state)
+   query_database("belief : type = main dish ; ingredients = chicken ; is_quick = yes  system: Certainly! Here are the ingredients and instructions for preparing the [recipe_name_1]: [recipe_ingredients], [recipe_instructions].")
