@@ -26,12 +26,15 @@ Please use the below commands to clone the repo and install required package.
 git clone 
 pip install -r requirements.txt
 ```
-Fetch and unzip the pretrained model based on which to continue finetune your own data. (*will release more versions of pretrained models, stay tuned*) 
+Fetch and unzip the pretrained model based on which to continue finetune your own data. 
 
-```zsh
-wget https://bapengstorage.blob.core.windows.net/soloist/gtg_pretrained.tar.gz
-cd soloist
-tar -xvf gtg_pretrained_model.tar.gz
+```
+https://drive.google.com/drive/folders/1VjnxouEe04yrokzllFpevXi7Jw-h_JDK?usp=sharing
+```
+
+```
+# make sure to load model to 
+soloist/soloist/finetuned_models
 ```
 ## Pipeline
 **Data format**
