@@ -40,7 +40,7 @@ conda activate /path/to/myenv
 
 * Install dependencies
 
-Navigate to the root directory of adviser, where you see `requirements_soloist_recipe.txt`
+Navigate to the root directory of soloist, where you see `requirements_soloist_recipe.txt`
 ```
 pip install -r requirements_soloist_recipe.txt
 ```
