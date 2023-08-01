@@ -1,23 +1,22 @@
 # COOKING UP A CONVERSATION WITH SOLOIST - FINETUNING AN END-TO-END MODEL FOR A NEW DOMAIN
 
 ## Introduction
-* For documentation of SOLOIST, please refer to the [repository](https://github.com/pengbaolin/soloist)
-* In this repository we show case a new domain: recipe recommendation, where the bot is asked to recommend a suitable recipe based on:
-    * ingredients: user's preferable main ingredient
-    * type of dish: main dish, salad, soup, beverage, dessert
-    * vegan
-    * difficulty: easy, medium, difficult
-    * time: time (in minutes) to prepare and cook
+* For documentation of SOLOIST, please refer to the [repository](https://github.com/pengbaolin/soloist) of Soloist's authors
+* In this repository we show case a new domain: **recipe** recommendation, where the bot is asked to recommend a suitable recipe based on:
+    * **ingredients**: user's preferable main ingredient
+    * **type**: main dish, salad, soup, beverage, dessert
+    * **is_vegan**: binary
+    * **difficulty**: easy, medium, difficult
+    * **time**: time (in minutes) to prepare and cook
 * The bot could provide serveral pieces of information
-    * recipe's name
-    * ingredients: list of all ingredients needed
-    * equipment: e.g oven, big salad bowl... 
-    * instruction: step-by-step how to prepare and cook
-    * substitute: if it is possible to substitute some ingredients with an alternative
+    * recipe's **name**
+    * **ingredients**: list of all ingredients needed
+    * **equipment**: e.g oven, big salad bowl... 
+    * **instruction**: step-by-step how to prepare and cook
+    * **substitute**: if it is possible to substitute some ingredients with an alternative
     * and further information related to each recipe: type, vegan, difficulty, time...
 * For the detailed report, please refer to this [link](https://docs.google.com/document/d/1F-HPy6cI-tPWWeAzBCw6Mpq-yxSDs__dQhwoWS1HvEc/edit?usp=sharing)
-* For a short version of report, please refer to this [link](github)
-
+* For a short version of report, please refer to this [link]([github](https://github.com/Yen444/soloist/blob/main/SDS_Recipe.pdf))
 
 ## Installation
 Require python 3.6.  
@@ -28,24 +27,18 @@ git clone https://github.com/Yen444/soloist.git
 pip install -r requirements.txt
 ```
 * Download pretrained model
-
 ```
+# gtg_pretrained 
 https://drive.google.com/file/d/1BNhY_GCx5f_Ubv_8mx6PHa6mFDAG7ujh/view?usp=drive_link
-```
-* Load the model to 
-```
-soloist/soloist/gtg_pretrained
-```
-
-* Download fine-tuned model for recipe domain
-```
+# finetuned_models
 https://drive.google.com/drive/folders/1VjnxouEe04yrokzllFpevXi7Jw-h_JDK?usp=sharing
 ```
+* Copy `gtg_pretrained` and `finetuned_models` to the same directory where you see soloist_train.py, that is:
 ```
-# make sure to load model to 
+soloist/soloist/gtg_pretrained
 soloist/soloist/finetuned_models
-
 ```
+
 ## Pipeline
 **Data format**
 ```json
@@ -116,7 +109,4 @@ npm run serve
 Open localhost:8080, you will see the following page. Note that the backend port should be consistent with the port used in html/compoents/chat.vue.
 
 <img src="doc/reminderbot.png" alt="drawing" width="600"/>
-
-
-
 
