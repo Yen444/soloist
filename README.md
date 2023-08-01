@@ -21,10 +21,28 @@
 ## Installation
 Require python 3.6.  
 
-Please use the below commands to clone the repo and install required package.
+* Please use the below commands to clone the repo and install required package.
 ```
 git clone https://github.com/Yen444/soloist.git
-pip install -r requirements.txt
+```
+
+* We recommend creating a virtual environment using conda
+```
+conda create -n myenv python=3.6
+# OR
+conda create -p /path/to/myenv python=3.6
+```
+
+* Activate virtual environment
+```
+conda activate /path/to/myenv
+```
+
+* Install dependencies
+
+Navigate to the root directory of adviser, where you see `requirements_soloist_recipe.txt`
+```
+pip install -r requirements_soloist_recipe.txt
 ```
 * Download pretrained model
 ```
