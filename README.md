@@ -99,6 +99,7 @@ We provide an demo interface to chat with finetuned models. The backend server i
 
 Start the backend server:
 ```bash
+# under soloist/examples/recipe
 python recipe_server.py # start the sever and expose 8081 port
 ```
 Start serving frontend page:
